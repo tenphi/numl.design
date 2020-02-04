@@ -1,0 +1,22 @@
+{
+  "name": "numl.design",
+  "version": "0.0.1",
+  "description": "Home page for NUDE Elements",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel --out-dir tmp src/index.html",
+    "build": "mkdir -p static && rm -vrf static/* && parcel build --out-dir static src/index.html",
+    "deploy": "npm run build && scp -rv static/* cloud:/usr/share/nginx/numl.design/"
+  },
+  "keywords": [
+    "design",
+    "system",
+    "framework"
+  ],
+  "author": "Andrey Yamanov <tenphi@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^1.12.4"
+  }
+}

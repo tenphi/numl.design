@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="nu-prefers-color-scheme" lang="en">
+<head>
+  <link rel="icon" media="(prefers-color-scheme:light)" type="image/png" sizes="32x32"
+        href="/images/nude-logo-32.png">
+  <link rel="icon" media="(prefers-color-scheme:light)" type="image/png" sizes="16x16"
+        href="/images/nude-logo-16.png">
+  <link rel="icon" media="(prefers-color-scheme:dark)" type="image/png" sizes="32x32"
+        href="/images/nude-logo-32-dark.png">
+  <link rel="icon" media="(prefers-color-scheme:dark)" type="image/png" sizes="16x16"
+        href="/images/nude-logo-16-dark.png">
+  <title>NuML | NUDE Elements</title>
+  <meta name="Description" content="Design System Framework for the any scale projects.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="scripts/index.js"></script>
+</head>
+<body>
+<nu-block responsive="960px|800px|640px">
+
+  <nu-theme hue="272"></nu-theme>
+  <nu-theme name="first" hue="232" mod="tone dim"></nu-theme>
+  <nu-theme name="second" hue="154" mod="tone dim"></nu-theme>
+  <nu-theme name="third" hue="45" mod="tone dim"></nu-theme>
+  <nu-theme name="fourth" hue="301" mod="tone dim"></nu-theme>
+  <nu-theme name="fifth" hue="96" mod="tone dim"></nu-theme>
+  <nu-theme name="sixth" hue="1" mod="tone dim"></nu-theme>
+
+  <nu-attrs for="section" gap="4x" flow="column" width="100%" fill="bg" items="center" padding="8x 2x||4x 2x"></nu-attrs>
+
+  <nu-attrs for="block" width="clamp(initial, 100%, 980px)"></nu-attrs>
+
+  <nu-flex
+    as="section"
+    fill="subtle"
+    padding="8x 2x||0 2x 4x">
+
+    <nu-flex items="center" flow="column" gap="4x||0">
+      <nu-svg
+        color="text-soft"
+        width="clamp(initial, 100%, 35)"
+        height="10"
+        id="logo">
+      </nu-svg>
+      <nu-heading label="NUDE Elements" text="center" hide="y"></nu-heading>
+      <nu-block text="w5 center" size="md">
+        ...based on
+        <nu-mark theme="tone">Custom Elements</nu-mark>
+        <nu-el text="nowrap">
+          and runtime
+          <nu-mark theme="tone">CSS Generation</nu-mark>
+          .
+        </nu-el>
+      </nu-block>
+    </nu-flex>
+
+    <nu-card padding="1x 2x" overflow="auto" scrollbar width="max(100%)">
+      <nu-code>
+      <textarea>
+        <script src="https://cdn.jsdelivr.net/npm/numl/dist/numl.js"></script>
+      </textarea>
+      </nu-code>
+    </nu-card>
+
+    <nu-flex size="xl||md" gap="4x||2x|2x 1x" content="center" flow="row wrap" padding="0|||0 5x">
+      <nu-vars pad="1x 2x|||.5x 1x"></nu-vars>
+
+      <nu-btn
+        to="!https://github.com/tenphi/nude"
+        theme="first special" radius="round" padding="@pad">
+        <nu-icon name="github"></nu-icon>
+        Github
+      </nu-btn>
+
+      <nu-btn
+        to="!https://numl.design/storybook"
+        theme="second special" radius="round" padding="@pad">
+        <nu-icon name="layout"></nu-icon>
+        Storybook
+      </nu-btn>
+
+      <nu-btn
+        to="!https://tele.click/nudeml"
+        theme="fourth special" radius="round" padding="@pad">
+        <nu-icon name="send"></nu-icon>
+        Chat
+      </nu-btn>
+
+      <nu-btn
+        to="!https://twitter.com/numldesign"
+        theme="fifth special" radius="round" padding="@pad">
+        <nu-icon name="twitter"></nu-icon>
+        Twitter
+      </nu-btn>
+
+      <nu-block place="relative">
+        <nu-btn theme="third special" radius="round" disabled padding="@pad">
+          <nu-icon name="file-text"></nu-icon>
+          Documentation
+        </nu-btn>
+        <nu-tooltip
+          text="w6 nowrap"
+          size="xxs"
+          place="outside-top">COMING SOON
+        </nu-tooltip>
+      </nu-block>
+    </nu-flex>
+
+  </nu-flex>
+
+  <nu-flex
+    as="section" gap="6x||4x">
+
+    <nu-attrs for="heading" level="2" column="1 / -1" size="h2||h4" text="w6 center"></nu-attrs>
+    <nu-attrs for="feature-header" level="3" size="h4"></nu-attrs>
+
+    <nu-grid as="block" gap="2x" columns="1fr 1fr 1fr||1fr">
+      <nu-heading>
+        With respect to your needs...
+      </nu-heading>
+
+      <nu-card theme="first">
+        <nu-heading id="feature-header">
+          Flexibility
+          <nu-icon name="sliders"></nu-icon>
+        </nu-heading>
+        <nu-block>
+          Create virtually any interface you want without writing CSS selectors and low-level
+          styles.
+        </nu-block>
+      </nu-card>
+
+      <nu-card theme="fourth">
+        <nu-heading id="feature-header">
+          Speed
+          <nu-icon name="zap"></nu-icon>
+        </nu-heading>
+        <nu-block>
+          Get production-ready high-quality markup with speed faster than prototyping tools.
+        </nu-block>
+      </nu-card>
+
+      <nu-card theme="third">
+        <nu-heading id="feature-header">
+          Compatibility
+          <nu-icon name="link"></nu-icon>
+        </nu-heading>
+        <nu-block>
+          Highly compatible with modern JS frameworks. Doesn't use
+          <nu-mark>[class]</nu-mark>
+          or
+          <nu-mark>[data-*]</nu-mark>
+          attributes.
+        </nu-block>
+      </nu-card>
+    </nu-grid>
+
+    <nu-grid as="block" gap="2x" columns="1fr 1fr 1fr||1fr">
+      <nu-heading>
+        All-in-One markup solution...
+      </nu-heading>
+
+      <nu-card theme="second">
+        <nu-heading id="feature-header">
+          Accessible
+          <nu-icon name="plus-circle"></nu-icon>
+        </nu-heading>
+        <nu-block>
+          Make your website accessible without fighting IDs and specifications.
+        </nu-block>
+      </nu-card>
+
+      <nu-card theme="fifth">
+        <nu-heading id="feature-header">
+          Interactive
+          <nu-icon name="mouse-pointer"></nu-icon>
+        </nu-heading>
+        <nu-block>
+          Use widgets to add some dynamics without using composite frameworks or UI libraries.
+        </nu-block>
+      </nu-card>
+
+      <nu-card theme="sixth">
+        <nu-heading id="feature-header">
+          Responsive
+          <nu-icon name="grid"></nu-icon>
+        </nu-heading>
+        <nu-block>
+          Make your styles responsive to screen width or item state with effort so little you've
+          never seen before.
+        </nu-block>
+      </nu-card>
+    </nu-grid>
+  </nu-flex>
+
+  <!--  <nu-flex text="w5 center" gap flow="column" items="center">-->
+  <!--    <nu-block>-->
+  <!--      Just add this script to your page...-->
+  <!--    </nu-block>-->
+  <!--    -->
+  <!--    <nu-block>-->
+  <!--      or...-->
+  <!--    </nu-block>-->
+  <!--    <nu-card padding="1x 2x">-->
+  <!--      <nu-code>-->
+  <!--          <textarea>-->
+  <!--            $ npm install numl &#45;&#45;save-->
+  <!--          </textarea>-->
+  <!--      </nu-code>-->
+  <!--    </nu-card>-->
+  <!--  </nu-flex>-->
+</nu-block>
+</body>
