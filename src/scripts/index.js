@@ -4,6 +4,17 @@ let logoUrl = require('../images/logo.svg');
 
 setTimeout(() => {
   Nude.getElementById('logo').setAttribute('src', logoUrl);
+
+  const hueSlider = Nude.getElementById('hue-slider');
+  const demoTheme = Nude.getElementById('demo-theme');
+  const hueEl = Nude.getElementById('hue');
+
+  hueSlider.addEventListener('input', (event) => {
+    const hue = event.detail;
+
+    demoTheme.setAttribute('hue', hue);
+    hueEl.innerHTML = hue;
+  });
 });
 
 // FIX FAVICON
