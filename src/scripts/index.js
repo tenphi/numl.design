@@ -1,4 +1,4 @@
-import '../../numl/numl';
+import '../../numl/numl.dev';
 
 let logoUrl = require('../images/logo.svg');
 
