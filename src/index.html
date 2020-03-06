@@ -127,29 +127,48 @@
       </nu-block>
     </nu-flex>
 
-    <nu-flex flow="column" gap="2x" items="center" width="max(100%)">
-      <nu-heading level="2">Install in seconds...</nu-heading>
+  </nu-flow>
 
-      <nu-card
-        padding="1x 2x" overflow="auto" scrollbar width="max(100%)" height="2.5 + 2b" shadow>
-        <nu-code>
+  <nu-flow as="section">
+    <nu-block
+      id="block"
+      radius overflow="no" height="20" border shadow>
+      <iframe
+        style="width: 100%; height: 100%"
+        frameborder="no" scrolling="no"
+        src="https://numl.design/repl#%7B%22scale%22%3A1%2C%22markup%22%3A%22%3Cnu-btn%3E%5Cn%20%20Dropdown%5Cn%20%20%3Cnu-icon%5Cn%20%20%20%20name%3D%5C%22chevron-down%5C%22%5Cn%20%20%20%20scale%3D%5C%22%5E%3Apressed%5Bflip-y%5D%5C%22%5Cn%20%20%20%20size%3D%5C%221.5%5C%22%5Cn%20%20%20%20color%3D%5C%22special%5C%22%5Cn%20%20%20%20transition%3D%5C%22scale%5C%22%3E%3C%2Fnu-icon%3E%5Cn%20%20%3Cnu-popup%3E%5Cn%20%20%20%20Content%5Cn%20%20%3C%2Fnu-popup%3E%5Cn%3C%2Fnu-btn%3E%22%2C%22options%22%3A%7B%22themeType%22%3A%22main%22%2C%22hue%22%3A214%2C%22pastel%22%3Afalse%2C%22saturation%22%3A80%2C%22saturationType%22%3A%22auto%22%2C%22gap%22%3A0.5%2C%22borderWidth%22%3A1%2C%22radius%22%3A0.5%2C%22animationTime%22%3A80%2C%22scheme%22%3A%22auto%22%2C%22contrast%22%3A%22auto%22%2C%22reducedMotion%22%3A%22auto%22%7D%2C%22embed%22%3Atrue%7D"></iframe>
+    </nu-block>
+
+    <nu-btn special disabled size="lg||md">
+      See more example
+      <nu-tooltip
+        text="w6 nowrap"
+        size="xxs"
+        place="outside-top">COMING SOON
+      </nu-tooltip>
+    </nu-btn>
+  </nu-flow>
+
+  <nu-flow as="section">
+    <nu-heading level="2">Install in seconds...</nu-heading>
+
+    <nu-card
+      padding="1x 2x" overflow="auto" scrollbar width="max(100%)" height="2.5 + 2b" shadow>
+      <nu-code>
           <textarea>
             <script src="https://cdn.jsdelivr.net/npm/numl/dist/numl.js"></script>
           </textarea>
-        </nu-code>
-      </nu-card>
+      </nu-code>
+    </nu-card>
 
-      <nu-block size="sm" text="center">
-        <nu-mark>No build step</nu-mark>
-        -
-        <nu-mark>No dependencies</nu-mark>
-        -
-        <nu-mark>No configs</nu-mark>
-      </nu-block>
-    </nu-flex>
-
+    <nu-block size="sm" text="center">
+      <nu-mark>No build step</nu-mark>
+      -
+      <nu-mark>No dependencies</nu-mark>
+      -
+      <nu-mark>No configs</nu-mark>
+    </nu-block>
   </nu-flow>
-
 
   <nu-flow id="features" as="section" gap="6x||4x">
 
@@ -357,7 +376,10 @@
       </textarea>
     </nu-code>
 
-    <nu-block>...<nu-el text="w6">NuML</nu-el> generates the following CSS:</nu-block>
+    <nu-block>...
+      <nu-el text="w6">NuML</nu-el>
+      generates the following CSS:
+    </nu-block>
 
     <nu-code fill="subtle">
       <textarea>
@@ -366,7 +388,9 @@
     </nu-code>
 
     <nu-block>
-      But <nu-el text="w6">NuML</nu-el> is
+      But
+      <nu-el text="w6">NuML</nu-el>
+      is
       <nu-el text="u">much powerful</nu-el>
       than that.
     </nu-block>
@@ -374,8 +398,6 @@
       It provides tools to support more sophisticated
       styles and dynamic states.
     </nu-block>
-
-    <nu-btn to="!/repl" special>See more examples</nu-btn>
   </nu-flow>
 
   <nu-markdown id="css-generation" as="section" size="lg||md">
@@ -748,8 +770,8 @@
         </nu-flex>
       </nu-block>
       <nu-badge text="w5" theme="tone" padding=".25x 1x">
-        Powered by
-        <nu-el text="w7">NuML</nu-el>
+        powered by
+        <nu-el text="w7">itself</nu-el>
       </nu-badge>
     </nu-pane>
   </nu-flow>
