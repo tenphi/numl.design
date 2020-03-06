@@ -80,59 +80,61 @@
       </pre>
     </nu-markdown>
 
-    <nu-flex
-      id="outer-links"
-      size="xl||md" gap="4x||2x|2x 1x" content="center" flow="row wrap"
-      padding="0|||0 5x">
-      <nu-attrs for="nu-btn" padding="1x 2x|||.5x 1x" radius="round"></nu-attrs>
+    <nu-block>
+      <nu-flex
+        id="outer-links"
+        size="xl||md" gap="4x||2x|2x 1x" content="center" flow="row wrap"
+        padding="0|||0 5x">
+        <nu-attrs for="nu-btn" padding="1x 2x|||.5x 1x" radius="round"></nu-attrs>
 
-      <nu-btn
-        to="!https://github.com/tenphi/nude"
-        theme="blue" special>
-        <nu-icon name="github"></nu-icon>
-        Github
-      </nu-btn>
-
-      <nu-btn
-        to="!https://numl.design/repl"
-        theme="green" special>
-        <nu-icon name="terminal"></nu-icon>
-        REPL
-      </nu-btn>
-
-      <nu-btn
-        to="!https://tele.click/nudeml"
-        theme="purple" special>
-        <nu-icon name="send"></nu-icon>
-        Telegram
-      </nu-btn>
-
-      <nu-btn
-        to="!https://twitter.com/numldesign"
-        theme="lime" special>
-        <nu-icon name="twitter"></nu-icon>
-        Twitter
-      </nu-btn>
-
-      <nu-block place="relative">
-        <nu-btn theme="orange" special disabled>
-          <nu-icon name="layout"></nu-icon>
-          Storybook
+        <nu-btn
+          to="!https://github.com/tenphi/nude"
+          theme="blue" special>
+          <nu-icon name="github"></nu-icon>
+          Github
         </nu-btn>
-        <nu-tooltip
-          text="w6 nowrap"
-          size="xxs"
-          place="outside-top">COMING SOON
-        </nu-tooltip>
-      </nu-block>
-    </nu-flex>
+
+        <nu-btn
+          to="!https://numl.design/repl"
+          theme="green" special>
+          <nu-icon name="terminal"></nu-icon>
+          REPL
+        </nu-btn>
+
+        <nu-btn
+          to="!https://tele.click/nudeml"
+          theme="purple" special>
+          <nu-icon name="send"></nu-icon>
+          Telegram
+        </nu-btn>
+
+        <nu-btn
+          to="!https://twitter.com/numldesign"
+          theme="lime" special>
+          <nu-icon name="twitter"></nu-icon>
+          Twitter
+        </nu-btn>
+
+        <nu-block place="relative">
+          <nu-btn theme="orange" special disabled>
+            <nu-icon name="layout"></nu-icon>
+            Storybook
+          </nu-btn>
+          <nu-tooltip
+            text="w6 nowrap"
+            size="xxs"
+            place="outside-top">COMING SOON
+          </nu-tooltip>
+        </nu-block>
+      </nu-flex>
+    </nu-block>
 
   </nu-flow>
 
   <nu-flow as="section">
     <nu-block
       id="block"
-      radius overflow="no" height="20" border shadow>
+      radius overflow="no" height="21.5" border shadow>
       <iframe
         style="width: 100%; height: 100%"
         frameborder="no" scrolling="no"
@@ -141,11 +143,6 @@
 
     <nu-btn special disabled size="lg||md">
       See more example
-      <nu-tooltip
-        text="w6 nowrap"
-        size="xxs"
-        place="outside-top">COMING SOON
-      </nu-tooltip>
     </nu-btn>
   </nu-flow>
 
@@ -153,7 +150,7 @@
     <nu-heading level="2">Install in seconds...</nu-heading>
 
     <nu-card
-      padding="1x 2x" overflow="auto" scrollbar width="max(100%)" height="2.5 + 2b" shadow>
+      padding="1x 2x" overflow="auto" scrollbar width="max(100%)" shadow>
       <nu-code>
           <textarea>
             <script src="https://cdn.jsdelivr.net/npm/numl/dist/numl.js"></script>
@@ -170,7 +167,7 @@
     </nu-block>
   </nu-flow>
 
-  <nu-flow id="features" as="section" gap="6x||4x">
+  <nu-flow id="features" as="section" gap="0">
 
     <nu-attrs for="heading" level="2" column="1 / -1" size="h2||h4" text="w7 center"></nu-attrs>
     <nu-attrs for="feature-header" level="3" size="h4"></nu-attrs>
@@ -391,7 +388,7 @@
       But
       <nu-el text="w6">NuML</nu-el>
       is
-      <nu-el text="u">much powerful</nu-el>
+      <nu-el text="u w5">much powerful</nu-el>
       than that.
     </nu-block>
     <nu-block>
