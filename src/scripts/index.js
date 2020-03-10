@@ -15,6 +15,17 @@ setTimeout(() => {
     demoTheme.setAttribute('hue', hue);
     hueEl.innerHTML = hue;
   });
+
+  const snippet = Nude.getElementById('snippet');
+
+  snippet.querySelector('textarea').textContent = `<nu-btn>
+  Dropdown
+  <nu-icon
+    name="chevron-down" size="1.5"
+    transition="scale" color="special"
+    scale="^:pressed[flip-y]"></nu-icon>
+  <nu-popup>Content</nu-popup>
+</nu-btn>`;
 });
 
 // FIX FAVICON
