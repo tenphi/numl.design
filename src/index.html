@@ -150,40 +150,18 @@
 
   </nu-flow>
 
-  <nu-flow as="section" theme="green">
-    <nu-card fill="subtle" shadow>
-      <nu-grid id="block" gap="2x" columns="1fr 1b 1fr||1fr" rows="1fr||auto 1b auto">
-        <nu-code fill id="snippet">
-          <textarea>
-
-          </textarea>
-        </nu-code>
-        <nu-block fill="special"></nu-block>
-        <nu-block>
-          <nu-btn>
-            Dropdown
-            <nu-icon
-              name="chevron-down"
-              scale="^:pressed[flip-y]"
-              size="1.5"
-              color="special"
-              transition="scale"></nu-icon>
-            <nu-popup>
-              Content
-            </nu-popup>
-          </nu-btn>
-        </nu-block>
-      </nu-grid>
-    </nu-card>
-
-    <nu-block id="block" text="center">
-      Example of styling by state and element composition
+  <nu-flow as="section">
+    <nu-block
+      id="block"
+      radius overflow="no" height="20" border shadow>
+      <iframe
+        style="width: 100%; height: 100%"
+        frameborder="no" scrolling="no"
+        src="https://numl.design/repl#%7B%22scale%22%3A1%2C%22markup%22%3A%22%3Cnu-btn%3E%5Cn%20%20Dropdown%5Cn%20%20%3Cnu-icon%5Cn%20%20%20%20name%3D%5C%22chevron-down%5C%22%5Cn%20%20%20%20scale%3D%5C%22%5E%3Apressed%5Bflip-y%5D%5C%22%5Cn%20%20%20%20size%3D%5C%221.5%5C%22%5Cn%20%20%20%20color%3D%5C%22special%5C%22%5Cn%20%20%20%20transition%3D%5C%22scale%5C%22%3E%3C%2Fnu-icon%3E%5Cn%20%20%3Cnu-popup%3E%5Cn%20%20%20%20Content%5Cn%20%20%3C%2Fnu-popup%3E%5Cn%3C%2Fnu-btn%3E%22%2C%22options%22%3A%7B%22themeType%22%3A%22main%22%2C%22hue%22%3A214%2C%22pastel%22%3Afalse%2C%22saturation%22%3A80%2C%22saturationType%22%3A%22auto%22%2C%22gap%22%3A0.5%2C%22borderWidth%22%3A1%2C%22radius%22%3A0.5%2C%22animationTime%22%3A80%2C%22scheme%22%3A%22auto%22%2C%22contrast%22%3A%22auto%22%2C%22reducedMotion%22%3A%22auto%22%7D%2C%22embed%22%3Atrue%7D"></iframe>
     </nu-block>
 
-    <nu-btn special size="lg||md"
-            to="!https:/numl.design/repl#%7B%22scale%22%3A1%2C%22markup%22%3A%22%3Cnu-btn%3E%5Cn%20%20Dropdown%5Cn%20%20%3Cnu-icon%5Cn%20%20%20%20name%3D%5C%22chevron-down%5C%22%5Cn%20%20%20%20scale%3D%5C%22%5E%3Apressed%5Bflip-y%5D%5C%22%5Cn%20%20%20%20size%3D%5C%221.5%5C%22%5Cn%20%20%20%20color%3D%5C%22special%5C%22%5Cn%20%20%20%20transition%3D%5C%22scale%5C%22%3E%3C%2Fnu-icon%3E%5Cn%20%20%3Cnu-popup%3E%5Cn%20%20%20%20Content%5Cn%20%20%3C%2Fnu-popup%3E%5Cn%3C%2Fnu-btn%3E%22%2C%22options%22%3A%7B%22themeType%22%3A%22main%22%2C%22hue%22%3A272%2C%22pastel%22%3Afalse%2C%22saturation%22%3A80%2C%22saturationType%22%3A%22auto%22%2C%22gap%22%3A0.5%2C%22borderWidth%22%3A1%2C%22radius%22%3A0.5%2C%22animationTime%22%3A80%2C%22scheme%22%3A%22auto%22%2C%22contrast%22%3A%22auto%22%2C%22reducedMotion%22%3A%22auto%22%7D%7D">
-      <nu-icon name="external-link"></nu-icon>
-      Open in REPL
+    <nu-btn special disabled size="lg||md">
+      See more example
     </nu-btn>
   </nu-flow>
 
