@@ -46,8 +46,7 @@
       generated in runtime by
       <nu-el id="bold">NuML</nu-el>
       based on
-      <nu-el id="bold">HTML</nu-el>
-      -markup. See the
+      <nu-el id="bold">HTML</nu-el>-markup. See the
       <nu-el id="bold">source code</nu-el>
       .
     </nu-block>
@@ -193,7 +192,7 @@
     <nu-attrs for="nu-grid" columns="1fr 1fr 1fr||1fr" gap="2x"></nu-attrs>
 
     <nu-flow gap="4x" as="block">
-      <nu-heading>
+      <nu-heading id="heading">
         All that the Web deserves...
       </nu-heading>
 
@@ -269,7 +268,7 @@
   </nu-flow>
 
   <nu-flow id="features" as="section" size="lg||md">
-    <nu-attrs for="list" text="left"></nu-attrs>
+    <nu-attrs for="nu-list" text="left"></nu-attrs>
     <nu-attrs for="nu-flow" display="flex" items="center" text="center"></nu-attrs>
     <nu-flow gap="4x" display="flex" items="center" text="center">
       <nu-heading level="2">
@@ -365,7 +364,7 @@
   </nu-flow>
 
   <nu-flow id="css-generation" as="section" size="lg||md">
-    <nu-attrs for="list" text="left"></nu-attrs>
+    <nu-attrs for="nu-list" text="left"></nu-attrs>
     <nu-attrs for="nu-flow" display="flex" items="center" text="center"></nu-attrs>
     <nu-flow gap="4x" display="flex" items="center" text="center">
       <nu-heading level="2">
@@ -443,27 +442,28 @@
     <nu-block>
       <nu-flex gap="2x" flow="row wrap" content="center" id="theme-variants">
         <nu-attrs
-          for="card" gap width="auto|||100%" padding="2x|||1x"
+          for="nu-card" gap width="auto|||100%" padding="2x|||1x"
           display="block|||flex" flow="column|||row" items="center"
           content="space-between"></nu-attrs>
-        <nu-attrs for="nu-heading" level="5"></nu-attrs>
-        <nu-attrs for="line" show="y|||n"></nu-attrs>
+        <nu-attrs for="nu-heading" level="5" width="min(5)"></nu-attrs>
+        <nu-attrs for="nu-line" show="y|||n" orient="h|v"></nu-attrs>
         <nu-attrs for="btn" padding="1x 2x|||.5x 1x" t="'Button'||'Btn'"></nu-attrs>
         <nu-attrs for="splbtn" padding="1x 2x|||.5x 1x" t="'Special'||'Spl'"></nu-attrs>
         <nu-attrs for="btnset" gap flow="row"></nu-attrs>
+        <nu-attrs for="content" grow="1"></nu-attrs>
 
         <nu-card>
           <nu-heading>Main</nu-heading>
 
           <nu-line></nu-line>
 
-          <nu-block>Text and
+          <nu-block id="content">Text and
             <nu-mark>mark</nu-mark>
             .
           </nu-block>
 
           <nu-flex id="btnset">
-            <nu-btn></nu-btn>
+            <nu-btn id="btn"></nu-btn>
 
             <nu-btn id="splbtn" special></nu-btn>
           </nu-flex>
@@ -474,13 +474,13 @@
 
           <nu-line></nu-line>
 
-          <nu-block>Text and
+          <nu-block id="content">Text and
             <nu-mark>mark</nu-mark>
             .
           </nu-block>
 
           <nu-flex id="btnset">
-            <nu-btn></nu-btn>
+            <nu-btn id="btn"></nu-btn>
 
             <nu-btn id="splbtn" special></nu-btn>
           </nu-flex>
@@ -491,13 +491,13 @@
 
           <nu-line></nu-line>
 
-          <nu-block>Text and
+          <nu-block id="content">Text and
             <nu-mark>mark</nu-mark>
             .
           </nu-block>
 
           <nu-flex id="btnset">
-            <nu-btn></nu-btn>
+            <nu-btn id="btn"></nu-btn>
 
             <nu-btn id="splbtn" special></nu-btn>
           </nu-flex>
@@ -508,13 +508,13 @@
 
           <nu-line></nu-line>
 
-          <nu-block>Text and
+          <nu-block id="content">Text and
             <nu-mark>mark</nu-mark>
             .
           </nu-block>
 
           <nu-flex id="btnset">
-            <nu-btn></nu-btn>
+            <nu-btn id="btn"></nu-btn>
 
             <nu-btn id="splbtn" special></nu-btn>
           </nu-flex>
@@ -525,13 +525,13 @@
 
           <nu-line></nu-line>
 
-          <nu-block>Text and
+          <nu-block id="content">Text and
             <nu-mark>mark</nu-mark>
             .
           </nu-block>
 
           <nu-flex id="btnset">
-            <nu-btn></nu-btn>
+            <nu-btn id="btn"></nu-btn>
 
             <nu-btn id="splbtn" special></nu-btn>
           </nu-flex>
@@ -596,7 +596,7 @@
       gap="2x|||0" content="start" items="start|||flex-end"
       flow="row|||column" id="responsive-layouts">
 
-      <nu-attrs for="icon" size="3||2"></nu-attrs>
+      <nu-attrs for="nu-icon" size="3||2"></nu-attrs>
       <nu-attrs for="layout" gap padding fill="bg" radius></nu-attrs>
       <nu-attrs
         for="size" padding="2x||1x" display="flex" gap
