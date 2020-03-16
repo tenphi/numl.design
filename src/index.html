@@ -366,52 +366,6 @@
     </nu-block>
   </nu-flow>
 
-  <nu-flow id="css-generation" as="section" size="lg||md">
-    <nu-attrs for="nu-list" text="left"></nu-attrs>
-    <nu-attrs for="nu-flow" display="flex" items="center" text="center"></nu-attrs>
-    <nu-flow gap="4x" display="flex" items="center" text="center">
-      <nu-heading level="2">
-        <nu-block>CSS Generation</nu-block>
-      </nu-heading>
-      <nu-block>The most efficient way to style your application:</nu-block>
-      <nu-block>
-        <nu-list text="left">
-          <nu-listitem>User gets only the
-            styles he needs at the moment
-          </nu-listitem>
-          <nu-listitem>Efficient disjoint
-            (as possible) selectors and styles
-          </nu-listitem>
-          <nu-listitem>Polyfills that are
-            just works
-          </nu-listitem>
-          <nu-listitem>Garbage collector
-            for non-reusable styles
-          </nu-listitem>
-          <nu-listitem>Best CSS practices
-            under-the-hood
-          </nu-listitem>
-        </nu-list>
-      </nu-block>
-      <nu-block>
-        <nu-mark>Remember:</nu-mark>
-        You can't make any mistake in
-        <nu-el>CSS</nu-el>
-        if&nbsp;you&nbsp;don't&nbsp;write&nbsp;it
-      </nu-block>
-      <nu-block>In many cases
-        <nu-el id="bold">CSS</nu-el>
-        is just
-        <nu-mark>too verbose</nu-mark>
-        ,
-        <nu-mark>unintuitive</nu-mark>
-        and
-        <nu-mark>really painful</nu-mark>
-        to&nbsp;maintain.
-      </nu-block>
-    </nu-flow>
-  </nu-flow>
-
   <nu-flow id="themes" as="section" gap="4x">
 
     <nu-theme id="demo-theme" hue="272"></nu-theme>
@@ -566,21 +520,57 @@
           <nu-switch id="contrast-switch" labelledby=":next"></nu-switch>
           <nu-label>High contrast</nu-label>
         </nu-flex>
-
-<!--        <nu-btn special id="scheme-toggle">-->
-<!--          <nu-icon name="sun"></nu-icon>-->
-<!--          Scheme-->
-<!--        </nu-btn>-->
-
-<!--        <nu-btn special id="contrast-toggle">-->
-<!--          <nu-icon name="plus-circle"></nu-icon>-->
-<!--          Contrast-->
-<!--        </nu-btn>-->
       </nu-flex>
     </nu-block>
 
     <nu-btn special disabled>Learn more</nu-btn>
 
+  </nu-flow>
+
+  <nu-flow id="css-generation" as="section" size="lg||md">
+    <nu-attrs for="nu-list" text="left"></nu-attrs>
+    <nu-attrs for="nu-flow" display="flex" items="center" text="center"></nu-attrs>
+    <nu-flow gap="4x" display="flex" items="center" text="center">
+      <nu-heading level="2">
+        <nu-block>CSS Generation</nu-block>
+      </nu-heading>
+      <nu-block>The most efficient way to style your application:</nu-block>
+      <nu-block>
+        <nu-list text="left">
+          <nu-listitem>User gets only the
+            styles he needs at the moment
+          </nu-listitem>
+          <nu-listitem>Efficient disjoint
+            (as possible) selectors and styles
+          </nu-listitem>
+          <nu-listitem>Polyfills that are
+            just works
+          </nu-listitem>
+          <nu-listitem>Garbage collector
+            for non-reusable styles
+          </nu-listitem>
+          <nu-listitem>Best CSS practices
+            under-the-hood
+          </nu-listitem>
+        </nu-list>
+      </nu-block>
+      <nu-block>
+        <nu-mark>Remember:</nu-mark>
+        You can't make any mistake in
+        <nu-el>CSS</nu-el>
+        if&nbsp;you&nbsp;don't&nbsp;write&nbsp;it
+      </nu-block>
+      <nu-block>In many cases
+        <nu-el id="bold">CSS</nu-el>
+        is just
+        <nu-mark>too verbose</nu-mark>
+        ,
+        <nu-mark>unintuitive</nu-mark>
+        and
+        <nu-mark>really painful</nu-mark>
+        to&nbsp;maintain.
+      </nu-block>
+    </nu-flow>
   </nu-flow>
 
   <nu-flow as="section">
