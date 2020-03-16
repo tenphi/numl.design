@@ -46,8 +46,11 @@
       generated in runtime by
       <nu-el id="bold">NuML</nu-el>
       based on
-      <nu-el id="bold">HTML</nu-el>-markup. See the
-      <nu-el id="bold">source code</nu-el>
+      <nu-el id="bold">HTML</nu-el>
+      -markup. See the
+      <nu-link to="!https://github.com/tenphi/numl.design/blob/master/src/index.html">
+        source code
+      </nu-link>
       .
     </nu-block>
   </nu-flex>
@@ -552,7 +555,32 @@
       </nu-rail>
     </nu-flow>
 
+    <nu-block>
+      <nu-flex gap="1x 2x" flow="row wrap" content="center" items="center">
+        <nu-flex gap>
+          <nu-switch id="scheme-switch" labelledby=":next"></nu-switch>
+          <nu-label>Dark scheme</nu-label>
+        </nu-flex>
+
+        <nu-flex gap>
+          <nu-switch id="contrast-switch" labelledby=":next"></nu-switch>
+          <nu-label>High contrast</nu-label>
+        </nu-flex>
+
+<!--        <nu-btn special id="scheme-toggle">-->
+<!--          <nu-icon name="sun"></nu-icon>-->
+<!--          Scheme-->
+<!--        </nu-btn>-->
+
+<!--        <nu-btn special id="contrast-toggle">-->
+<!--          <nu-icon name="plus-circle"></nu-icon>-->
+<!--          Contrast-->
+<!--        </nu-btn>-->
+      </nu-flex>
+    </nu-block>
+
     <nu-btn special disabled>Learn more</nu-btn>
+
   </nu-flow>
 
   <nu-flow as="section">
@@ -685,7 +713,8 @@
       </nu-block>
 
       <nu-flex gap="2x" items="center">
-        <nu-img width="minmax(4, 4)" height="minmax(4, 4)" shadow overflow="no" radius="round" border>
+        <nu-img width="minmax(4, 4)" height="minmax(4, 4)" shadow overflow="no" radius="round"
+                border>
           <img src="./images/andrey-yamanov.jpg" alt="Photo"/>
         </nu-img>
         <nu-flow>
