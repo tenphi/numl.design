@@ -10,6 +10,7 @@
   <link rel="icon" media="(prefers-color-scheme:dark)" type="image/png" sizes="16x16"
         href="/images/nude-logo-16-dark.png">
   <title>NuML | NUDE Elements</title>
+  <meta charset="utf-8">
   <meta name="Description" content="Design System Framework for projects of any scale.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -192,6 +193,52 @@
       -
       <nu-mark>No configs</nu-mark>
     </nu-block>
+
+    <nu-heading level="2">Compatibility</nu-heading>
+
+    <nu-block border radius size="md||sm" width="max(100%)" scrollbar overflow="auto">
+      <nu-gridtable columns="auto auto auto auto auto">
+        <nu-rowheader place="sticky left" z="above"></nu-rowheader>
+        <nu-columnheader>Vue.js</nu-columnheader>
+        <nu-columnheader>Svelte</nu-columnheader>
+        <nu-columnheader>React</nu-columnheader>
+        <nu-columnheader>Angular</nu-columnheader>
+
+        <nu-rowheader place="sticky left" z="above">Is it working?</nu-rowheader>
+
+        <nu-cell theme="green tone" text="center">
+          <nu-icon name="check"></nu-icon>
+        </nu-cell>
+        <nu-cell theme="green tone" text="center">
+          <nu-icon name="check"></nu-icon>
+        </nu-cell>
+        <nu-cell theme="green tone" text="center">
+          <nu-icon name="check"></nu-icon>
+        </nu-cell>
+        <nu-cell theme="green tone" text="center">
+          <nu-icon name="check"></nu-icon>
+        </nu-cell>
+
+        <nu-rowheader place="sticky left" z="above">Prod tested?</nu-rowheader>
+
+        <nu-cell theme="green tone" text="center">
+          <nu-icon name="check"></nu-icon>
+        </nu-cell>
+        <nu-cell theme="green tone" text="center">
+          <nu-icon name="check"></nu-icon>
+        </nu-cell>
+        <nu-cell theme="red tone" text="center">
+          <nu-icon name="x"></nu-icon>
+        </nu-cell>
+        <nu-cell theme="red tone" text="center">
+          <nu-icon name="x"></nu-icon>
+        </nu-cell>
+      </nu-gridtable>
+    </nu-block>
+
+    <nu-block size="md">Vue.js is recommended pair for NuML.</nu-block>
+
+    <nu-link to="mailto:nudeframework@gmail.com">Tell us about your experience</nu-link>
   </nu-flow>
 
   <nu-flow id="features" as="section" gap="0">
@@ -325,10 +372,14 @@
         <nu-block>Unmatched customization capabilities</nu-block>
       </nu-heading>
       <nu-block>
-        Are you <nu-el text="w6">tired</nu-el> customizing your favourite UI library?
+        Are you
+        <nu-el text="w6">tired</nu-el>
+        customizing your favourite UI library?
       </nu-block>
       <nu-block>
-        There is no such problem with <nu-el text="w6">NuML</nu-el>.
+        There is no such problem with
+        <nu-el text="w6">NuML</nu-el>
+        .
       </nu-block>
       <nu-block>
         It provides methods to easily customize elements at every level:
@@ -336,29 +387,38 @@
       <nu-block>
         <nu-list>
           <nu-listitem>
-            <nu-el text="w6">By attribute</nu-el> –
+            <nu-el text="w6">By attribute</nu-el>
+            –
             just add attribute to element to replace specific style set.
           </nu-listitem>
           <nu-listitem>
-            <nu-el text="w6">By decorator</nu-el> –
-            Use <nu-link to="!/reference/elements/nu-attrs">nu-attrs</nu-link> decorator to assign attributes to multiple elements.
+            <nu-el text="w6">By decorator</nu-el>
+            –
+            Use
+            <nu-link to="!/reference/elements/nu-attrs">nu-attrs</nu-link>
+            decorator to assign attributes to multiple elements.
           </nu-listitem>
           <nu-listitem>
-            <nu-el text="w6">By custom attribute</nu-el> –
+            <nu-el text="w6">By custom attribute</nu-el>
+            –
             Declare your own attribute for styling.
           </nu-listitem>
           <nu-listitem>
-            <nu-el id="bold">By inheritance</nu-el> –
+            <nu-el id="bold">By inheritance</nu-el>
+            –
             Create your own elements with different defaults or/and new attributes.
           </nu-listitem>
           <nu-listitem>
-            <nu-el id="bold">By plain CSS</nu-el> –
+            <nu-el id="bold">By plain CSS</nu-el>
+            –
             Add some plain CSS to your element if other options are not working. *
           </nu-listitem>
         </nu-list>
       </nu-block>
 
-      <nu-block size="sm||xs">* Yes, you can still use plain CSS in elements. We won't blame you. We do it by ourselves sometimes.</nu-block>
+      <nu-block size="sm||xs">* Yes, you can still use plain CSS in elements. We won't blame you. We
+        do it by ourselves sometimes.
+      </nu-block>
 
       <nu-btn special to="!/guide/features/customization">Learn more</nu-btn>
     </nu-flow>
@@ -800,7 +860,7 @@
     </nu-block>
     <nu-pane id="block" flow="row||column" gap="2x">
       <nu-block>
-        <nu-flex gap flow="row wrap" size="xs" text="w5">
+        <nu-flex gap flow="row wrap" size="xs" text="w5" content="space-between||center">
           <nu-attrs for="nu-btn" padding></nu-attrs>
 
           <nu-btn
@@ -836,6 +896,13 @@
             theme="orange tone">
             <nu-icon name="send"></nu-icon>
             Telegram
+          </nu-btn>
+
+          <nu-btn
+            to="mailto:nudeframework@gmail.com"
+            theme="red tone">
+            <nu-icon name="mail"></nu-icon>
+            Email
           </nu-btn>
         </nu-flex>
       </nu-block>
