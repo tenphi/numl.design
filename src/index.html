@@ -123,10 +123,10 @@
         </nu-btn>
 
         <nu-btn
-          to="!https://tele.click/nudeml"
+          to="!/storybook"
           theme="purple" special>
-          <nu-icon name="send"></nu-icon>
-          Telegram
+          <nu-icon name="layout"></nu-icon>
+          Storybook
         </nu-btn>
 
         <nu-btn
@@ -136,33 +136,39 @@
           Twitter
         </nu-btn>
 
-        <nu-block place="relative">
-          <nu-btn theme="orange" special disabled>
-            <nu-icon name="layout"></nu-icon>
-            Storybook
-          </nu-btn>
-          <nu-tooltip
-            text="w6 nowrap"
-            size="xxs"
-            place="outside-top">COMING SOON
-          </nu-tooltip>
-        </nu-block>
+        <nu-btn
+          to="!https://tele.click/nudeml"
+          theme="orange" special>
+          <nu-icon name="send"></nu-icon>
+          Telegram
+        </nu-btn>
       </nu-flex>
     </nu-block>
 
   </nu-flow>
 
   <nu-flow as="section">
+    <nu-block size="lg||md">
+      <nu-attrs
+        for="nu-btn"
+        toggle="0 :active[.75em] :disabled[0]"
+        fill="bg :pressed[special-bg]"></nu-attrs>
+      <nu-tablist id="snippet-selector" gap="2x||1x" value="card">
+        <nu-tab value="card">Info card</nu-tab>
+        <nu-tab value="tabs">Card with tabs</nu-tab>
+        <nu-tab value="dropdown">Dropdown</nu-tab>
+      </nu-tablist>
+    </nu-block>
+
     <nu-block
       id="block"
       radius overflow="no" height="21" border shadow>
       <iframe
         style="width: 100%; height: 100%; -webkit-mask-image: -webkit-radial-gradient(white, black); border-radius: var(--nu-radius);"
-        frameborder="no" scrolling="no"
-        src="https://numl.design/repl#%7B%22scale%22%3A1%2C%22markup%22%3A%22%3Cnu-card%5Cn%20%20%20%20%20%20%20%20%20responsive%3D%5C%22420px%5C%22%3E%5Cn%20%20%3Cnu-flex%20gap%3D%5C%222x%5C%22%20flow%3D%5C%22row%7Ccolumn%5C%22%3E%5Cn%20%20%20%20%3Cnu-svg%5Cn%20%20%20%20%20%20%20%20%20%20%20%20src%3D%5C%22%2Fimg%2Ficon.svg%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20color%3D%5C%22special-bg%5C%22%5Cn%20%20%20%20%20%20%20%20%20%20%20%20width%3D%5C%22min(4)%5C%22%20height%3D%5C%224%5C%22%3E%3C%2Fnu-svg%3E%5Cn%20%20%20%20%3Cnu-flex%20gap%3D%5C%222x%7C1x%5C%22%20grow%3D%5C%221%5C%22%20flow%3D%5C%22column%5C%22%20text%3D%5C%22left%7Ccenter%5C%22%3E%5Cn%20%20%20%20%20%20%3Cnu-heading%20grow%3D%5C%221%5C%22%20size%3D%5C%22h3%7Ch4%5C%22%3E%5Cn%20%20%20%20%20%20%20%20NuML%20Design%20System%5Cn%20%20%20%20%20%20%3C%2Fnu-heading%3E%5Cn%20%20%20%20%20%20%3Cnu-line%3E%3C%2Fnu-line%3E%5Cn%20%20%20%20%20%20%3Cnu-block%20size%3D%5C%22lg%7Cmd%5C%22%3E%5Cn%20%20%20%20%20%20%20%20Markup%20tool%20that%20reinvents%20the%20way%20Web%20Apps%20are%20built...%5Cn%20%20%20%20%20%20%3C%2Fnu-block%3E%5Cn%20%20%20%20%20%20%3Cnu-btn%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20place%3D%5C%22start%7Cstretch%5C%22%20size%3D%5C%22lg%7Cmd%5C%22%20%5Cn%20%20%20%20%20%20%20%20%20%20%20%20%20%20special%20to%3D%5C%22!https%2F%2Fnuml.design%2F%5C%22%3E%5Cn%20%20%20%20%20%20%20%20Learn%20more%5Cn%20%20%20%20%20%20%3C%2Fnu-btn%3E%5Cn%20%20%20%20%3C%2Fnu-flow%3E%5Cn%20%20%3C%2Fnu-flex%3E%5Cn%3C%2Fnu-card%3E%5Cn%22%2C%22options%22%3A%7B%22themeType%22%3A%22main%22%2C%22hue%22%3A272%2C%22pastel%22%3Afalse%2C%22saturation%22%3A80%2C%22saturationType%22%3A%22auto%22%2C%22gap%22%3A0.5%2C%22borderWidth%22%3A1%2C%22radius%22%3A0.5%2C%22transitionTime%22%3A80%2C%22scheme%22%3A%22auto%22%2C%22contrast%22%3A%22auto%22%2C%22reducedMotion%22%3A%22auto%22%7D%2C%22embed%22%3Atrue%7D"></iframe>
+        frameborder="no" scrolling="no"></iframe>
     </nu-block>
 
-    <nu-btn special disabled size="lg||md">
+    <nu-btn special size="lg||md" to="!/storybook">
       See more example
     </nu-btn>
   </nu-flow>
@@ -311,59 +317,51 @@
     </nu-flow>
   </nu-flow>
 
-  <nu-flow id="styling" as="section" size="lg||md">
-    <nu-attrs
-      for="nu-code"
-      border radius radius shadow fill="subtle" padding
-      size="md" scrollbar overflow="auto" width="max(100%)"></nu-attrs>
-
-    <nu-block text="center">
+  <nu-flow id="customization" as="section" size="lg||md">
+    <nu-attrs for="nu-list" text="left"></nu-attrs>
+    <nu-attrs for="nu-flow" display="flex" items="center" text="center"></nu-attrs>
+    <nu-flow gap="4x" display="flex" items="center" text="center">
       <nu-heading level="2">
-        How it works*
+        <nu-block>Unmatched customization capabilities</nu-block>
       </nu-heading>
-      <nu-block size="xs" text="w6">
-        *simplified
+      <nu-block>
+        Are you <nu-el text="w6">tired</nu-el> customizing your favourite UI library?
       </nu-block>
-    </nu-block>
+      <nu-block>
+        There is no such problem with <nu-el text="w6">NuML</nu-el>.
+      </nu-block>
+      <nu-block>
+        It provides methods to easily customize elements at every level:
+      </nu-block>
+      <nu-block>
+        <nu-list>
+          <nu-listitem>
+            <nu-el text="w6">By attribute</nu-el> –
+            just add attribute to element to replace specific style set.
+          </nu-listitem>
+          <nu-listitem>
+            <nu-el text="w6">By decorator</nu-el> –
+            Use <nu-link to="!/reference/elements/nu-attrs">nu-attrs</nu-link> decorator to assign attributes to multiple elements.
+          </nu-listitem>
+          <nu-listitem>
+            <nu-el text="w6">By custom attribute</nu-el> –
+            Declare your own attribute for styling.
+          </nu-listitem>
+          <nu-listitem>
+            <nu-el id="bold">By inheritance</nu-el> –
+            Create your own elements with different defaults or/and new attributes.
+          </nu-listitem>
+          <nu-listitem>
+            <nu-el id="bold">By plain CSS</nu-el> –
+            Add some plain CSS to your element if other options are not working. *
+          </nu-listitem>
+        </nu-list>
+      </nu-block>
 
-    <nu-block>Each attribute has function declaration like:</nu-block>
+      <nu-block size="sm||xs">* Yes, you can still use plain CSS in elements. We won't blame you. We do it by ourselves sometimes.</nu-block>
 
-    <nu-code fill="subtle">
-      <textarea>
-        display(val) { return { display: val }; }
-      </textarea>
-    </nu-code>
-
-    <nu-block>When you use this attribute in markup...</nu-block>
-
-    <nu-code fill="subtle">
-      <textarea>
-        <nu-block display="flex"></nu-block>
-      </textarea>
-    </nu-code>
-
-    <nu-block>...
-      <nu-el text="w6">NuML</nu-el>
-      generates the following CSS:
-    </nu-block>
-
-    <nu-code fill="subtle">
-      <textarea>
-        [nu-block][display="flex"] { display: flex; }
-      </textarea>
-    </nu-code>
-
-    <nu-block>
-      But
-      <nu-el text="w6">NuML</nu-el>
-      is
-      <nu-el text="u w5">much powerful</nu-el>
-      than that.
-    </nu-block>
-    <nu-block>
-      It provides tools to support more sophisticated
-      styles and dynamic states.
-    </nu-block>
+      <nu-btn special to="!/guide/features/customization">Learn more</nu-btn>
+    </nu-flow>
   </nu-flow>
 
   <nu-flow id="themes" as="section" gap="4x">
@@ -523,54 +521,63 @@
       </nu-flex>
     </nu-block>
 
-    <nu-btn special disabled>Learn more</nu-btn>
+    <nu-btn special to="!/guide/features/themes">Learn more</nu-btn>
 
   </nu-flow>
 
-  <nu-flow id="css-generation" as="section" size="lg||md">
-    <nu-attrs for="nu-list" text="left"></nu-attrs>
-    <nu-attrs for="nu-flow" display="flex" items="center" text="center"></nu-attrs>
-    <nu-flow gap="4x" display="flex" items="center" text="center">
+  <nu-flow id="styling" as="section" size="lg||md">
+    <nu-attrs
+      for="nu-code"
+      border radius radius shadow fill="subtle" padding
+      size="md" scrollbar overflow="auto" width="max(100%)"></nu-attrs>
+
+    <nu-block text="center">
       <nu-heading level="2">
-        <nu-block>CSS Generation</nu-block>
+        How it works*
       </nu-heading>
-      <nu-block>The most efficient way to style your application:</nu-block>
-      <nu-block>
-        <nu-list text="left">
-          <nu-listitem>User gets only the
-            styles he needs at the moment
-          </nu-listitem>
-          <nu-listitem>Efficient disjoint
-            (as possible) selectors and styles
-          </nu-listitem>
-          <nu-listitem>Polyfills that are
-            just works
-          </nu-listitem>
-          <nu-listitem>Garbage collector
-            for non-reusable styles
-          </nu-listitem>
-          <nu-listitem>Best CSS practices
-            under-the-hood
-          </nu-listitem>
-        </nu-list>
+      <nu-block size="xs" text="w6">
+        *simplified
       </nu-block>
-      <nu-block>
-        <nu-mark>Remember:</nu-mark>
-        You can't make any mistake in
-        <nu-el>CSS</nu-el>
-        if&nbsp;you&nbsp;don't&nbsp;write&nbsp;it
-      </nu-block>
-      <nu-block>In many cases
-        <nu-el id="bold">CSS</nu-el>
-        is just
-        <nu-mark>too verbose</nu-mark>
-        ,
-        <nu-mark>unintuitive</nu-mark>
-        and
-        <nu-mark>really painful</nu-mark>
-        to&nbsp;maintain.
-      </nu-block>
-    </nu-flow>
+    </nu-block>
+
+    <nu-block>Each attribute has function declaration like:</nu-block>
+
+    <nu-code fill="subtle">
+      <textarea>
+        display(val) { return { display: val }; }
+      </textarea>
+    </nu-code>
+
+    <nu-block>When you use this attribute in markup...</nu-block>
+
+    <nu-code fill="subtle">
+      <textarea>
+        <nu-block display="flex"></nu-block>
+      </textarea>
+    </nu-code>
+
+    <nu-block>...
+      <nu-el text="w6">NuML</nu-el>
+      generates the following CSS:
+    </nu-block>
+
+    <nu-code fill="subtle">
+      <textarea>
+        [nu-block][display="flex"] { display: flex; }
+      </textarea>
+    </nu-code>
+
+    <nu-block>
+      But
+      <nu-el text="w6">NuML</nu-el>
+      is
+      <nu-el text="u w5">much powerful</nu-el>
+      than that.
+    </nu-block>
+    <nu-block>
+      It provides tools to support more sophisticated
+      styles and dynamic states.
+    </nu-block>
   </nu-flow>
 
   <nu-flow as="section">
@@ -663,7 +670,53 @@
       </nu-grid>
     </nu-flex>
 
-    <nu-btn special disabled>Learn more</nu-btn>
+    <nu-btn special to="!/guide/features/responsiveness">Learn more</nu-btn>
+  </nu-flow>
+
+  <nu-flow id="css-generation" as="section" size="lg||md">
+    <nu-attrs for="nu-list" text="left"></nu-attrs>
+    <nu-attrs for="nu-flow" display="flex" items="center" text="center"></nu-attrs>
+    <nu-flow gap="4x" display="flex" items="center" text="center">
+      <nu-heading level="2">
+        <nu-block>CSS Generation</nu-block>
+      </nu-heading>
+      <nu-block>The most efficient way to style your application:</nu-block>
+      <nu-block>
+        <nu-list text="left">
+          <nu-listitem>User gets only the
+            styles he needs at the moment
+          </nu-listitem>
+          <nu-listitem>Efficient disjoint
+            (as possible) selectors and styles
+          </nu-listitem>
+          <nu-listitem>Polyfills that are
+            just works
+          </nu-listitem>
+          <nu-listitem>Garbage collector
+            for non-reusable styles
+          </nu-listitem>
+          <nu-listitem>Best CSS practices
+            under-the-hood
+          </nu-listitem>
+        </nu-list>
+      </nu-block>
+      <nu-block>
+        <nu-mark>Remember:</nu-mark>
+        You can't make any mistake in
+        <nu-el>CSS</nu-el>
+        if&nbsp;you&nbsp;don't&nbsp;write&nbsp;it
+      </nu-block>
+      <nu-block>In many cases
+        <nu-el id="bold">CSS</nu-el>
+        is just
+        <nu-mark>too verbose</nu-mark>
+        ,
+        <nu-mark>unintuitive</nu-mark>
+        and
+        <nu-mark>really painful</nu-mark>
+        to&nbsp;maintain.
+      </nu-block>
+    </nu-flow>
   </nu-flow>
 
   <nu-flow id="framework" as="section">
@@ -765,10 +818,10 @@
           </nu-btn>
 
           <nu-btn
-            to="!https://tele.click/nudeml"
+            to="!/storybook"
             theme="purple tone">
-            <nu-icon name="send"></nu-icon>
-            Telegram
+            <nu-icon name="layout"></nu-icon>
+            Storybook
           </nu-btn>
 
           <nu-btn
@@ -776,6 +829,13 @@
             theme="lime tone">
             <nu-icon name="twitter"></nu-icon>
             Twitter
+          </nu-btn>
+
+          <nu-btn
+            to="!https://tele.click/nudeml"
+            theme="orange tone">
+            <nu-icon name="send"></nu-icon>
+            Telegram
           </nu-btn>
         </nu-flex>
       </nu-block>
@@ -788,17 +848,25 @@
 </nu-block>
 
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+<script type="text/javascript">
+(function (m, e, t, r, i, k, a) {
+  m[i] = m[i] || function () {
+    (m[i].a = m[i].a || []).push(arguments)
+  };
+  m[i].l = 1 * new Date();
+  k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+})
+(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(60992518, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
+ym(60992518, "init", {
+  clickmap: true,
+  trackLinks: true,
+  accurateTrackBounce: true
+});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/60992518" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/60992518" style="position:absolute; left:-9999px;"
+            alt=""/></div>
+</noscript>
 <!-- /Yandex.Metrika counter -->
 </body>
