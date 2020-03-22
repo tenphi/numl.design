@@ -256,7 +256,7 @@
     </nu-flow>
   </nu-flow>
 
-  <nu-flow as="section">
+  <nu-flow as="section" text="center">
     <nu-heading level="2">Install in seconds...</nu-heading>
 
     <nu-card
@@ -278,47 +278,84 @@
 
     <nu-heading level="2">Compatibility</nu-heading>
 
-    <nu-block border radius size="md||sm" width="max(100%)" scrollbar overflow="auto">
-      <nu-gridtable columns="auto auto auto auto auto">
-        <nu-rowheader place="sticky left" z="above"></nu-rowheader>
-        <nu-columnheader>Vue.js</nu-columnheader>
-        <nu-columnheader>Svelte</nu-columnheader>
-        <nu-columnheader>React</nu-columnheader>
-        <nu-columnheader>Angular</nu-columnheader>
+    <nu-flow gap>
+      <nu-heading level="3" size="h5">Browsers</nu-heading>
 
-        <nu-rowheader place="sticky left" z="above">Is it working?</nu-rowheader>
+      <nu-block border radius size="md||sm" width="max(100%)" scrollbar overflow="auto">
+        <nu-gridtable columns="auto auto auto auto">
+          <nu-columnheader>Edge</nu-columnheader>
+          <nu-columnheader>Firefox</nu-columnheader>
+          <nu-columnheader>Chrome</nu-columnheader>
+          <nu-columnheader>Safari</nu-columnheader>
 
-        <nu-cell theme="green tone" text="center">
-          <nu-icon name="check"></nu-icon>
-        </nu-cell>
-        <nu-cell theme="green tone" text="center">
-          <nu-icon name="check"></nu-icon>
-        </nu-cell>
-        <nu-cell theme="green tone" text="center">
-          <nu-icon name="check"></nu-icon>
-        </nu-cell>
-        <nu-cell theme="green tone" text="center">
-          <nu-icon name="check"></nu-icon>
-        </nu-cell>
+          <nu-cell theme="green tone" text="center">
+            16+
+          </nu-cell>
+          <nu-cell theme="green tone" text="center">
+            63+
+          </nu-cell>
+          <nu-cell theme="green tone" text="center">
+            67+
+          </nu-cell>
+          <nu-cell theme="green tone" text="center">
+            10.1+
+          </nu-cell>
+        </nu-gridtable>
+      </nu-block>
+    </nu-flow>
 
-        <nu-rowheader place="sticky left" z="above">Prod tested?</nu-rowheader>
-
-        <nu-cell theme="green tone" text="center">
-          <nu-icon name="check"></nu-icon>
-        </nu-cell>
-        <nu-cell theme="green tone" text="center">
-          <nu-icon name="check"></nu-icon>
-        </nu-cell>
-        <nu-cell theme="red tone" text="center">
-          <nu-icon name="x"></nu-icon>
-        </nu-cell>
-        <nu-cell theme="red tone" text="center">
-          <nu-icon name="x"></nu-icon>
-        </nu-cell>
-      </nu-gridtable>
+    <nu-block text="center">
+      Edge (16-18) requires
+      <nu-link
+        to="!https://github.com/webcomponents/polyfills/tree/master/packages/custom-elements">
+        @webcomponents/custom-elements
+      </nu-link>
+      polyfill. 5.3Kb
     </nu-block>
 
-    <nu-block size="md">Vue.js is recommended pair for NuML.</nu-block>
+    <nu-flow gap>
+      <nu-heading level="3" size="h5">Frameworks</nu-heading>
+
+      <nu-block border radius size="md||sm" width="max(100%)" scrollbar overflow="auto">
+        <nu-gridtable columns="auto auto auto auto auto">
+          <nu-rowheader place="sticky left" z="above"></nu-rowheader>
+          <nu-columnheader>Vue.js</nu-columnheader>
+          <nu-columnheader>Svelte</nu-columnheader>
+          <nu-columnheader>React</nu-columnheader>
+          <nu-columnheader>Angular</nu-columnheader>
+
+          <nu-rowheader place="sticky left" z="above">Is it working?</nu-rowheader>
+
+          <nu-cell theme="green tone" text="center">
+            <nu-icon name="check"></nu-icon>
+          </nu-cell>
+          <nu-cell theme="green tone" text="center">
+            <nu-icon name="check"></nu-icon>
+          </nu-cell>
+          <nu-cell theme="green tone" text="center">
+            <nu-icon name="check"></nu-icon>
+          </nu-cell>
+          <nu-cell theme="green tone" text="center">
+            <nu-icon name="check"></nu-icon>
+          </nu-cell>
+
+          <nu-rowheader place="sticky left" z="above">Prod tested?</nu-rowheader>
+
+          <nu-cell theme="green tone" text="center">
+            <nu-icon name="check"></nu-icon>
+          </nu-cell>
+          <nu-cell theme="green tone" text="center">
+            <nu-icon name="check"></nu-icon>
+          </nu-cell>
+          <nu-cell theme="red tone" text="center">
+            <nu-icon name="x"></nu-icon>
+          </nu-cell>
+          <nu-cell theme="red tone" text="center">
+            <nu-icon name="x"></nu-icon>
+          </nu-cell>
+        </nu-gridtable>
+      </nu-block>
+    </nu-flow>
 
     <nu-link to="mailto:nudeframework@gmail.com">Tell us about your experience</nu-link>
   </nu-flow>
@@ -377,7 +414,8 @@
         customizing your favourite UI library?
       </nu-block>
       <nu-block>
-        <nu-el text="w6">NuML</nu-el> provides methods to easily customize elements at every level:
+        <nu-el text="w6">NuML</nu-el>
+        provides methods to easily customize elements at every level:
       </nu-block>
       <nu-block>
         <nu-list>
@@ -421,7 +459,8 @@
         </nu-list>
       </nu-block>
 
-      <nu-block size="sm||xs" text="w6">* Yes, you can still use plain CSS in elements. We won't blame you. We
+      <nu-block size="sm||xs" text="w6">* Yes, you can still use plain CSS in elements. We won't
+        blame you. We
         do it by ourselves sometimes.
       </nu-block>
 
