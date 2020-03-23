@@ -47,12 +47,10 @@
       generated in runtime by
       <nu-el id="bold">NuML</nu-el>
       based on
-      <nu-el id="bold">HTML</nu-el>
-      -markup. See the
+      <nu-el id="bold">HTML</nu-el>-markup. See the
       <nu-link to="!https://github.com/tenphi/numl.design/blob/master/src/index.html">
         source code
-      </nu-link>
-      .
+      </nu-link>.
     </nu-block>
   </nu-flex>
 
@@ -98,14 +96,13 @@
       taming
       <nu-el id="bold">Web Standards</nu-el>
       and
-      <nu-el id="bold">Design Patterns</nu-el>
-      , not fighting them.
+      <nu-el id="bold">Design Patterns</nu-el>, not fighting them.
     </nu-block>
 
-    <nu-block>
+    <nu-block padding="0 2x">
       <nu-flex
         id="outer-links"
-        size="xl||md" gap="4x||2x|2x 1x" content="center" flow="row wrap"
+        size="xl||md" gap="4x|2x||2x 1x" content="center" flow="row wrap"
         padding="0|||0 5x">
         <nu-attrs for="nu-btn" padding="1x 2x|||.5x 1.5x" radius="round"></nu-attrs>
 
@@ -283,7 +280,7 @@
 
       <nu-block border radius size="md||sm" width="max(100%)" scrollbar overflow="auto">
         <nu-gridtable columns="auto auto auto auto">
-          <nu-columnheader>Edge</nu-columnheader>
+          <nu-columnheader>Edge *</nu-columnheader>
           <nu-columnheader>Firefox</nu-columnheader>
           <nu-columnheader>Chrome</nu-columnheader>
           <nu-columnheader>Safari</nu-columnheader>
@@ -305,7 +302,7 @@
     </nu-flow>
 
     <nu-block text="center">
-      Edge (16-18) requires
+      * Edge (16-18) requires
       <nu-link
         to="!https://github.com/webcomponents/polyfills/tree/master/packages/custom-elements">
         @webcomponents/custom-elements
@@ -372,10 +369,10 @@
         <nu-list>
           <nu-listitem>Powerful
             <nu-el>state-of-the-art</nu-el>
-            theming system
+            <nu-link to="#themes">theming system</nu-link>
           </nu-listitem>
           <nu-listitem>
-            Multiple widgets
+            <nu-link to="!/storybook/widgets/inputs">Multiple widgets</nu-link>
             with accessible design and laconic API
           </nu-listitem>
           <nu-listitem>
@@ -388,13 +385,13 @@
             <nu-mark>transform</nu-mark>
           </nu-listitem>
           <nu-listitem>Compact syntax to
-            declare styles depending on state
+            declare styles <nu-link to="!/guide/features/states">depending on state</nu-link>
           </nu-listitem>
           <nu-listitem>New convenient
             identifier system
           </nu-listitem>
-          <nu-listitem>Really simple
-            customization
+          <nu-listitem>
+            Really simple <nu-link to="#customization">customization</nu-link>
           </nu-listitem>
         </nu-list>
       </nu-block>
@@ -680,7 +677,7 @@
     </nu-block>
     <nu-block>
       It provides tools to support more sophisticated
-      styles and dynamic states.
+      styles and <nu-link to="!/guide/features/states">dynamic states</nu-link>.
     </nu-block>
   </nu-flow>
 
@@ -838,14 +835,22 @@
     </nu-block>
 
     <nu-list size="lg||md">
-      <nu-listitem>Based on Custom Elements</nu-listitem>
+      <nu-listitem>
+        Based on
+        <nu-link to="!https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">
+          Custom Elements
+        </nu-link>
+      </nu-listitem>
       <nu-listitem>Real CSS inheritance between elements</nu-listitem>
-      <nu-listitem>Multiple options for flexible element customization</nu-listitem>
+      <nu-listitem>Multiple options for flexible element <nu-link to="#customization">customization</nu-link></nu-listitem>
       <nu-listitem>Optimized CSS Generation algorithms</nu-listitem>
       <nu-listitem>Context-sensitive styling and logic</nu-listitem>
-      <nu-listitem>Variables and Custom Properties support</nu-listitem>
+      <nu-listitem>Built-in Variables and Custom Properties support</nu-listitem>
       <nu-listitem>Multiple tools for styling, coloring and accessibility</nu-listitem>
-      <nu-listitem>Shadow DOM optional support</nu-listitem>
+      <nu-listitem>
+        Transparent
+        <nu-link to="!/framework/shadow-dom">Shadow DOM support</nu-link>
+      </nu-listitem>
     </nu-list>
   </nu-flow>
 
