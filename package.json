@@ -17,6 +17,7 @@
   "author": "Andrey Yamanov <tenphi@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@webcomponents/custom-elements": "^1.4.1",
     "parcel": "^1.12.4"
   }
 }

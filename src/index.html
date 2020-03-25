@@ -286,7 +286,7 @@
           <nu-columnheader>Safari</nu-columnheader>
 
           <nu-cell theme="green tone" text="center">
-            16+
+            79+
           </nu-cell>
           <nu-cell theme="green tone" text="center">
             63+
@@ -301,14 +301,19 @@
       </nu-block>
     </nu-flow>
 
-    <nu-block text="center">
-      * Edge (16-18) requires
-      <nu-link
-        to="!https://github.com/webcomponents/polyfills/tree/master/packages/custom-elements">
-        @webcomponents/custom-elements
-      </nu-link>
-      polyfill. 5.3Kb
-    </nu-block>
+    <nu-flow text="center" gap>
+      <nu-block>
+        * Edge (16-18) requires
+        <nu-link
+          to="!https://github.com/webcomponents/polyfills/tree/master/packages/custom-elements">
+          @webcomponents/custom-elements
+        </nu-link>
+        polyfill. 5.3Kb
+      </nu-block>
+      <nu-block>
+        We don't officially support it yet
+      </nu-block>
+    </nu-flow>
 
     <nu-flow gap>
       <nu-heading level="3" size="h5">Frameworks</nu-heading>
