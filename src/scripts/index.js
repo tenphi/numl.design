@@ -1,11 +1,15 @@
-import '../../numl/numl';
+import '../../numl/index';
 
-let logoUrl = require('../images/logo.svg');
+const icons = require('../images/*.svg');
 
 window.addEventListener('DOMContentLoaded', () => {
-  const html = document.querySelector('html');
+  [...document.querySelectorAll('nu-svg')].forEach(svgEl => {
+    const name = svgEl.getAttribute('name');
 
-  Nude.getElementById('logo').setAttribute('src', logoUrl);
+    if (!name || !icons[name]) return;
+
+    svgEl.setAttribute('src', icons[name]);
+  });
 
   const hueSlider = Nude.getElementById('hue-slider');
   const demoTheme = Nude.getElementById('demo-theme');
@@ -21,28 +25,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // TOGGLE SCHEME
   const toggle = Nude.getElementById('scheme-switch');
 
-  function toggleScheme() {
-    let scheme;
-
-    if (html.classList.contains('nu-scheme-dark')) {
-      scheme = 'light';
-    } else if (html.classList.contains('nu-scheme-light')) {
-      scheme = 'dark';
-    } else {
-      scheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
-    }
-
-    if (scheme === 'light') {
-      html.classList.remove('nu-scheme-dark');
-      html.classList.add('nu-scheme-light');
-    } else {
-      html.classList.remove('nu-scheme-light');
-      html.classList.add('nu-scheme-dark');
-    }
-
-    setToggleStyle(scheme);
-  }
-
   function setToggleStyle(scheme) {
     if (scheme === 'dark') {
       toggle.setAttribute('checked', '');
@@ -53,32 +35,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
   setToggleStyle(matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
-  toggle.addEventListener('tap', toggleScheme);
-
   // TOGGLE CONTRAST
   const toggleContrastEl = Nude.getElementById('contrast-switch');
-
-  function toggleContrast() {
-    let contrast;
-
-    if (html.classList.contains('nu-contrast-high')) {
-      contrast = 'low';
-    } else if (html.classList.contains('nu-contrast-low')) {
-      contrast = 'high';
-    } else {
-      contrast = matchMedia('(prefers-contrast: high)').matches ? 'low' : 'high';
-    }
-
-    if (contrast === 'low') {
-      html.classList.remove('nu-contrast-high');
-      html.classList.add('nu-contrast-low');
-    } else {
-      html.classList.remove('nu-contrast-low');
-      html.classList.add('nu-contrast-high');
-    }
-
-    setToggleContrastStyle(contrast);
-  }
 
   function setToggleContrastStyle(contrast) {
     if (contrast === 'high') {
@@ -89,8 +47,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   setToggleContrastStyle(matchMedia('(prefers-contrast: high)').matches ? 'high' : 'low');
-
-  toggleContrastEl.addEventListener('tap', toggleContrast);
 
   // SNIPPET SELECTOR
 
