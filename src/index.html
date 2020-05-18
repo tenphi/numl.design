@@ -35,7 +35,7 @@
     padding="10x 0||4x 0"></nu-attrs>
 
   <nu-attrs for="section-block" place="side-space" width="clamp(initial, 100%, 1100px)"
-            padding="2x"></nu-attrs>
+            padding="4x"></nu-attrs>
 
   <nu-attrs for="bold" text="w6" force></nu-attrs>
 
@@ -49,7 +49,7 @@
 
     <nu-pane
       as="section-block" content="space-between" height="100%" transition="height"
-      padding="2x||1x 2x">
+      padding="2x 4x||1x 2x">
       <nu-pane color="special">
         <nu-blocklink to="/" radius="2x" hoverable="1.5x">
           <nu-svg name="nude-logo-small" width="5x" height="5x" display="block"></nu-svg>
@@ -133,11 +133,11 @@
     </nu-grid>
   </nu-flow>
 
-  <nu-flow id="features" as="section" padding="8x 2x">
+  <nu-flow id="features" as="section" padding="8x 2x||4x 2x|4x 1x">
     <nu-flow as="section-block" gap="4x">
       <nu-attrs for="feature" gap="1x" clear shadow="1.5 :hover[1]"></nu-attrs>
 
-      <nu-grid columns="repeat(4, 1fr)" gap="3x">
+      <nu-grid columns="repeat(4, 1fr)|1fr 1fr|1fr" gap="3x">
         <nu-cardbtn as="feature" theme="blue tint" to="#basics">
           <nu-heading level="3" size="h4">
             Simplicity
@@ -457,7 +457,9 @@
 
   <nu-flow id="basics" as="section">
     <nu-flow as="section-block" size="lg||md" gap="4x">
-      <nu-attrs for="code" fill="diff" padding inline border></nu-attrs>
+      <nu-attrs
+        for="code" fill="diff" padding inline border
+        overflow="auto" scrollbar width="max(100%)"></nu-attrs>
 
       <nu-heading size="h1">Learn basics in minutes</nu-heading>
 
@@ -495,24 +497,24 @@
 <!--            Let's try more attributes to change button size and border radius. Then we can add text transformation. And let's make it a checkbox to actually see **pressed** state.-->
 <!--          </pre>-->
 <!--        </nu-markdown>-->
-      <nu-grid columns="15 1fr" content="space-around" gap="2x" size="md">
-        <nu-block place="start end" size="lg">
+      <nu-grid columns="15 1fr||1fr" content="space-around" gap="2x" size="md" width="max(100%)">
+        <nu-block place="start end" size="lg" show="y||n">
           <nu-el>Preview</nu-el>
           <nu-icon name="eye-outline"></nu-icon>
         </nu-block>
-        <nu-block size="lg">
+        <nu-block size="lg" show="y||n">
           <nu-icon name="code"></nu-icon>
           <nu-el>Code</nu-el>
         </nu-block>
 
-        <nu-block place="start end">
+        <nu-block place="start end||start">
           <nu-btn>Button</nu-btn>
         </nu-block>
         <nu-block>
           <nu-code><textarea><nu-btn>Button</nu-btn></textarea></nu-code>
         </nu-block>
 
-        <nu-block place="start end">
+        <nu-block place="start end||start">
           <nu-btn special>Button</nu-btn>
         </nu-block>
         <nu-block>
@@ -521,7 +523,7 @@
           </textarea></nu-code>
         </nu-block>
 
-        <nu-block place="start end">
+        <nu-block place="start end||start">
           <nu-btn
             role="checkbox"
             special radius=".5r"
@@ -541,7 +543,7 @@
           </nu-code>
         </nu-block>
 
-        <nu-block place="start end">
+        <nu-block place="start end||start">
           <nu-btn
             role="checkbox"
             special radius=".5r"
@@ -730,7 +732,14 @@
         </nu-flex>
       </nu-block>
 
-      <nu-btn special to="!/guide/features/themes">Learn more</nu-btn>
+      <nu-flow gap>
+        <nu-el size="lg||md">Learn more in our Guide:</nu-el>
+
+        <nu-pane gap="2x" size="md">
+          <nu-btn special>Theme definitions</nu-btn>
+          <nu-btn special>Using colors</nu-btn>
+        </nu-pane>
+      </nu-flow>
 
     </nu-flow>
   </nu-flow>
@@ -750,7 +759,7 @@
         to declare style value for each responsive zone.
       </nu-block>
 
-      <nu-grid columns="1fr auto|1fr">
+      <nu-grid columns="1fr auto|1fr" gap="4x">
 
         <nu-flow gap="4x">
           <nu-card border overflow="auto" width="max(28)" scrollbar fill="diff" shadow>
@@ -768,7 +777,7 @@
             </nu-code>
           </nu-card>
 
-          <nu-flex flow="row|||column" gap="2x|||1x" items="center">
+          <nu-flex flow="row wrap" gap="1x 2x">
             <nu-block>
               <nu-mark theme="red special">* responsive breakpoints</nu-mark>
             </nu-block>
@@ -777,15 +786,11 @@
               <nu-mark theme="blue tone">* style values for each zone</nu-mark>
             </nu-block>
           </nu-flex>
-
-          <nu-btn special to="!/guide/features/responsiveness" size="lg">
-            Learn more
-          </nu-btn>
         </nu-flow>
 
         <nu-flex
-          gap="0" content="start" items="start|||flex-end"
-          flow="row|||column" id="responsive-layouts">
+          gap="0" content="start" items="start|||stretch"
+          flow="row|||column" id="responsive-layouts" row="span 2">
 
           <nu-attrs for="nu-icon" size="3||2"></nu-attrs>
           <nu-attrs for="layout" gap padding fill="bg" radius></nu-attrs>
@@ -835,6 +840,16 @@
             </nu-grid>
           </nu-grid>
         </nu-flex>
+
+        <nu-flow gap>
+          <nu-el size="lg||md">Learn more in our Guide:</nu-el>
+
+          <nu-pane gap="2x" size="md">
+            <nu-btn special>Basics</nu-btn>
+            <nu-btn special>Custom units</nu-btn>
+            <nu-btn special>State modifiers</nu-btn>
+          </nu-pane>
+        </nu-flow>
       </nu-grid>
     </nu-flow>
   </nu-flow>
