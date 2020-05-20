@@ -20,7 +20,7 @@
 <body>
 <script src="scripts/index.js"></script>
 <nu-root responsive="1100px|800px|640px" id="root">
-  <nu-theme hue="272"></nu-theme>
+  <nu-theme id="main-theme" hue="272"></nu-theme>
   <nu-theme name="blue" hue="232" mod="dim"></nu-theme>
   <nu-theme name="green" hue="154" mod="dim"></nu-theme>
   <nu-theme name="orange" hue="45" mod="dim"></nu-theme>
@@ -33,10 +33,9 @@
     for="section" gap="4x" flow="column" width="100%" fill="subtle :odd[bg]"
     items="center"
     padding="10x 0||4x 0"></nu-attrs>
-
   <nu-attrs for="section-block" place="side-space" width="clamp(initial, 100%, 1100px)"
-            padding="4x"></nu-attrs>
-
+            padding="4x||2x"></nu-attrs>
+  <nu-attrs for="section-header" size="h1||h3"></nu-attrs>
   <nu-attrs for="bold" text="w6" force></nu-attrs>
 
   <nu-topbar
@@ -86,373 +85,443 @@
   </nu-topbar>
 
   <nu-flow
-    as="section" padding="26x 0 16x||14x 0" theme="special"
+    as="section" padding="26x 0 16x||14x 0 4x" theme="special"
     image="linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0))">
-    <nu-grid columns="auto auto||auto" as="section-block" gap="2x">
-      <nu-flow gap="4x">
-        <nu-block move="-2b 0">
-          <nu-heading size="8x" inline place="relative">
-            numl
-            <nu-el size="4x">unity of design&code</nu-el>
-            <nu-block place="top left -.5x .4x" size="md" color="text 66%">
-              <nu-el color="text">nu</nu-el>de e<nu-el color="text">l</nu-el>e<nu-el color="text">m</nu-el>ents
-            </nu-block>
-          </nu-heading>
-        </nu-block>
-        <!--        <nu-heading level="2">-->
-        <!--          -->
-        <!--        </nu-heading>-->
-        <nu-block size="lg||md">
-          <nu-block>
-            Your
-            <nu-b>code</nu-b>
-            is your
-            <nu-b>design system</nu-b>
-            .
-          </nu-block>
-          <nu-block>
-            Create modern
-            <nu-b>high-quality</nu-b>
-            interfaces using only
-            <nu-b>HTML</nu-b>.
-          </nu-block>
-        </nu-block>
-        <nu-pane size="lg||md" gap="2x||1x" text="w5">
-          <nu-attrs for="btn" padding="1x 2x||1x"></nu-attrs>
-          <nu-btn special>Get started</nu-btn>
-          <nu-btn id="#features">
-            Why NUML?
-          </nu-btn>
-          <nu-btn to="#examples">
-            Examples
-          </nu-btn>
-        </nu-pane>
-      </nu-flow>
-
-      <nu-block></nu-block>
-    </nu-grid>
-  </nu-flow>
-
-  <nu-flow id="features" as="section" padding="8x 2x||4x 2x|4x 1x">
     <nu-flow as="section-block" gap="4x">
-      <nu-attrs for="feature" gap="1x" clear shadow="1.5 :hover[1]"></nu-attrs>
-
-      <nu-grid columns="repeat(4, 1fr)|1fr 1fr|1fr" gap="3x">
-        <nu-cardbtn as="feature" theme="blue tint" to="#basics">
-          <nu-heading level="3" size="h4">
-            Simplicity
-          </nu-heading>
-          <nu-block>
-            Single intuitive <nu-b>language</nu-b> to describe <nu-b>styles</nu-b> and <nu-b>interactions</nu-b> of your app.
+      <nu-block move="-2b 0">
+        <nu-heading size="8x" inline place="relative">
+          numl
+          <nu-el size="4x">unity of design&code</nu-el>
+          <nu-block place="top left -.5x .4x" size="md" color="text 66%">
+            <nu-el color="text">nu</nu-el>de e<nu-el color="text">l</nu-el>e<nu-el color="text">m</nu-el>ents
           </nu-block>
-        </nu-cardbtn>
-
-        <nu-cardbtn as="feature" theme="green tint" to="#responsive">
-          <nu-heading level="3" size="h4">
-            Responsive
-          </nu-heading>
-          <nu-block>
-            Declarative <nu-b>responsive breakpoints</nu-b> in runtime for any element and its context.
-          </nu-block>
-        </nu-cardbtn>
-
-        <nu-cardbtn as="feature" theme="red tint" to="#themes">
-          <nu-heading level="3" size="h4">
-            Theming
-          </nu-heading>
-          <nu-block>
-            <nu-b>State-of-the-art</nu-b> runtime theming system with <nu-b>Dark</nu-b> and <nu-b>High Contrast</nu-b> modes.
-          </nu-block>
-        </nu-cardbtn>
-
-        <nu-cardbtn as="feature" theme="lime tint" to="!https://github.com/tenphi/numl">
-          <nu-heading level="3" size="h4">
-            Free
-          </nu-heading>
-          <nu-block>
-            <nu-b>Open source</nu-b> project based on <nu-b>web standards</nu-b> and hosted on <nu-b>Github</nu-b>
-          </nu-block>
-        </nu-cardbtn>
-      </nu-grid>
+        </nu-heading>
+      </nu-block>
+      <!--        <nu-heading level="2">-->
+      <!--          -->
+      <!--        </nu-heading>-->
+      <nu-block size="lg||md">
+        <nu-block>
+          Your
+          <nu-b>code</nu-b>
+          is your
+          <nu-b>design system</nu-b>
+          .
+        </nu-block>
+        <nu-block>
+          Create modern
+          <nu-b>high-quality</nu-b>
+          interfaces using only
+          <nu-b>HTML</nu-b>.
+        </nu-block>
+      </nu-block>
+      <nu-pane size="lg||md" gap="2x||1x" text="w5">
+        <nu-attrs for="btn" padding="1x 2x||1x"></nu-attrs>
+        <nu-btn special>Get started</nu-btn>
+        <nu-btn to="#features">
+          Why NuML?
+        </nu-btn>
+        <nu-btn to="#examples">
+          Examples
+        </nu-btn>
+      </nu-pane>
     </nu-flow>
   </nu-flow>
 
-  <nu-flow id="examples" as="section">
+  <nu-flow id="features" as="section" padding="8x 2x||4x 2x|4x 1x">
+    <nu-flow as="section-block" gap="8x">
+      <nu-flow gap="4x">
+        <nu-attrs
+          for="feature"
+          gap="1x 2x" clear shadow="1.5 :hover[1]" text="w5"
+          display="block||grid" flow="column||row" columns="auto 1fr" rows="auto 1fr"></nu-attrs>
+        <nu-attrs for="icon" size="5x" place="top right 1.25x 1x||start" row="span 2"></nu-attrs>
+        <nu-attrs for="heading"></nu-attrs>
+
+        <nu-heading as="section-header">
+          Design&nbsp;System and UI&nbsp;library out-of-the-box
+        </nu-heading>
+
+        <nu-grid columns="repeat(4, 1fr)|1fr 1fr|1fr" gap="3x">
+          <nu-cardbtn as="feature" theme="blue tint" to="#basics">
+            <nu-icon name="bulb-outline"></nu-icon>
+            <nu-heading level="3" size="h4">
+              Easy to learn
+            </nu-heading>
+            <nu-block>
+              A single intuitive <nu-b>language</nu-b> to describe <nu-b>styles</nu-b> and <nu-b>interactions</nu-b> of your app.
+            </nu-block>
+          </nu-cardbtn>
+
+          <nu-cardbtn as="feature" theme="green tint" to="#responsive">
+            <nu-icon name="layout-outline"></nu-icon>
+            <nu-heading level="3" size="h4">
+              Responsive
+            </nu-heading>
+            <nu-block>
+              Declarative <nu-b>responsive breakpoints</nu-b> in runtime in any <nu-b>DOM</nu-b> context.
+            </nu-block>
+          </nu-cardbtn>
+
+          <nu-cardbtn as="feature" theme="red tint" to="#themes">
+            <nu-icon name="color-palette-outline"></nu-icon>
+            <nu-heading level="3" size="h4">
+              Themeable
+            </nu-heading>
+            <nu-block>
+              State-of-the-art runtime theming system with <nu-b>Dark</nu-b> and <nu-b>High Contrast</nu-b> modes.
+            </nu-block>
+          </nu-cardbtn>
+
+          <nu-cardbtn as="feature" theme="lime tint" to="!https://github.com/tenphi/numl">
+            <nu-icon name="code-outline"></nu-icon>
+            <nu-heading level="3" size="h4">
+              Free
+            </nu-heading>
+            <nu-block>
+              <nu-b>Open source</nu-b> project licensed under <nu-b>MIT license</nu-b> and hosted on <nu-b>Github</nu-b>
+            </nu-block>
+          </nu-cardbtn>
+        </nu-grid>
+      </nu-flow>
+
+      <nu-flow gap="4x" size="lg||md">
+        <nu-heading as="section-header">
+          Why NuML?
+        </nu-heading>
+
+        <nu-flow gap>
+          <nu-heading level="3" size="h3||h5">Creating and maintaining a&nbsp;design&nbsp;system is&nbsp;tough</nu-heading>
+
+          <nu-block>
+            It consumes a lot of time and requires high&nbsp;level of&nbsp;expertise in your team.
+          </nu-block>
+
+          <nu-block>
+            With <nu-b>NuML</nu-b> you'll get <nu-b>full-featured</nu-b> Design&nbsp;System with a <nu-b>bunch of elements and components</nu-b> <nu-link to="!/guide/getting-started">in seconds</nu-link>.
+          </nu-block>
+        </nu-flow>
+
+        <nu-flow gap>
+          <nu-heading level="3" size="h3||h5">Customizable & Future-proof</nu-heading>
+
+          <nu-block>
+            In <nu-b>NuML</nu-b> everything is <nu-b>customizable</nu-b> to&nbsp;the&nbsp;core and uses generation techniques to&nbsp;give you the&nbsp;newest features of&nbsp;the&nbsp;platform (like <nu-b>Flex gap</nu-b>). It means the&nbsp;markup of&nbsp;your project will&nbsp;be up-to-date with <nu-b>the&nbsp;latest web&nbsp;standards</nu-b> and <nu-b>best&nbsp;practices</nu-b> for at least the <nu-b>next decade</nu-b>.
+          </nu-block>
+        </nu-flow>
+
+        <nu-flow gap>
+          <nu-heading level="3" size="h3||h5">No build step is needed.</nu-heading>
+
+          <nu-block>
+            Everything happens <nu-b>in runtime</nu-b>. Simply <nu-link>add NuML script</nu-link> to your page and <nu-b>start prototyping</nu-b>.
+          </nu-block>
+
+          <nu-block>
+            All the <nu-b>CSS</nu-b> will be generated <nu-b>instantly</nu-b> as needed.
+          </nu-block>
+
+          <nu-block>
+            All the <nu-b>JS</nu-b> required for interactions will be loaded <nu-b>dynamically</nu-b>.
+          </nu-block>
+        </nu-flow>
+      </nu-flow>
+    </nu-flow>
+  </nu-flow>
+
+  <nu-flow id="examples" as="section" gap="0">
     <nu-attrs for="code" border padding="1x 2x" overflow="auto" scrollbar></nu-attrs>
-    <nu-attrs for="heading" level="3" size="h2"></nu-attrs>
 
-    <nu-block as="section-block">
-      <nu-pane items="baseline" gap="2x||0" flow="row||column">
-        <nu-heading level="3">Check out</nu-heading>
-        <nu-block size="lg h3">
-          how to build a
-          <nu-btn value="login-form" padding="1x 0 1x 1x" gap="0">
-            <nu-value list="list"></nu-value>
-            <nu-icon name="chevron-down" scale="^:pressed[flip-y]"></nu-icon>
-            <nu-popupmenu id="list" link-value size="lg">
-              <nu-menuitem value="login-form">Login form</nu-menuitem>
-              <nu-menuitem value="dropdown-menu">Dropdown menu</nu-menuitem>
-            </nu-popupmenu>
-          </nu-btn>
-          with <nu-el text="w6">NUML</nu-el>
-        </nu-block>
-      </nu-pane>
-    </nu-block>
+    <nu-flow as="section-block" gap="2x">
+      <nu-attrs for="btn" fill=":pressed[special-bg] bg" color toggle=":active[1]"></nu-attrs>
 
-    <nu-grid as="section-block" columns="repeat(3, 1fr)|1fr 1fr|1fr" gap="6x 4x|4x">
-      <nu-attrs for="step" theme="tint" size="sm" text="w5"></nu-attrs>
-      <nu-attrs for="step-pane" content="space-between" items="start"></nu-attrs>
-      <nu-attrs for="line" column="1 / -1"></nu-attrs>
+      <nu-heading as="section-header">Design with NuML</nu-heading>
 
-      <nu-flow gap column="|span 2|1">
-        <nu-heading>Prototype</nu-heading>
-        <nu-block>
-          Create interfaces using human-readable HTML with clear syntax. You can set styles for each
-          element depending on its state or screen width.
-          <nu-link>Learn more</nu-link>
-        </nu-block>
-      </nu-flow>
-      <nu-flow gap>
-        <nu-pane as="step-pane">
-          <nu-block as="step">
-            <nu-b>Step 1.</nu-b>
-            Create a login form.
+      <nu-radiogroup value="login-form" gap flow="row wrap" items="center" text="w6">
+        <nu-btn value="login-form">Login form</nu-btn>
+<!--        <nu-btn value="dropdown-menu">Dropdown menu</nu-btn>-->
+        <nu-el color="special" size="xs">More examples to come...</nu-el>
+      </nu-radiogroup>
+    </nu-flow>
+
+<!--    <nu-block as="section-block">-->
+<!--      <nu-pane items="baseline" gap="2x||0" flow="row||column">-->
+<!--        <nu-heading level="3" size="h3||h4">Check out</nu-heading>-->
+<!--        <nu-block size="lg h3||md h3">-->
+<!--          how to design a-->
+<!--          <nu-btn padding="1x 0 1x 1x" gap="0" control="example" special>-->
+<!--            <nu-value list="list" placeholder="select any" color="special-text :empty[special-text 50%]"></nu-value>-->
+<!--            <nu-icon name="chevron-down" scale="^:pressed[flip-y]"></nu-icon>-->
+<!--            <nu-popupmenu id="list" link-value size="lg">-->
+<!--              <nu-menuitem value="login-form">login form</nu-menuitem>-->
+<!--              <nu-menuitem value="dropdown-menu">dropdown menu</nu-menuitem>-->
+<!--              <nu-line></nu-line>-->
+<!--              <nu-block size="xs" padding color="text 66%" text="w6 nowrap">More examples to come...</nu-block>-->
+<!--            </nu-popupmenu>-->
+<!--          </nu-btn>-->
+<!--          with <nu-el text="w6">NuML</nu-el>-->
+<!--        </nu-block>-->
+<!--      </nu-pane>-->
+<!--    </nu-block>-->
+
+    <nu-block id="example">
+      <nu-attrs for="heading" level="4" size="h3"></nu-attrs>
+
+      <nu-grid as="section-block" columns="repeat(3, 1fr)|1fr 1fr|1fr" gap="6x 4x|4x">
+        <nu-attrs for="step" theme="tint" size="sm" text="w5"></nu-attrs>
+        <nu-attrs for="step-pane" content="space-between" items="start"></nu-attrs>
+        <nu-attrs for="line" column="1 / -1"></nu-attrs>
+
+        <nu-flow gap column="|span 2|1">
+          <nu-heading>Prototype</nu-heading>
+          <nu-block>
+            Create interfaces using human-readable HTML with clear syntax. You can set styles for each
+            element depending on its state or screen width.
+            <nu-link>Learn more</nu-link>
           </nu-block>
-          <nu-btn size="xs" special padding>
-            <nu-icon name="external-link" size="1.25em"></nu-icon>
-            <nu-tooltip>See the full code snippet in editor</nu-tooltip>
-            REPL
-          </nu-btn>
-        </nu-pane>
-        <nu-code>
-          <textarea>
-            &lt;nu-form>
-              &lt;nu-field>
-                &lt;nu-label>Username&lt;/nu-label>
-                &lt;nu-input id="username"/>
-            ...
-          </textarea>
-        </nu-code>
-      </nu-flow>
-      <nu-flow gap>
-        <nu-block as="step">
-          Focus on input to see default focus styling.
-        </nu-block>
-        <nu-card>
-          <nu-form>
-            <nu-flow>
-              <nu-label>Username</nu-label>
-              <nu-input id="username"></nu-input>
-            </nu-flow>
-            <nu-flow>
-              <nu-label>Password</nu-label>
-              <nu-input id="password" mask></nu-input>
-            </nu-flow>
-          </nu-form>
-        </nu-card>
-      </nu-flow>
-
-      <nu-line></nu-line>
-
-      <nu-flow gap column="|span 2|1">
-        <nu-heading>Customize</nu-heading>
-        <nu-block>
-          Use attributes or context style definitions to customize your elements as you like. Syntax
-          of numl is very extensive and allows you to describe very complex states.
-          <nu-link>Learn more</nu-link>
-        </nu-block>
-      </nu-flow>
-      <nu-flow gap>
-        <nu-pane as="step-pane">
+        </nu-flow>
+        <nu-flow gap>
+          <nu-pane as="step-pane">
+            <nu-block as="step">
+              <nu-b>Step 1.</nu-b>
+              Create a login form.
+            </nu-block>
+            <nu-btn size="xs" special padding>
+              <nu-icon name="external-link" size="1.25em"></nu-icon>
+              <nu-tooltip>See the full code snippet in editor</nu-tooltip>
+              REPL
+            </nu-btn>
+          </nu-pane>
+          <nu-code>
+            <textarea>
+              &lt;nu-form>
+                &lt;nu-field>
+                  &lt;nu-label>Username&lt;/nu-label>
+                  &lt;nu-input id="username"/>
+              ...
+            </textarea>
+          </nu-code>
+        </nu-flow>
+        <nu-flow gap>
           <nu-block as="step">
-            <nu-b>Step 2.</nu-b>
-            Add a custom theme. Change border radius size. Design fancy-looking placeholders. Decrease
-            gap.
+            Focus on input to see default focus styling.
           </nu-block>
-          <nu-btn size="xs" special padding>
-            <nu-icon name="external-link" size="1.25em"></nu-icon>
-            REPL
-          </nu-btn>
-        </nu-pane>
-        <nu-code>
-          <textarea>
-            &lt;nu-props radius=".5x"/>
-            &lt;nu-theme hue="250" mod="tone"/>
-            &lt;nu-attrs for="label"
-              place="top left 1x 2x" z="above"
-              text="w5" origin="top left"
+          <nu-card>
+            <nu-form>
+              <nu-flow>
+                <nu-label>Username</nu-label>
+                <nu-input id="username"></nu-input>
+              </nu-flow>
+              <nu-flow>
+                <nu-label>Password</nu-label>
+                <nu-input id="password" mask></nu-input>
+              </nu-flow>
+            </nu-form>
+          </nu-card>
+        </nu-flow>
+
+        <nu-line></nu-line>
+
+        <nu-flow gap column="|span 2|1">
+          <nu-heading>Customize</nu-heading>
+          <nu-block>
+            Use attributes or context style definitions to customize your elements as you like. Syntax
+            of numl is very extensive and allows you to describe very complex states.
+            <nu-link>Learn more</nu-link>
+          </nu-block>
+        </nu-flow>
+        <nu-flow gap>
+          <nu-pane as="step-pane">
+            <nu-block as="step">
+              <nu-b>Step 2.</nu-b>
+              Add a custom theme. Change border radius size. Design fancy-looking placeholders. Decrease
+              gap.
+            </nu-block>
+            <nu-btn size="xs" special padding>
+              <nu-icon name="external-link" size="1.25em"></nu-icon>
+              REPL
+            </nu-btn>
+          </nu-pane>
+          <nu-code>
+            <textarea>
+              &lt;nu-props radius=".5x"/>
+              &lt;nu-theme hue="250" mod="tone"/>
+              &lt;nu-attrs for="label"
+                place="top left 1x 2x" z="above"
+                text="w5" origin="top left"
+                scale="^:focus[.75] :empty[1] .75"
+                move="^:focus[0] :empty[0 1.25x] 0"
+              &ltnu-form gap="1x">...
+            </textarea>
+          </nu-code>
+        </nu-flow>
+        <nu-flow gap>
+          <nu-block as="step">
+            Focus on input to see "focus" state.
+          </nu-block>
+          <nu-card>
+            <nu-props radius=".5x"></nu-props>
+            <nu-theme hue="250" mod="tone"></nu-theme>
+            <nu-theme name="error" hue="1" mod="tint"></nu-theme>
+            <nu-attrs for="check" theme=":invalid[error]"></nu-attrs>
+            <nu-attrs for="field" theme=":invalid[error]"></nu-attrs>
+            <nu-attrs
+              for="label"
+              place="top left 1x 2x" z="above" text="w5" origin="top left"
               scale="^:focus[.75] :empty[1] .75"
               move="^:focus[0] :empty[0 1.25x] 0"
-            &ltnu-form gap="1x">...
-          </textarea>
-        </nu-code>
-      </nu-flow>
-      <nu-flow gap>
-        <nu-block as="step">
-          Focus on input to see "focus" state.
-        </nu-block>
-        <nu-card>
-          <nu-props radius=".5x"></nu-props>
-          <nu-theme hue="250" mod="tone"></nu-theme>
-          <nu-theme name="error" hue="1" mod="tint"></nu-theme>
-          <nu-attrs for="check" theme=":invalid[error]"></nu-attrs>
-          <nu-attrs for="field" theme=":invalid[error]"></nu-attrs>
-          <nu-attrs
-            for="label"
-            place="top left 1x 2x" z="above" text="w5" origin="top left"
-            scale="^:focus[.75] :empty[1] .75"
-            move="^:focus[0] :empty[0 1.25x] 0"
-            color="^:focus[text-soft] :empty[text 50%] text-soft"
-            transition="theme, transform"></nu-attrs>
-          <nu-form gap="1x">
-            <nu-flow>
-              <nu-inputgroup height="8x" padding="2.5x 1x 1x 1x">
-                <nu-label>Username</nu-label>
-                <nu-input id="username" placeholder="" grow="1"></nu-input>
-              </nu-inputgroup>
-            </nu-flow>
-            <nu-flow>
-              <nu-inputgroup height="8x" padding="2.5x 1x 1x 1x">
-                <nu-label>Password</nu-label>
-                <nu-input id="password" placeholder="" grow="1"></nu-input>
-              </nu-inputgroup>
-            </nu-flow>
-          </nu-form>
-        </nu-card>
-      </nu-flow>
+              color="^:focus[text-soft] :empty[text 50%] text-soft"
+              transition="theme, transform"></nu-attrs>
+            <nu-form gap="1x">
+              <nu-flow>
+                <nu-inputgroup height="8x" padding="2.5x 1x 1x 1x">
+                  <nu-label>Username</nu-label>
+                  <nu-input id="username" placeholder="" grow="1"></nu-input>
+                </nu-inputgroup>
+              </nu-flow>
+              <nu-flow>
+                <nu-inputgroup height="8x" padding="2.5x 1x 1x 1x">
+                  <nu-label>Password</nu-label>
+                  <nu-input id="password" placeholder="" grow="1"></nu-input>
+                </nu-inputgroup>
+              </nu-flow>
+            </nu-form>
+          </nu-card>
+        </nu-flow>
 
-      <nu-line></nu-line>
+        <nu-line></nu-line>
 
-      <nu-flow gap column="|span 2|1">
-        <nu-heading>Interactions</nu-heading>
-        <nu-block>
-          Use widgets and components or inject&nbsp;behaviors to implement basic&nbsp;logic. You can
-          also define actions for each widget to change other element attribute or property.
-          <nu-link>Learn more</nu-link>
-        </nu-block>
-      </nu-flow>
-      <nu-flow gap>
-        <nu-pane as="step-pane">
-          <nu-block as="step">
-            <nu-b>Step 3.</nu-b>
-            Add form validation. Add simple data output (for debug)
+        <nu-flow gap column="|span 2|1">
+          <nu-heading>Interactions</nu-heading>
+          <nu-block>
+            Use widgets and components or inject&nbsp;behaviors to implement basic&nbsp;logic. You can
+            also define actions for each widget to change other element attribute or property.
+            <nu-link>Learn more</nu-link>
           </nu-block>
-          <nu-btn size="xs" special padding>
-            <nu-icon name="external-link" size="1.25em"></nu-icon>
-            REPL
-          </nu-btn>
-        </nu-pane>
-        <nu-code>
-          <textarea>
-            &lt;nu-check for="username"
-              assert="required">
-              Username is required
-            &lt;/nu-check>
-            &lt;nu-check for="password"
-              assert="required">
-              Password is required
-            &lt;/nu-check>
-          </textarea>
-        </nu-code>
-      </nu-flow>
-      <nu-flow gap>
-        <nu-block as="step">
-          Click "Submit" to trigger validation and (if the form is valid) get the result.
-        </nu-block>
-        <nu-card>
-          <nu-props radius=".5x"></nu-props>
-          <nu-theme hue="250" mod="tone"></nu-theme>
-          <nu-theme name="error" hue="1" mod="tint"></nu-theme>
-          <nu-attrs for="field" theme=":invalid[error]"></nu-attrs>
-          <nu-attrs
-            for="label"
-            place="top left 1x 2x" z="above" text="w5" origin="top left"
-            scale="^:focus[.75] :empty[1] .75"
-            move="^:focus[0] :empty[0 1.25x] 0"
-            color="^:focus[text-soft] :empty[text 50%] text-soft"
-            transition="theme, transform"></nu-attrs>
-          <nu-form control="output[.value]" gap="1x">
-            <nu-field>
-              <nu-inputgroup height="8x" padding="2.5x 1x 1x 1x">
-                <nu-label>Username</nu-label>
-                <nu-input id="username" placeholder="" grow="1"></nu-input>
-              </nu-inputgroup>
-              <nu-check for="username" assert="required">
-                Username is required
-              </nu-check>
-            </nu-field>
-            <nu-field>
-              <nu-inputgroup height="8x" padding="2.5x 1x 1x 1x">
-                <nu-label>Password</nu-label>
-                <nu-input id="password" placeholder="" grow="1" mask></nu-input>
-              </nu-inputgroup>
-              <nu-check for="password" assert="required">
-                Password is required
-              </nu-check>
-            </nu-field>
-            <nu-btn special action="submit">Submit</nu-btn>
-          </nu-form>
-          <nu-block overflow="auto" scrollbar width="max(16)">
-            <nu-value id="output"></nu-value>
-          </nu-block>
-        </nu-card>
-      </nu-flow>
-
-      <nu-line></nu-line>
-    </nu-grid>
-
-    <nu-grid columns="1fr 1fr||1fr" gap="4x" as="section-block">
-      <nu-flow gap>
-        <nu-pane>
-          <nu-heading>
-            Integrate
-          </nu-heading>
-          <nu-pane>
-            <nu-attrs for="svg" width="2" height="2"></nu-attrs>
-            <nu-svg name="svelte"></nu-svg>
-            <nu-svg name="vue"></nu-svg>
-            <nu-svg name="angular"></nu-svg>
-            <nu-svg name="react" class="nu-dark-dim"></nu-svg>
+        </nu-flow>
+        <nu-flow gap>
+          <nu-pane as="step-pane">
+            <nu-block as="step">
+              <nu-b>Step 3.</nu-b>
+              Add form validation. Add simple data output (for debug)
+            </nu-block>
+            <nu-btn size="xs" special padding>
+              <nu-icon name="external-link" size="1.25em"></nu-icon>
+              REPL
+            </nu-btn>
           </nu-pane>
-        </nu-pane>
-        <nu-block>
-          Add your favorite framework if you need more or put the code inside the existing
-          application.
-          <nu-link>Learn more</nu-link>
-        </nu-block>
-        <nu-block>
           <nu-code>
-          <textarea>
-            &lt;nu-somewidget
-              value={someValue}
-              @input={evt => result = evt.$detail}
-              type="num" />
-            ...
-            {result} // "some output"
-            {typeof result} // "number"
-          </textarea>
+            <textarea>
+              &lt;nu-check for="username"
+                assert="required">
+                Username is required
+              &lt;/nu-check>
+              &lt;nu-check for="password"
+                assert="required">
+                Password is required
+              &lt;/nu-check>
+            </textarea>
           </nu-code>
-        </nu-block>
-      </nu-flow>
+        </nu-flow>
+        <nu-flow gap>
+          <nu-block as="step">
+            Click "Submit" to trigger validation and (if the form is valid) get the result.
+          </nu-block>
+          <nu-card>
+            <nu-props radius=".5x"></nu-props>
+            <nu-theme hue="250" mod="tone"></nu-theme>
+            <nu-theme name="error" hue="1" mod="tint"></nu-theme>
+            <nu-attrs for="field" theme=":invalid[error]"></nu-attrs>
+            <nu-attrs
+              for="label"
+              place="top left 1x 2x" z="above" text="w5" origin="top left"
+              scale="^:focus[.75] :empty[1] .75"
+              move="^:focus[0] :empty[0 1.25x] 0"
+              color="^:focus[text-soft] :empty[text 50%] text-soft"
+              transition="theme, transform"></nu-attrs>
+            <nu-form control="output[.value]" gap="1x">
+              <nu-field>
+                <nu-inputgroup height="8x" padding="2.5x 1x 1x 1x">
+                  <nu-label>Username</nu-label>
+                  <nu-input id="username" placeholder="" grow="1"></nu-input>
+                </nu-inputgroup>
+                <nu-check for="username" assert="required">
+                  Username is required
+                </nu-check>
+              </nu-field>
+              <nu-field>
+                <nu-inputgroup height="8x" padding="2.5x 1x 1x 1x">
+                  <nu-label>Password</nu-label>
+                  <nu-input id="password" placeholder="" grow="1" mask></nu-input>
+                </nu-inputgroup>
+                <nu-check for="password" assert="required">
+                  Password is required
+                </nu-check>
+              </nu-field>
+              <nu-btn special action="submit">Submit</nu-btn>
+            </nu-form>
+            <nu-block overflow="auto" scrollbar width="max(16)">
+              <nu-value id="output"></nu-value>
+            </nu-block>
+          </nu-card>
+        </nu-flow>
 
-      <nu-flow gap>
-        <nu-heading>
-          Extend
-          <nu-icon name="settings-outline" size="1em"></nu-icon>
-        </nu-heading>
-        <nu-md>
-          <pre>
-            Using **JavaScript** you can extend **numl** syntax: Create new **custom units**, **design tokens**, **style generators**, **elements**, **behaviors** and more...
-          </pre>
-        </nu-md>
-        <nu-block size="lg">
-          Possibilities are <nu-mark>ENDLESS</nu-mark>.
-        </nu-block>
-        <nu-block size="lg">
-          <nu-btn special>Visit our Storybook</nu-btn>
-        </nu-block>
-      </nu-flow>
-    </nu-grid>
+        <nu-line></nu-line>
+      </nu-grid>
+
+      <nu-grid columns="1fr 1fr||1fr" gap="4x" as="section-block">
+        <nu-flow gap>
+          <nu-pane>
+            <nu-heading>
+              Integrate
+            </nu-heading>
+            <nu-pane>
+              <nu-attrs for="svg" width="2" height="2"></nu-attrs>
+              <nu-svg name="svelte"></nu-svg>
+              <nu-svg name="vue"></nu-svg>
+              <nu-svg name="angular"></nu-svg>
+              <nu-svg name="react" class="nu-dark-dim"></nu-svg>
+            </nu-pane>
+          </nu-pane>
+          <nu-block>
+            Add your favorite framework if you need more or put the code inside the existing
+            application.
+            <nu-link>Learn more</nu-link>
+          </nu-block>
+          <nu-block>
+            <nu-code>
+            <textarea>
+              &lt;nu-somewidget
+                value={someValue}
+                @input={evt => result = evt.$detail}
+                type="num" />
+              ...
+              {result} // "some output"
+              {typeof result} // "number"
+            </textarea>
+            </nu-code>
+          </nu-block>
+        </nu-flow>
+
+        <nu-flow gap>
+          <nu-heading>
+            Extend
+            <nu-icon name="settings-outline" size="1em"></nu-icon>
+          </nu-heading>
+          <nu-md>
+            <pre>
+              Using **JavaScript** you can extend **numl** syntax: Create new **custom units**, **design tokens**, **style generators**, **elements**, **behaviors** and more...
+            </pre>
+          </nu-md>
+          <nu-block size="lg">
+            Possibilities are <nu-mark>ENDLESS</nu-mark>.
+          </nu-block>
+          <nu-block size="lg">
+            <nu-btn special>Visit our Storybook</nu-btn>
+          </nu-block>
+        </nu-flow>
+      </nu-grid>
+    </nu-block>
   </nu-flow>
 
   <nu-flow id="basics" as="section">
@@ -461,11 +530,11 @@
         for="code" fill="diff" padding inline border
         overflow="auto" scrollbar width="max(100%)"></nu-attrs>
 
-      <nu-heading size="h1">Learn basics in minutes</nu-heading>
+      <nu-heading as="section-header">Learn basics in minutes</nu-heading>
 
       <nu-markdown width="max(48)">
         <textarea>
-          **NUML** is a markup language with a very **intuitive** syntax.
+          **NuML** is a markup language with a very **intuitive** syntax.
 
           If you already familiar with **CSS** you will need minutes to&nbsp;learn basics.
         </textarea>
@@ -475,7 +544,7 @@
 
 <!--      <nu-markdown>-->
 <!--        <pre>-->
-<!--          **NUML** is based on so-called ==Atomic approach==. But instead of atomic classes (like in popular framework **Tailwind**) it uses attributes and allows any value you provide. You can even use custom units like ==x== (default gap) for short.-->
+<!--          **NuML** is based on so-called ==Atomic approach==. But instead of atomic classes (like in popular framework **Tailwind**) it uses attributes and allows any value you provide. You can even use custom units like ==x== (default gap) for short.-->
 <!--        </pre>-->
 <!--      </nu-markdown>-->
 
@@ -531,7 +600,7 @@
             Button
           </nu-btn>
         </nu-block>
-        <nu-block>
+        <nu-block width="max(100vw - 4x)">
           <nu-code>
             <textarea>
               &lt;nu-btn
@@ -553,7 +622,7 @@
             Button
           </nu-btn>
         </nu-block>
-        <nu-block>
+        <nu-block width="max(100vw - 4x)">
           <nu-code>
             <textarea>
               &lt;nu-btn
@@ -570,17 +639,18 @@
 
       <nu-markdown>
         <pre>
-          Just **in few seconds** we created a nice-looking custom-designed checkbox button with **accessibility** attributes and beautiful icon inside that **changes itself depending on button state** with transition.
+          So **in just few seconds** we created a nice-looking custom-designed checkbox button with **accessibility** attributes and beautiful icon inside that **changes itself depending on button state** with transition.
         </pre>
       </nu-markdown>
 
       <nu-flow gap>
         <nu-el size="lg||md">Learn more in our Guide:</nu-el>
 
-        <nu-pane gap="2x" size="md">
+        <nu-pane size="md" flow="row wrap">
           <nu-btn special>Basics</nu-btn>
           <nu-btn special>Custom units</nu-btn>
           <nu-btn special>State modifiers</nu-btn>
+          <nu-btn special>Batch styling</nu-btn>
         </nu-pane>
       </nu-flow>
 
@@ -589,16 +659,136 @@
   </nu-flow>
 
 
-  <nu-flow id="themes" as="section" gap="4x">
-    <nu-theme id="demo-theme" hue="272"></nu-theme>
+  <nu-flow id="responsive" as="section">
+    <nu-flow as="section-block" gap="4x">
+      <nu-heading as="section-header">Responsive layouts</nu-heading>
 
-    <nu-flow as="section-block" gap="4x" size="lg||md">
+      <nu-block size="lg||md">
+        Use <nu-el text="nowrap">
+          <nu-mark special>|</nu-mark>
+          symbol
+        </nu-el>
+        to declare style value for each responsive zone.
+      </nu-block>
+
+      <nu-grid columns="auto 1fr|1fr" gap="4x">
+
+        <nu-flow gap="4x">
+          <nu-card border overflow="auto" width="max(100vw - 4x)" scrollbar fill="diff" shadow>
+            <nu-code fill="local">
+              <textarea>
+                &lt;nu-card
+                  responsive=![["960px|540px"]]!
+                  theme=#[["blue|green|purple"]]#>
+                  &lt;nu-grid
+                    columns=#[["repeat(4, 1fr)|1fr 1fr|1fr"]]#>
+                    ...
+                  &lt;/nu-grid>
+                &lt;/nu-card>
+              </textarea>
+            </nu-code>
+          </nu-card>
+
+          <nu-flex flow="row wrap" gap="1x 2x">
+            <nu-block>
+              <nu-mark theme="red" special>* responsive breakpoints</nu-mark>
+            </nu-block>
+
+            <nu-block>
+              <nu-mark theme="blue tone">* style values for each zone</nu-mark>
+            </nu-block>
+          </nu-flex>
+        </nu-flow>
+
+        <nu-flex
+          gap="0" content="start" items="start|||stretch"
+          flow="row|||column" id="responsive-layouts" row="span 2">
+
+          <nu-attrs for="nu-icon" size="3||2"></nu-attrs>
+          <nu-attrs for="layout" gap="0" padding fill="bg" radius></nu-attrs>
+          <nu-attrs for="query" text="w6" size="xs"></nu-attrs>
+          <nu-attrs
+            for="size" padding="2x||1x" display="flex" gap
+            flow="column|||row" content="space-between" items="start"></nu-attrs>
+
+          <nu-block as="size" theme="blue tone">
+            <nu-block>
+              <nu-heading level="4">Desktop</nu-heading>
+              <nu-block as="query">>= 960px</nu-block>
+            </nu-block>
+
+            <nu-grid columns="repeat(4, 1fr)" as="layout">
+              <nu-icon name="image"></nu-icon>
+              <nu-icon name="image"></nu-icon>
+              <nu-icon name="image"></nu-icon>
+              <nu-icon name="image"></nu-icon>
+            </nu-grid>
+          </nu-block>
+
+          <nu-block as="size" theme="green tone">
+            <nu-block>
+              <nu-heading level="4">Tablet</nu-heading>
+              <nu-block as="query">< 960px AND >= 540px</nu-block>
+            </nu-block>
+
+            <nu-grid columns="repeat(2, 1fr)" as="layout">
+              <nu-icon name="image"></nu-icon>
+              <nu-icon name="image"></nu-icon>
+              <nu-icon name="image"></nu-icon>
+              <nu-icon name="image"></nu-icon>
+            </nu-grid>
+          </nu-block>
+
+          <nu-grid as="size" theme="purple tone" items="center">
+            <nu-block>
+              <nu-heading level="4">Mobile</nu-heading>
+              <nu-block as="query">< 540px</nu-block>
+            </nu-block>
+
+            <nu-grid columns="1fr" as="layout">
+              <nu-icon name="image"></nu-icon>
+              <nu-icon name="image"></nu-icon>
+              <nu-icon name="image"></nu-icon>
+              <nu-icon name="image"></nu-icon>
+            </nu-grid>
+          </nu-grid>
+        </nu-flex>
+      </nu-grid>
+
       <nu-flow gap>
-        <nu-heading level="2" size="h1">Theming</nu-heading>
+          <nu-el size="lg||md">See more Layout examples in our Storybook:</nu-el>
 
-        <nu-pane size="lg h1||md h1">
-          <nu-el>Choose a <nu-b>hue</nu-b></nu-el>
-          <nu-slider id="hue-slider" value="272" min="0" max="359" width="12"></nu-slider>
+          <nu-pane size="md" flow="row wrap">
+            <nu-btn special>Basic layouts</nu-btn>
+            <nu-btn special>Flex layouts</nu-btn>
+            <nu-btn special>Grid layouts</nu-btn>
+            <nu-btn special>Complex layouts</nu-btn>
+          </nu-pane>
+        </nu-flow>
+
+        <nu-flow gap>
+          <nu-el size="lg||md">Learn more in our Guide:</nu-el>
+
+          <nu-pane size="md">
+            <nu-btn special>Responsive styles</nu-btn>
+            <nu-btn special>Complex styles</nu-btn>
+          </nu-pane>
+        </nu-flow>
+    </nu-flow>
+  </nu-flow>
+
+
+  <nu-flow id="themes" as="section" gap="4x">
+<!--    <nu-theme id="demo-theme" hue="272"></nu-theme>-->
+
+    <nu-flow as="section-block" gap="4x||2x" size="lg||md">
+      <nu-flow gap>
+        <nu-heading as="section-header">Theming</nu-heading>
+
+        <nu-pane size="lg h1||md h1" flow="row wrap" gap="0 1x">
+          <nu-el text="nowrap">Choose a <nu-b>hue</nu-b></nu-el>
+          <nu-slider id="hue-slider" control="main-theme[hue] hue[.value]" value="272" min="0" max="359" width="12"></nu-slider>
+          <nu-btn special control="main-theme[hue] hue-slider[.value]" value="272" size="xs">reset</nu-btn>
         </nu-pane>
       </nu-flow>
 
@@ -608,7 +798,7 @@
           <nu-b>hue</nu-b>
           is simple as
           <nu-el text="monospace" color="special">
-            &lt;nu-theme hue="<nu-el id="hue" text="bolder">272</nu-el>"/&gt;
+            &lt;nu-theme hue="<nu-value id="hue" text="bolder" color="inherit">272</nu-value>"/&gt;
           </nu-el>.
         </nu-block>
 
@@ -625,21 +815,23 @@
             value="dark" off-value="light"></nu-switch>
           <nu-b>Dark Scheme</nu-b>
           and
-          <nu-switch
-            id="contrast-switch" control=":root[data-nu-contrast=@]"
-            value="high" off-value="low"></nu-switch>
-          <nu-b>High Contrast Mode</nu-b>.
+          <nu-el text="nowrap">
+            <nu-switch
+              id="contrast-switch" control=":root[data-nu-contrast=@]"
+              value="high" off-value="low"></nu-switch>
+            <nu-b>High Contrast Mode</nu-b>
+          </nu-el>.
         </nu-block>
       </nu-flow>
 
       <nu-block size="md">
-        <nu-flex gap="2x" flow="row wrap" id="theme-variants">
+        <nu-flex gap flow="row wrap" id="theme-variants">
           <nu-attrs
-            for="nu-card" gap width="auto|||100%" padding="2x|||1x"
+            for="card" gap width="auto|||100%" padding="2x|||1x"
             display="block|||flex" flow="column|||row"
-            content="space-between"></nu-attrs>
+            content="space-between" items="center"></nu-attrs>
           <nu-attrs for="nu-heading" level="5" width="min(5)"></nu-attrs>
-          <nu-attrs for="nu-line" show="y|||n" orient="h|v"></nu-attrs>
+          <nu-attrs for="nu-line" orient="h|||v"></nu-attrs>
           <nu-attrs for="btn" padding="1x|||.5x 1x" t="'Button'||'Btn'"></nu-attrs>
           <nu-attrs for="splbtn" padding="1x 2x|||.5x 1x" t="'Special'||'Spl'"></nu-attrs>
           <nu-attrs for="btnset" gap flow="row"></nu-attrs>
@@ -735,7 +927,7 @@
       <nu-flow gap>
         <nu-el size="lg||md">Learn more in our Guide:</nu-el>
 
-        <nu-pane gap="2x" size="md">
+        <nu-pane size="md">
           <nu-btn special>Theme definitions</nu-btn>
           <nu-btn special>Using colors</nu-btn>
         </nu-pane>
@@ -745,814 +937,204 @@
   </nu-flow>
 
 
-  <nu-flow id="responsive" as="section">
-    <nu-theme hue="1"></nu-theme>
-
+  <nu-flow id="footer" as="section" padding="4x 0||4x 0">
     <nu-flow as="section-block" gap="4x">
-      <nu-heading level="2" size="h1">Responsive layouts</nu-heading>
+      <nu-attrs for="heading" level="4" padding="bottom"></nu-attrs>
 
-      <nu-block size="lg||md">
-        Use <nu-el text="nowrap">
-          <nu-mark special>|</nu-mark>
-          symbol
-        </nu-el>
-        to declare style value for each responsive zone.
-      </nu-block>
+      <nu-grid columns="1fr 1fr 1fr||1fr 1fr|1fr" gap="4x">
+        <nu-flow gap>
+          <nu-heading>
+            Designed and coded by
+          </nu-heading>
 
-      <nu-grid columns="1fr auto|1fr" gap="4x">
+          <nu-block size="lg md">
+            <nu-link text="w7" to="!https://twitter.com/tenphi">Andrey Yamanov</nu-link>
+          </nu-block>
 
-        <nu-flow gap="4x">
-          <nu-card border overflow="auto" width="max(28)" scrollbar fill="diff" shadow>
-            <nu-code fill="local">
-              <textarea>
-                &lt;nu-card
-                  responsive=![["960px|540px"]]!
-                  theme=#[["blue|green|purple"]]#>
-                  &lt;nu-grid
-                    columns=#[["repeat(4, 1fr)|1fr 1fr|1fr"]]#>
-                    ...
-                  &lt;/nu-grid>
-                &lt;/nu-card>
-              </textarea>
-            </nu-code>
-          </nu-card>
+          <nu-block>
+            <iframe src="https://ghbtns.com/github-btn.html?user=tenphi&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="Follow tenphi on GitHub"></iframe>
+          </nu-block>
 
-          <nu-flex flow="row wrap" gap="1x 2x">
-            <nu-block>
-              <nu-mark theme="red special">* responsive breakpoints</nu-mark>
-            </nu-block>
-
-            <nu-block>
-              <nu-mark theme="blue tone">* style values for each zone</nu-mark>
-            </nu-block>
-          </nu-flex>
+          <nu-block>
+            <a href="https://twitter.com/tenphi?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="en" data-show-count="true">Follow @tenphi</a>
+          </nu-block>
         </nu-flow>
-
-        <nu-flex
-          gap="0" content="start" items="start|||stretch"
-          flow="row|||column" id="responsive-layouts" row="span 2">
-
-          <nu-attrs for="nu-icon" size="3||2"></nu-attrs>
-          <nu-attrs for="layout" gap padding fill="bg" radius></nu-attrs>
-          <nu-attrs
-            for="size" padding="2x||1x" display="flex" gap
-            flow="column|||row" content="space-between"></nu-attrs>
-
-          <nu-block id="size" theme="blue tone">
-            <nu-block>
-              <nu-heading level="4">Desktop</nu-heading>
-              <nu-block text="w5" size="xs">>= 960px</nu-block>
-            </nu-block>
-
-            <nu-grid columns="repeat(4, 1fr)" id="layout">
-              <nu-icon name="image"></nu-icon>
-              <nu-icon name="image"></nu-icon>
-              <nu-icon name="image"></nu-icon>
-              <nu-icon name="image"></nu-icon>
-            </nu-grid>
-          </nu-block>
-
-          <nu-block id="size" theme="green tone">
-            <nu-block>
-              <nu-heading level="4">Tablet</nu-heading>
-              <nu-block text="w5 nowrap" size="xs">< 960px AND >= 540px</nu-block>
-            </nu-block>
-
-            <nu-grid columns="repeat(2, 1fr)" id="layout">
-              <nu-icon name="image"></nu-icon>
-              <nu-icon name="image"></nu-icon>
-              <nu-icon name="image"></nu-icon>
-              <nu-icon name="image"></nu-icon>
-            </nu-grid>
-          </nu-block>
-
-          <nu-grid id="size" theme="purple tone" items="center">
-            <nu-block>
-              <nu-heading level="4">Mobile</nu-heading>
-              <nu-block text="w5" size="xs">< 540px</nu-block>
-            </nu-block>
-
-            <nu-grid columns="1fr" id="layout">
-              <nu-icon name="image"></nu-icon>
-              <nu-icon name="image"></nu-icon>
-              <nu-icon name="image"></nu-icon>
-              <nu-icon name="image"></nu-icon>
-            </nu-grid>
-          </nu-grid>
-        </nu-flex>
 
         <nu-flow gap>
-          <nu-el size="lg||md">Learn more in our Guide:</nu-el>
+          <nu-heading>
+            Contributors
+          </nu-heading>
 
-          <nu-pane gap="2x" size="md">
-            <nu-btn special>Basics</nu-btn>
-            <nu-btn special>Custom units</nu-btn>
-            <nu-btn special>State modifiers</nu-btn>
-          </nu-pane>
+          <nu-block>
+            <nu-link to="!https://github.com/katrinLuna">katrinLuna</nu-link>,
+            <nu-link to="!https://github.com/timeshift92">timeshift92</nu-link>
+          </nu-block>
+
+          <nu-block>
+            <nu-b>NuML</nu-b> is an indi-project for now. We will be appreciated for any help and feedback!
+          </nu-block>
+
+          <nu-heading padding="top">
+            Join us!
+          </nu-heading>
+
+          <nu-block>
+            Our chats: <nu-link special>Telegram</nu-link>, <nu-link>Gitter</nu-link>
+          </nu-block>
+        </nu-flow>
+
+        <nu-flow gap>
+          <nu-heading>
+            Special thanks
+          </nu-heading>
+
+          <nu-block>
+            <nu-link to="!https://sellerscale.com">Sellerscale</nu-link> - Sponsor and the first adapter of the technology.
+          </nu-block>
+
+          <nu-block>
+            <nu-link to="!https://github.com/boronine">@boronine</nu-link> - For the <nu-b>HSLuv</nu-b> color space that is used in theme generation.
+          </nu-block>
+
+          <nu-block>
+            <nu-link to="!https://github.com/lrsjng">@lrsjng</nu-link> - For lightweight tokenizer <nu-link to="!https://github.com/lrsjng/lolight">lolight</nu-link> that NuML code tokenizer is based on.
+          </nu-block>
         </nu-flow>
       </nu-grid>
-    </nu-flow>
-  </nu-flow>
 
-  <nu-flow id="footer" as="section">
-    <nu-flow as="section-block">
-      <nu-heading>Footer</nu-heading>
-<!--      <iframe src="https://ghbtns.com/github-btn.html?user=tenphi&repo=numl&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="Star tenphi/numl on GitHub"></iframe>-->
+      <nu-line show="y|||n"></nu-line>
 
-        <nu-card theme="tone" fill size="md" padding="1x 2x">
-          <nu-mark>Disclaimer:</nu-mark>
-          This page has
-          <nu-el id="bold">zero CSS</nu-el>
-          assets. All
-          <nu-el id="bold">CSS</nu-el>
-          was
-          <nu-el id="bold">instantly</nu-el>
-          generated in runtime by
-          <nu-el id="bold">NuML</nu-el>
-          based on
-          <nu-el id="bold">HTML</nu-el>-markup.
-<!--            See the-->
-<!--            <nu-link to="!https://github.com/tenphi/numl.design/blob/master/src/index.html">-->
-<!--              source code-->
-<!--            </nu-link>.-->
-        </nu-card>
-    </nu-flow>
-  </nu-flow>
+      <nu-grid columns="1fr 1fr 1fr||1fr 1fr|1fr" gap="4x">
+        <nu-flow gap>
+          <nu-heading>Resources</nu-heading>
 
-  <!--  <nu-flow-->
-  <!--    id="hero"-->
-  <!--    as="section"-->
-  <!--    padding="6x 2x||0 2x 4x">-->
+          <nu-list size="md">
+            <nu-listitem>
+              <nu-link>REPL</nu-link>
+            </nu-listitem>
 
-  <!--    <nu-flow display="flex" items="center" flow="column" gap="4x||0">-->
-  <!--      <nu-svg-->
-  <!--        color="text-soft"-->
-  <!--        width="clamp(initial, 100%, 35)"-->
-  <!--        height="10"-->
-  <!--        id="logo"-->
-  <!--        size="h4" text="w6"-->
-  <!--        role="heading" aria-level="1">-->
-  <!--        NUDE Elements - Elementary design system for the modern and future web.-->
-  <!--      </nu-svg>-->
-  <!--      <nu-flex text="w5 center|||w5 left" size="md" flow="row|||column" gap width="100%"-->
-  <!--               padding="0 8x">-->
-  <!--        <nu-el text="nowrap" place="|||flex-start">-->
-  <!--          ...based on-->
-  <!--          <nu-mark theme="tone">Custom Elements</nu-mark>-->
-  <!--        </nu-el>-->
-  <!--        <nu-el text="nowrap" place="|||flex-end">-->
-  <!--          and runtime-->
-  <!--          <nu-mark theme="tone">CSS Generation</nu-mark>-->
-  <!--          .-->
-  <!--        </nu-el>-->
-  <!--      </nu-flex>-->
-  <!--    </nu-flow>-->
+            <nu-listitem>
+              <nu-link>Guide</nu-link>
+            </nu-listitem>
 
-  <!--    <nu-heading level="2" size="h3||h5" text="center w7">-->
-  <!--      Ultimate All-in-One markup solution-->
-  <!--    </nu-heading>-->
+            <nu-listitem>
+              <nu-link>Storybook</nu-link>
+            </nu-listitem>
 
-  <!--    <nu-block size="lg||md" width="max(62)" text="center">-->
-  <!--      <nu-mark>NUDE Elements</nu-mark>-->
-  <!--      (or-->
-  <!--      <nu-mark>NuML</nu-mark>-->
-  <!--      ) reinvents the&nbsp;way-->
-  <!--      <nu-el id="bold">Web Apps</nu-el>-->
-  <!--      are built and&nbsp;allows&nbsp;you to create gorgeous web-interfaces while&nbsp;learning and-->
-  <!--      taming-->
-  <!--      <nu-el id="bold">Web Standards</nu-el>-->
-  <!--      and-->
-  <!--      <nu-el id="bold">Design Patterns</nu-el>-->
-  <!--      , not fighting them.-->
-  <!--    </nu-block>-->
+            <nu-listitem>
+              <nu-link>API Reference</nu-link>
+            </nu-listitem>
 
-  <!--    <nu-block padding="0 2x">-->
-  <!--      <nu-flex-->
-  <!--        id="outer-links"-->
-  <!--        size="xl||md" gap="4x|2x||2x 1x" content="center" flow="row wrap"-->
-  <!--        padding="0|||0 5x">-->
-  <!--        <nu-attrs for="btn" padding="1x 2x|||.5x 1.5x" radius="round"></nu-attrs>-->
-  <!--        <nu-attrs for="icon" size="1.125em"></nu-attrs>-->
+            <nu-listitem>
+              <nu-link>NUDE Framework</nu-link>
+            </nu-listitem>
+          </nu-list>
+        </nu-flow>
 
-  <!--        <nu-btn-->
-  <!--          to="!https://github.com/tenphi/numl"-->
-  <!--          theme="blue" special>-->
-  <!--          <nu-icon name="github"></nu-icon>-->
-  <!--          Github-->
-  <!--        </nu-btn>-->
+        <nu-flow gap>
+          <nu-heading>Spread the word</nu-heading>
 
-  <!--        <nu-btn-->
-  <!--          to="!https://numl.design/repl"-->
-  <!--          theme="green" special>-->
-  <!--          <nu-icon name="terminal"></nu-icon>-->
-  <!--          REPL-->
-  <!--        </nu-btn>-->
+          <nu-pane>
+            <a class="twitter-share-button"
+              href="https://twitter.com/intent/tweet?url=https://numl.design/&text=Create modern high-quality interfaces using only HTML"
+              data-size="large" data-lang="en">
+            Share</a>
+            <nu-el text="w5">about us</nu-el>
+          </nu-pane>
 
-  <!--        <nu-btn-->
-  <!--          to="!/storybook"-->
-  <!--          theme="purple" special>-->
-  <!--          <nu-icon name="layout"></nu-icon>-->
-  <!--          Storybook-->
-  <!--        </nu-btn>-->
-
-  <!--        <nu-btn-->
-  <!--          to="!https://twitter.com/numldesign"-->
-  <!--          theme="lime" special>-->
-  <!--          <nu-icon name="twitter"></nu-icon>-->
-  <!--          Twitter-->
-  <!--        </nu-btn>-->
-
-  <!--        <nu-btn-->
-  <!--          to="!https://gitter.im/tenphi/numl?utm_source=share-link&utm_medium=link&utm_campaign=share-link"-->
-  <!--          theme="orange" special>-->
-  <!--          <nu-icon name="message-circle"></nu-icon>-->
-  <!--          Chat-->
-  <!--        </nu-btn>-->
-  <!--      </nu-flex>-->
-  <!--    </nu-block>-->
-
-  <!--  </nu-flow>-->
-
-<!--  <nu-flow as="section" padding="4x 2x" z="above">-->
-<!--    <nu-block size="lg||md">-->
-<!--      <nu-attrs-->
-<!--        for="nu-btn"-->
-<!--        toggle="0 :active[.75em] :disabled[0]"-->
-<!--        fill="bg :pressed[special-bg]"></nu-attrs>-->
-<!--      <nu-tablist id="snippet-selector" gap="2x||1x" value="card">-->
-<!--        <nu-tab value="card">Info card</nu-tab>-->
-<!--        <nu-tab value="tabs">Card with tabs</nu-tab>-->
-<!--        <nu-tab value="dropdown">Dropdown</nu-tab>-->
-<!--      </nu-tablist>-->
-<!--    </nu-block>-->
-
-<!--    <nu-block-->
-<!--      as="section-block"-->
-<!--      radius overflow="no" height="21" border shadow hidden>-->
-<!--      <iframe-->
-<!--        style="width: 100%; height: 100%; -webkit-mask-image: -webkit-radial-gradient(white, black); border-radius: var(&#45;&#45;nu-radius);"-->
-<!--        frameborder="no" scrolling="no"></iframe>-->
-<!--    </nu-block>-->
-
-<!--    <nu-btn special size="lg||md" to="!/storybook">-->
-<!--      See more example-->
-<!--    </nu-btn>-->
-<!--  </nu-flow>-->
-
-<!--  <nu-flow id="features" as="section" gap="0">-->
-
-<!--    <nu-attrs for="heading" level="2" column="1 / -1" size="h2||h4" text="w7"></nu-attrs>-->
-<!--    <nu-attrs for="feature-header" level="3" size="h4"></nu-attrs>-->
-<!--    <nu-attrs for="nu-grid" columns="1fr 1fr 1fr||1fr" gap="2x"></nu-attrs>-->
-
-<!--    <nu-flow gap="4x" as="section-block">-->
-<!--      <nu-heading id="heading">-->
-<!--        All that the Web deserves...-->
-<!--      </nu-heading>-->
-
-<!--      <nu-grid>-->
-<!--        <nu-card theme="blue tone">-->
-<!--          <nu-heading id="feature-header">-->
-<!--            Flexibility-->
-<!--            <nu-icon name="sliders"></nu-icon>-->
-<!--          </nu-heading>-->
-<!--          <nu-block>-->
-<!--            Create virtually any interface you want without writing tricky CSS selectors and-->
-<!--            low-level-->
-<!--            styles.-->
-<!--          </nu-block>-->
-<!--        </nu-card>-->
-
-<!--        <nu-card theme="purple tone">-->
-<!--          <nu-heading id="feature-header">-->
-<!--            Speed-->
-<!--            <nu-icon name="zap"></nu-icon>-->
-<!--          </nu-heading>-->
-<!--          <nu-block>-->
-<!--            Get production-ready high-quality markup with speed faster than prototyping tools.-->
-<!--          </nu-block>-->
-<!--        </nu-card>-->
-
-<!--        <nu-card theme="orange tone">-->
-<!--          <nu-heading id="feature-header">-->
-<!--            Compatibility-->
-<!--            <nu-icon name="link"></nu-icon>-->
-<!--          </nu-heading>-->
-<!--          <nu-block>-->
-<!--            Highly compatible with modern JS frameworks. Doesn't use-->
-<!--            <nu-mark>[class]</nu-mark>-->
-<!--            or-->
-<!--            <nu-mark>[data-*]</nu-mark>-->
-<!--            attributes.-->
-<!--          </nu-block>-->
-<!--        </nu-card>-->
-
-<!--        <nu-card theme="green tone">-->
-<!--          <nu-heading id="feature-header">-->
-<!--            Accessible-->
-<!--            <nu-icon name="plus-circle"></nu-icon>-->
-<!--          </nu-heading>-->
-<!--          <nu-block>-->
-<!--            Make your website accessible without fighting IDs and specifications.-->
-<!--          </nu-block>-->
-<!--        </nu-card>-->
-
-<!--        <nu-card theme="lime tone">-->
-<!--          <nu-heading id="feature-header">-->
-<!--            Interactive-->
-<!--            <nu-icon name="mouse-pointer"></nu-icon>-->
-<!--          </nu-heading>-->
-<!--          <nu-block>-->
-<!--            Use widgets to add some dynamics without using component frameworks or UI libraries.-->
-<!--          </nu-block>-->
-<!--        </nu-card>-->
-
-<!--        <nu-card theme="red tone">-->
-<!--          <nu-heading id="feature-header">-->
-<!--            Responsive-->
-<!--            <nu-icon name="grid"></nu-icon>-->
-<!--          </nu-heading>-->
-<!--          <nu-block>-->
-<!--            Change your styles based on screen width or element state with effort so little you've-->
-<!--            never seen before.-->
-<!--          </nu-block>-->
-<!--        </nu-card>-->
-<!--      </nu-grid>-->
-<!--    </nu-flow>-->
-<!--  </nu-flow>-->
-
-<!--  <nu-flow as="section" text="center">-->
-<!--    <nu-heading level="2">Install in seconds...</nu-heading>-->
-
-<!--    <nu-card-->
-<!--      padding="1x 2x" overflow="auto" scrollbar width="max(100%)" shadow>-->
-<!--      <nu-code>-->
-<!--          <textarea>-->
-<!--            <script src="https://cdn.jsdelivr.net/npm/numl@0.10/dist/numl.js"></script>-->
-<!--          </textarea>-->
-<!--      </nu-code>-->
-<!--    </nu-card>-->
-
-<!--    <nu-block size="sm" text="center">-->
-<!--      <nu-mark>No build step</nu-mark>-->
-<!--      - -->
-<!--      <nu-mark>No dependencies</nu-mark>-->
-<!--      - -->
-<!--      <nu-mark>No configs</nu-mark>-->
-<!--    </nu-block>-->
-
-<!--    <nu-heading level="2">Compatibility</nu-heading>-->
-
-<!--    <nu-flow gap>-->
-<!--      <nu-heading level="3" size="h5">Browsers</nu-heading>-->
-
-<!--      <nu-block border radius size="md||sm" width="max(100%)" scrollbar overflow="auto">-->
-<!--        <nu-gridtable columns="auto auto auto auto">-->
-<!--          <nu-columnheader>Edge *</nu-columnheader>-->
-<!--          <nu-columnheader>Firefox</nu-columnheader>-->
-<!--          <nu-columnheader>Chrome</nu-columnheader>-->
-<!--          <nu-columnheader>Safari</nu-columnheader>-->
-
-<!--          <nu-cell theme="green tone" text="center">-->
-<!--            76+-->
-<!--          </nu-cell>-->
-<!--          <nu-cell theme="green tone" text="center">-->
-<!--            63+-->
-<!--          </nu-cell>-->
-<!--          <nu-cell theme="green tone" text="center">-->
-<!--            67+-->
-<!--          </nu-cell>-->
-<!--          <nu-cell theme="green tone" text="center">-->
-<!--            10.1+-->
-<!--          </nu-cell>-->
-<!--        </nu-gridtable>-->
-<!--      </nu-block>-->
-<!--    </nu-flow>-->
-
-<!--    <nu-flow text="center" gap>-->
-<!--      <nu-block>-->
-<!--        * Edge (16-18) requires-->
-<!--        <nu-link-->
-<!--          to="!https://github.com/webcomponents/polyfills/tree/master/packages/custom-elements">-->
-<!--          @webcomponents/custom-elements-->
-<!--        </nu-link>-->
-<!--        polyfill. 5.3Kb-->
-<!--      </nu-block>-->
-<!--      <nu-block>-->
-<!--        We don't officially support it yet-->
-<!--      </nu-block>-->
-<!--    </nu-flow>-->
-
-<!--    <nu-flow gap>-->
-<!--      <nu-heading level="3" size="h5">Frameworks</nu-heading>-->
-
-<!--      <nu-block border radius size="md||sm" width="max(100%)" scrollbar overflow="auto">-->
-<!--        <nu-gridtable columns="auto auto auto auto auto">-->
-<!--          <nu-rowheader place="sticky left" z="above"></nu-rowheader>-->
-<!--          <nu-columnheader>Vue.js</nu-columnheader>-->
-<!--          <nu-columnheader>Svelte</nu-columnheader>-->
-<!--          <nu-columnheader>React</nu-columnheader>-->
-<!--          <nu-columnheader>Angular</nu-columnheader>-->
-
-<!--          <nu-rowheader place="sticky left" z="above">Is it working?</nu-rowheader>-->
-
-<!--          <nu-cell theme="green tone" text="center">-->
-<!--            <nu-icon name="check"></nu-icon>-->
-<!--          </nu-cell>-->
-<!--          <nu-cell theme="green tone" text="center">-->
-<!--            <nu-icon name="check"></nu-icon>-->
-<!--          </nu-cell>-->
-<!--          <nu-cell theme="green tone" text="center">-->
-<!--            <nu-icon name="check"></nu-icon>-->
-<!--          </nu-cell>-->
-<!--          <nu-cell theme="green tone" text="center">-->
-<!--            <nu-icon name="check"></nu-icon>-->
-<!--          </nu-cell>-->
-
-<!--          <nu-rowheader place="sticky left" z="above">Prod tested?</nu-rowheader>-->
-
-<!--          <nu-cell theme="green tone" text="center">-->
-<!--            <nu-icon name="check"></nu-icon>-->
-<!--          </nu-cell>-->
-<!--          <nu-cell theme="green tone" text="center">-->
-<!--            <nu-icon name="check"></nu-icon>-->
-<!--          </nu-cell>-->
-<!--          <nu-cell theme="red tone" text="center">-->
-<!--            <nu-icon name="x"></nu-icon>-->
-<!--          </nu-cell>-->
-<!--          <nu-cell theme="red tone" text="center">-->
-<!--            <nu-icon name="x"></nu-icon>-->
-<!--          </nu-cell>-->
-<!--        </nu-gridtable>-->
-<!--      </nu-block>-->
-<!--    </nu-flow>-->
-
-<!--    <nu-link-->
-<!--      to="!https://gitter.im/tenphi/numl?utm_source=share-link&utm_medium=link&utm_campaign=share-link">-->
-<!--      Tell us about your experience-->
-<!--    </nu-link>-->
-<!--  </nu-flow>-->
-
-<!--  <nu-flow id="features" as="section" size="lg||md">-->
-<!--    <nu-attrs for="nu-list" text="left"></nu-attrs>-->
-<!--    <nu-attrs for="nu-flow" display="flex" items="center" text="center"></nu-attrs>-->
-<!--    <nu-flow gap="4x" display="flex" items="center" text="center">-->
-<!--      <nu-heading level="2">-->
-<!--        <nu-block>Features</nu-block>-->
-<!--      </nu-heading>-->
-<!--      <nu-block>Every aspect of creating markup &amp; styling is simplified:</nu-block>-->
-<!--      <nu-block>-->
-<!--        <nu-list>-->
-<!--          <nu-listitem>Powerful-->
-<!--            <nu-el>state-of-the-art</nu-el>-->
-<!--            <nu-link to="#themes">theming system</nu-link>-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>-->
-<!--            <nu-link to="!/storybook/widgets/inputs">Multiple widgets</nu-link>-->
-<!--            with accessible design and laconic API-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>-->
-<!--            <nu-el id="bold">Polyfills</nu-el>-->
-<!--            for upcoming CSS standards-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>Combined styling for-->
-<!--            <nu-mark>box-shadow</nu-mark>-->
-<!--            and-->
-<!--            <nu-mark>transform</nu-mark>-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>Compact syntax to-->
-<!--            declare styles-->
-<!--            <nu-link to="!/guide/features/states">depending on state</nu-link>-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>New convenient-->
-<!--            identifier system-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>-->
-<!--            Really simple-->
-<!--            <nu-link to="#customization">customization</nu-link>-->
-<!--          </nu-listitem>-->
-<!--        </nu-list>-->
-<!--      </nu-block>-->
-<!--    </nu-flow>-->
-<!--  </nu-flow>-->
-
-<!--  <nu-flow id="customization" as="section" size="lg||md">-->
-<!--    <nu-attrs for="nu-list" text="left"></nu-attrs>-->
-<!--    <nu-attrs for="nu-flow" display="flex" items="center" text="center"></nu-attrs>-->
-<!--    <nu-flow gap="4x" display="flex" items="center" text="center">-->
-<!--      <nu-heading level="2">-->
-<!--        <nu-block>Unmatched customization capabilities</nu-block>-->
-<!--      </nu-heading>-->
-<!--      <nu-block>-->
-<!--        Are you-->
-<!--        <nu-el text="w6">tired</nu-el>-->
-<!--        customizing your favourite UI library?-->
-<!--      </nu-block>-->
-<!--      <nu-block>-->
-<!--        <nu-el text="w6">NuML</nu-el>-->
-<!--        provides methods to easily customize elements at every level:-->
-<!--      </nu-block>-->
-<!--      <nu-block>-->
-<!--        <nu-list>-->
-<!--          <nu-listitem>-->
-<!--            <nu-el text="w6">By attribute</nu-el>-->
-<!--            –-->
-<!--            just add attribute to the element to replace specific style set.-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>-->
-<!--            <nu-el text="w6">By decorator</nu-el>-->
-<!--            –-->
-<!--            Use-->
-<!--            <nu-link to="!/reference/elements/nu-attrs">nu-attrs</nu-link>-->
-<!--            decorator to assign attributes to multiple elements.-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>-->
-<!--            <nu-el text="w6">By CSS Properties</nu-el>-->
-<!--            –-->
-<!--            change Custom Properties to affect various styles at once.-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>-->
-<!--            <nu-el text="w6">By variables</nu-el>-->
-<!--            –-->
-<!--            use built-in variable system to change NuML-specific styling.-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>-->
-<!--            <nu-el text="w6">By custom attribute</nu-el>-->
-<!--            –-->
-<!--            Declare your own attribute for styling.-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>-->
-<!--            <nu-el id="bold">By inheritance</nu-el>-->
-<!--            –-->
-<!--            Create your own elements with different defaults or/and new attributes.-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>-->
-<!--            <nu-el id="bold">By plain CSS</nu-el>-->
-<!--            –-->
-<!--            Add some plain CSS to your element if other options are not working. *-->
-<!--          </nu-listitem>-->
-<!--        </nu-list>-->
-<!--      </nu-block>-->
-
-<!--      <nu-block size="sm||xs" text="w6">* Yes, you can still use plain CSS in elements. We won't-->
-<!--        blame you. We-->
-<!--        do it by ourselves sometimes.-->
-<!--      </nu-block>-->
-
-<!--      <nu-btn special to="!/guide/features/customization">-->
-<!--        Learn more-->
-<!--      </nu-btn>-->
-<!--    </nu-flow>-->
-<!--  </nu-flow>-->
-
-<!--  <nu-flow id="styling" as="section" size="lg||md">-->
-<!--    <nu-attrs-->
-<!--      for="nu-code"-->
-<!--      border radius radius shadow fill="subtle" padding-->
-<!--      size="md" scrollbar overflow="auto" width="max(100%)"></nu-attrs>-->
-
-<!--    <nu-block text="center">-->
-<!--      <nu-heading level="2">-->
-<!--        How it works*-->
-<!--      </nu-heading>-->
-<!--      <nu-block size="xs" text="w6">-->
-<!--        *simplified-->
-<!--      </nu-block>-->
-<!--    </nu-block>-->
-
-<!--    <nu-block>Each attribute has function declaration like:</nu-block>-->
-
-<!--    <nu-code fill="subtle">-->
-<!--      <textarea>-->
-<!--        display(val) { return { display: val }; }-->
-<!--      </textarea>-->
-<!--    </nu-code>-->
-
-<!--    <nu-block>When you use this attribute in markup...</nu-block>-->
-
-<!--    <nu-code fill="subtle">-->
-<!--      <textarea>-->
-<!--        <nu-block display="flex"></nu-block>-->
-<!--      </textarea>-->
-<!--    </nu-code>-->
-
-<!--    <nu-block>...-->
-<!--      <nu-el text="w6">NuML</nu-el>-->
-<!--      generates the following CSS:-->
-<!--    </nu-block>-->
-
-<!--    <nu-code fill="subtle">-->
-<!--      <textarea>-->
-<!--        [nu-block][display="flex"] { display: flex; }-->
-<!--      </textarea>-->
-<!--    </nu-code>-->
-
-<!--    <nu-block>-->
-<!--      But-->
-<!--      <nu-el text="w6">NuML</nu-el>-->
-<!--      is-->
-<!--      <nu-el text="u w5">much powerful</nu-el>-->
-<!--      than that.-->
-<!--    </nu-block>-->
-<!--    <nu-block>-->
-<!--      It provides tools to support more sophisticated-->
-<!--      styles and-->
-<!--      <nu-link to="!/guide/features/states">dynamic states</nu-link>-->
-<!--      .-->
-<!--    </nu-block>-->
-<!--  </nu-flow>-->
-
-<!--  <nu-flow id="css-generation" as="section" size="lg||md">-->
-<!--    <nu-attrs for="nu-list" text="left"></nu-attrs>-->
-<!--    <nu-attrs for="nu-flow" display="flex" items="center" text="center"></nu-attrs>-->
-<!--    <nu-flow gap="4x" display="flex" items="center" text="center">-->
-<!--      <nu-heading level="2">-->
-<!--        <nu-block>CSS Generation</nu-block>-->
-<!--      </nu-heading>-->
-<!--      <nu-block>The most efficient way to style your application:</nu-block>-->
-<!--      <nu-block>-->
-<!--        <nu-list text="left">-->
-<!--          <nu-listitem>User gets only the-->
-<!--            styles he needs at the moment-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>Efficient disjoint-->
-<!--            (as possible) selectors and styles-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>Polyfills that are-->
-<!--            just works-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>Garbage collector-->
-<!--            for non-reusable styles-->
-<!--          </nu-listitem>-->
-<!--          <nu-listitem>Best CSS practices-->
-<!--            under-the-hood-->
-<!--          </nu-listitem>-->
-<!--        </nu-list>-->
-<!--      </nu-block>-->
-<!--      <nu-block>-->
-<!--        <nu-mark>Remember:</nu-mark>-->
-<!--        You can't make any mistake in-->
-<!--        <nu-el>CSS</nu-el>-->
-<!--        if&nbsp;you&nbsp;don't&nbsp;write&nbsp;it-->
-<!--      </nu-block>-->
-<!--      <nu-block>In many cases-->
-<!--        <nu-el id="bold">CSS</nu-el>-->
-<!--        is just-->
-<!--        <nu-mark>too verbose</nu-mark>-->
-<!--        ,-->
-<!--        <nu-mark>unintuitive</nu-mark>-->
-<!--        and-->
-<!--        <nu-mark>really painful</nu-mark>-->
-<!--        to&nbsp;maintain.-->
-<!--      </nu-block>-->
-<!--    </nu-flow>-->
-<!--  </nu-flow>-->
-
-<!--  <nu-flow id="framework" as="section">-->
-<!--    <nu-heading level="2" text="center w7">-->
-<!--      Powered by-->
-<!--      <nu-mark text="w7">NUDE Framework</nu-mark>-->
-<!--    </nu-heading>-->
-
-<!--    <nu-block size="lg||md">-->
-<!--      Powerful and extendable-->
-<!--      <nu-link-->
-<!--        to="!https://paulbakaus.com/tutorials/css/where-to-start-if-you-want-to-become-a-web-developer/#2_Start_building_your_first_pages_and_sites_with_an_HTML_framework">-->
-<!--        HTML Framework-->
-<!--      </nu-link>-->
-<!--    </nu-block>-->
-
-<!--    <nu-list size="lg||md">-->
-<!--      <nu-listitem>-->
-<!--        Based on-->
-<!--        <nu-link-->
-<!--          to="!https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements">-->
-<!--          Custom Elements-->
-<!--        </nu-link>-->
-<!--      </nu-listitem>-->
-<!--      <nu-listitem>Real CSS inheritance between elements</nu-listitem>-->
-<!--      <nu-listitem>Multiple options for flexible element-->
-<!--        <nu-link to="#customization">customization</nu-link>-->
-<!--      </nu-listitem>-->
-<!--      <nu-listitem>Optimized CSS Generation algorithms</nu-listitem>-->
-<!--      <nu-listitem>Context-sensitive styling and logic</nu-listitem>-->
-<!--      <nu-listitem>Built-in Variables and Custom Properties support</nu-listitem>-->
-<!--      <nu-listitem>Multiple tools for styling, coloring and accessibility</nu-listitem>-->
-<!--      <nu-listitem>-->
-<!--        Transparent-->
-<!--        <nu-link to="!/framework/shadow-dom">Shadow DOM support</nu-link>-->
-<!--      </nu-listitem>-->
-<!--    </nu-list>-->
-<!--  </nu-flow>-->
-
-  <nu-flow id="credits" as="section" size="lg|md">
-    <nu-heading level="2" text="center w7">
-      Credits
-    </nu-heading>
-
-    <nu-flow gap="2x">
-      <nu-block text="w6">
-        Designed and created by
-      </nu-block>
-
-      <nu-flex gap="2x" items="center">
-        <nu-img width="minmax(6, 6)" height="minmax(6, 6)" shadow="special" overflow="no"
-                radius="round"
-                border>
-          <img src="./images/andrey-yamanov.jpg" alt="Photo"/>
-        </nu-img>
-        <nu-flow>
-          <nu-link to="!https://github.com/tenphi" text="w6">Andrey Yamanov</nu-link>
-          <nu-block size="sm" text="w5">
-            <nu-block>20y+ exp UX/UI Engineer</nu-block>
-            <nu-block>Creator of AngularBEM, Founder&nbsp;of&nbsp;MoscowJS</nu-block>
+          <nu-block>
+            <a href="https://twitter.com/numldesign?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="en" data-show-count="true">Follow @numldesign</a>
           </nu-block>
         </nu-flow>
-      </nu-flex>
 
-      <nu-block text="w6">
-        Sponsored by
-      </nu-block>
+        <nu-flow gap>
+          <nu-heading>
+            Contribute on Github
+          </nu-heading>
 
-      <nu-flex gap="2x" items="center">
+          <nu-block>
+            <iframe src="https://ghbtns.com/github-btn.html?user=tenphi&repo=numl&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="Star tenphi/numl on GitHub"></iframe>
+          </nu-block>
 
-        <nu-img
-          class="nu-dark-dim" width="minmax(6, 6)" height="minmax(6, 6)"
-          shadow overflow="no" radius="round" border>
-          <img src="./images/sellerscale.svg" alt="Photo"/>
-        </nu-img>
-        <nu-flow>
-          <nu-link to="!https://sellerscale.com/" text="w6">Sellerscale Inc</nu-link>
-          <nu-block size="sm" text="w5">Smarter financial management for Amazon&nbsp;sellers
+          <nu-block text="w5">
+            Source code licensed <nu-link>MIT</nu-link>
           </nu-block>
         </nu-flow>
-      </nu-flex>
+      </nu-grid>
+
+      <nu-line></nu-line>
+
+        <nu-markdown theme="tone" size="md">
+          <pre>
+            ==FYI==: This page is made using **NuML** with **zero CSS** assets and **tiny JS** script. See the [source code](!https://github.com/tenphi/numl-landing) to learn more.
+          </pre>
+        </nu-markdown>
     </nu-flow>
   </nu-flow>
 
-  <nu-flow id="credits" as="section">
-    <nu-block as="section-block" text="||center">
-      <nu-heading level="3" size="xl">
-        NUDE Elements
-      </nu-heading>
-      <nu-heading level="4" size="lg" text="w5">
-        Ultimate All-in-One markup solution
-      </nu-heading>
-    </nu-block>
-    <nu-pane as="section-block" flow="row||column" gap="2x" content="space-between">
-      <nu-block>
-        <nu-flex gap flow="row wrap" size="xs" text="w5" content="space-between||center">
-          <nu-attrs for="nu-btn" padding></nu-attrs>
+<!--  <nu-flow id="credits" as="section">-->
+<!--    <nu-block as="section-block" text="||center">-->
+<!--      <nu-heading level="3" size="xl">-->
+<!--        NUDE Elements-->
+<!--      </nu-heading>-->
+<!--      <nu-heading level="4" size="lg" text="w5">-->
+<!--        Ultimate All-in-One markup solution-->
+<!--      </nu-heading>-->
+<!--    </nu-block>-->
+<!--    <nu-pane as="section-block" flow="row||column" gap="2x" content="space-between">-->
+<!--      <nu-block>-->
+<!--        <nu-flex gap flow="row wrap" size="xs" text="w5" content="space-between||center">-->
+<!--          <nu-attrs for="nu-btn" padding></nu-attrs>-->
 
-          <nu-btn
-            to="!https://github.com/tenphi/numl"
-            theme="blue tone">
-            <nu-icon name="github"></nu-icon>
-            Github
-          </nu-btn>
+<!--          <nu-btn-->
+<!--            to="!https://github.com/tenphi/numl"-->
+<!--            theme="blue tone">-->
+<!--            <nu-icon name="github"></nu-icon>-->
+<!--            Github-->
+<!--          </nu-btn>-->
 
-          <nu-btn
-            to="!https://numl.design/repl"
-            theme="green tone">
-            <nu-icon name="terminal"></nu-icon>
-            REPL
-          </nu-btn>
+<!--          <nu-btn-->
+<!--            to="!https://numl.design/repl"-->
+<!--            theme="green tone">-->
+<!--            <nu-icon name="terminal"></nu-icon>-->
+<!--            REPL-->
+<!--          </nu-btn>-->
 
-          <nu-btn
-            to="!/storybook"
-            theme="purple tone">
-            <nu-icon name="layout"></nu-icon>
-            Storybook
-          </nu-btn>
+<!--          <nu-btn-->
+<!--            to="!/storybook"-->
+<!--            theme="purple tone">-->
+<!--            <nu-icon name="layout"></nu-icon>-->
+<!--            Storybook-->
+<!--          </nu-btn>-->
 
-          <nu-btn
-            to="!https://twitter.com/numldesign"
-            theme="lime tone">
-            <nu-icon name="twitter"></nu-icon>
-            Twitter
-          </nu-btn>
+<!--          <nu-btn-->
+<!--            to="!https://twitter.com/numldesign"-->
+<!--            theme="lime tone">-->
+<!--            <nu-icon name="twitter"></nu-icon>-->
+<!--            Twitter-->
+<!--          </nu-btn>-->
 
-          <nu-btn
-            to="!https://gitter.im/tenphi/numl?utm_source=share-link&utm_medium=link&utm_campaign=share-link"
-            theme="orange tone">
-            <nu-icon name="message-circle"></nu-icon>
-            Chat
-          </nu-btn>
+<!--          <nu-btn-->
+<!--            to="!https://gitter.im/tenphi/numl?utm_source=share-link&utm_medium=link&utm_campaign=share-link"-->
+<!--            theme="orange tone">-->
+<!--            <nu-icon name="message-circle"></nu-icon>-->
+<!--            Chat-->
+<!--          </nu-btn>-->
 
-          <nu-btn
-            to="mailto:nudeframework@gmail.com"
-            theme="red tone">
-            <nu-icon name="mail"></nu-icon>
-            Email
-          </nu-btn>
-        </nu-flex>
-      </nu-block>
-      <nu-badge text="w5" theme="tone" padding=".25x 1x">
-        powered by
-        <nu-el text="w7">itself</nu-el>
-      </nu-badge>
-    </nu-pane>
-  </nu-flow>
+<!--          <nu-btn-->
+<!--            to="mailto:nudeframework@gmail.com"-->
+<!--            theme="red tone">-->
+<!--            <nu-icon name="mail"></nu-icon>-->
+<!--            Email-->
+<!--          </nu-btn>-->
+<!--        </nu-flex>-->
+<!--      </nu-block>-->
+<!--      <nu-badge text="w5" theme="tone" padding=".25x 1x">-->
+<!--        powered by-->
+<!--        <nu-el text="w7">itself</nu-el>-->
+<!--      </nu-badge>-->
+<!--    </nu-pane>-->
+<!--  </nu-flow>-->
 </nu-root>
 
 <!-- Yandex.Metrika counter -->
@@ -1577,4 +1159,6 @@ ym(60992518, "init", {
             alt=""/></div>
 </noscript>
 <!-- /Yandex.Metrika counter -->
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>

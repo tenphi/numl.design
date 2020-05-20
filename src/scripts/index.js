@@ -11,16 +11,16 @@ window.addEventListener('DOMContentLoaded', () => {
     svgEl.setAttribute('src', icons[name]);
   });
 
-  const hueSlider = Nude.getElementById('hue-slider');
-  const demoTheme = Nude.getElementById('demo-theme');
-  const hueEl = Nude.getElementById('hue');
-
-  hueSlider.addEventListener('input', (event) => {
-    const hue = event.detail;
-
-    demoTheme.setAttribute('hue', hue);
-    hueEl.innerHTML = hue;
-  });
+  // const hueSlider = Nude.getElementById('hue-slider');
+  // const demoTheme = Nude.getElementById('demo-theme');
+  // const hueEl = Nude.getElementById('hue');
+  //
+  // hueSlider.addEventListener('input', (event) => {
+  //   const hue = event.detail;
+  //
+  //   demoTheme.setAttribute('hue', hue);
+  //   hueEl.innerHTML = hue;
+  // });
 
   // TOGGLE SCHEME
   const toggle = Nude.getElementById('scheme-switch');
