@@ -21,7 +21,7 @@
 <script src="scripts/index.js"></script>
 <noscript>JavaScript is required to see this page.</noscript>
 
-<nu-root responsive="1160px|800px|640px" id="root" place="relative">
+<nu-root responsive="1112px|800px|640px" id="root" place="relative">
   <nu-theme id="main-theme" hue="272"></nu-theme>
   <nu-theme name="blue" hue="232" mod="dim"></nu-theme>
   <nu-theme name="green" hue="154" mod="dim"></nu-theme>
@@ -35,7 +35,7 @@
     for="section" gap="4x" flow="column" width="100%" fill="subtle :even[bg]"
     items="center"
     padding="10x 0||5x 0"></nu-attrs>
-  <nu-attrs for="section-block" place="side-space" width="clamp(initial, 100%, 1160px)"
+  <nu-attrs for="section-block" place="side-space" width="clamp(initial, 100%, 1112px)"
             padding="4x||2x"></nu-attrs>
   <nu-attrs for="section-header" size="h1||h3"></nu-attrs>
   <nu-attrs for="bold" text="w6" force></nu-attrs>
@@ -64,15 +64,17 @@
       <nu-pane size="md" text="w5">
         <nu-attrs for="btn" padding="1x"></nu-attrs>
 
-        <nu-btn clear to="!https://twitter.com/numldesign">
-          <nu-icon name="^#nav twitter :sticky[twitter-outline]"></nu-icon>
-          <nu-el show="y|n">Twitter</nu-el>
-        </nu-btn>
+        <nu-pane gap="1x|0">
+          <nu-btn clear to="!https://twitter.com/numldesign">
+            <nu-icon name="^#nav twitter :sticky[twitter-outline]"></nu-icon>
+            <nu-el show="y|n">Twitter</nu-el>
+          </nu-btn>
 
-        <nu-btn clear to="!https://github.com/tenphi/numl">
-          <nu-icon name="^#nav github :sticky[github-outline]"></nu-icon>
-          <nu-el show="y|n">Github</nu-el>
-        </nu-btn>
+          <nu-btn clear to="!https://github.com/tenphi/numl">
+            <nu-icon name="^#nav github :sticky[github-outline]"></nu-icon>
+            <nu-el show="y|n">Github</nu-el>
+          </nu-btn>
+        </nu-pane>
 
         <nu-btn special padding="1x .5x 1x 1x">
           <nu-icon name="message-circle-outline"></nu-icon>
@@ -142,10 +144,10 @@
     opacity=":sticky[1] 0" transition="opacity" interactive="n">
     <nu-props opacity-transition-time=".5s"></nu-props>
     <nu-block
-      as="section-block" padding="4 left||3 left"
+      as="section-block" padding="4.5 left||3 left"
       show="^:sticky[y] n">
       <nu-pane padding="2x|1x" gap="1x|0" interactive="^#nav:sticky[y] n" inline>
-        <nu-attrs for="btn" border=":current[3b inside bottom color(special)] 0" radius=":current[1r 1r 0 0] 1r"></nu-attrs>
+        <nu-attrs for="btn" border=":current[3b inside bottom color(special)] 0" radius="1r 1r 0 0"></nu-attrs>
 
         <nu-btn padding clear to="#examples">
           <nu-icon name="play-circle-outline"></nu-icon>
@@ -333,6 +335,7 @@
               <nu-badge>Context-sensitive coloring</nu-badge>
               <nu-badge>Shadow DOM</nu-badge>
               <nu-badge>Style reset</nu-badge>
+              <nu-badge>Sticky detection</nu-badge>
               <nu-badge>Multiline clamping</nu-badge>
               <nu-badge>Polite focus</nu-badge>
               <nu-badge>Accessibility attributes</nu-badge>
@@ -1075,7 +1078,7 @@
       </nu-block>
 
       <nu-block size="lg">
-        We're glad that you got here. We&nbsp;hope you&nbsp;liked our&nbsp;introduction. The&nbsp;last&nbsp;step remained...
+        We're glad that you got here and&nbsp;hope you&nbsp;liked our&nbsp;introduction. The&nbsp;last&nbsp;step remained...
       </nu-block>
 
       <nu-pane size="lg" gap="2x||1x">
@@ -1213,7 +1216,7 @@
 
         <nu-markdown theme="tone" size="md" padding="4x right">
           <pre>
-            ==FYI==: This page is made using **NuML** with **zero CSS** assets and **tiny JS** script. See the [source code](!https://github.com/tenphi/numl-storybook) to learn more.
+            ==FYI==: This page is made using **NuML** with **zero CSS** assets and **tiny JS** script. See the [source code](!https://github.com/tenphi/numl.design) to learn more.
           </pre>
         </nu-markdown>
     </nu-flow>
