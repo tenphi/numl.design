@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "rm -rf .cache && parcel --out-dir tmp src/index.html",
     "build": "mkdir -p static && rm -vrf static/* && parcel build --out-dir static src/index.html",
-    "deploy": "rm -rf .cache && npm run build && mv static/index.html static/landing.html && scp -rv static/* cloud:/usr/share/nginx/numl.design/"
+    "deploy": "rm -rf .cache && npm run build && mv static/index.html static/landing.html && scp -rv static/* cloud:/usr/share/nginx/numl.design/",
+    "now": "npm run build && now --prod static --name numl-design"
   },
   "keywords": [
     "design",
