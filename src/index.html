@@ -483,10 +483,8 @@
               &lt;nu-props radius=".5x"/>
               &lt;nu-theme hue="250" mod="tone"/>
               &lt;nu-attrs for="label"
-                place="top left 1x 2x" z="above"
-                text="w5" origin="top left"
-                scale="^:focus[.75] :empty[1] .75"
-                move="^:focus[0] :empty[0 1.25x] 0"
+                place="top left 1x 2x" z="above" text="w5" origin="top left"
+                scale="^:focus[.75] :empty[1] .75" move="^:focus[0] :empty[0 1.25x] 0"
               &ltnu-form gap="1x">...
             </textarea>
           </nu-code>
@@ -548,12 +546,11 @@
           </nu-pane>
           <nu-code>
             <textarea>
-              &lt;nu-check for="username"
-                assert="required">
+              &lt;nu-check for="username" assert="required">
                 Username is required
               &lt;/nu-check>
-              &lt;nu-check for="password"
-                assert="required">
+              ...
+              &lt;nu-check for="password" assert="required">
                 Password is required
               &lt;/nu-check>
             </textarea>
@@ -628,9 +625,8 @@
             <nu-code>
               <textarea>
                 &lt;nu-somewidget
-                  value={someValue}
-                  @input={evt => result = evt.$detail}
-                  type="num" />
+                  value={someValue} type="num"
+                  @input={evt => result = evt.$detail}/>
                 ...
                 {result} // "some output"
                 {typeof result} // "number"
