@@ -916,7 +916,7 @@
 
 
   <nu-flow id="theming" as="section" gap="4x">
-<!--    <nu-theme id="demo-theme" hue="272"></nu-theme>-->
+    <nu-theme id="demo-theme" hue="272"></nu-theme>
 
     <nu-flow as="section-block" gap="4x||2x" size="lg||md">
       <nu-flow gap>
@@ -924,8 +924,8 @@
 
         <nu-pane size="lg h1||md h1" flow="row wrap" gap="0 1x">
           <nu-el text="nowrap">Choose a <nu-b>hue</nu-b></nu-el>
-          <nu-slider id="hue-slider" control="main-theme[hue] hue[.value]" value="272" min="0" max="359" width="12"></nu-slider>
-          <nu-btn special control="main-theme[hue] hue-slider[.value]" value="272" size="xs">reset</nu-btn>
+          <nu-slider id="hue-slider" control="demo-theme[hue] hue[.value]" value="272" min="0" max="359" width="12"></nu-slider>
+          <nu-btn special control="demo-theme[hue] hue-slider[.value]" value="272" size="xs">reset</nu-btn>
         </nu-pane>
       </nu-flow>
 
@@ -972,7 +972,7 @@
           <nu-attrs for="btn" padding="1x|||.5x 1x" t="'Button'||'Btn'"></nu-attrs>
           <nu-attrs for="splbtn" padding="1x 2x|||.5x 1x" t="'Special'||'Spl'"></nu-attrs>
           <nu-attrs for="btnset" gap flow="row"></nu-attrs>
-          <nu-attrs for="content" grow="1"></nu-attrs>
+          <nu-attrs for="content" grow="1" text="nowrap"></nu-attrs>
 
           <nu-card>
             <nu-heading>Main</nu-heading>
