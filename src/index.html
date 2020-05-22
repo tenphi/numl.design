@@ -86,14 +86,14 @@
           <nu-dropdownicon></nu-dropdownicon>
           <nu-popupmenu to="!https://tele.click/telegram">
             <nu-props opacity-transition-time=".08s"></nu-props>
-            <nu-menuitem to="!https://tele.click/numldesign" columns="1fr auto">
+            <nu-option to="!https://tele.click/numldesign" columns="1fr auto">
               Telegram
               <nu-icon name="external-link" size="1em"></nu-icon>
-            </nu-menuitem>
-            <nu-menuitem to="!https://gitter.im/tenphi/numl" columns="1fr auto">
+            </nu-option>
+            <nu-option to="!https://gitter.im/tenphi/numl" columns="1fr auto">
               Gitter
               <nu-icon name="external-link" size="1em"></nu-icon>
-            </nu-menuitem>
+            </nu-option>
           </nu-popupmenu>
         </nu-btn>
       </nu-pane>
@@ -325,7 +325,7 @@
               <nu-badge>Flex gap polyfill</nu-badge>
               <nu-badge>Markdown conversion</nu-badge>
               <nu-badge>Syntax highlighting</nu-badge>
-              <nu-badge>Styling shorthands</nu-badge>
+              <nu-badge>Form validation</nu-badge>
               <nu-badge>Column layouts</nu-badge>
               <nu-badge>Shadow DOM support</nu-badge>
               <nu-badge>Accessible colors</nu-badge>
@@ -333,6 +333,7 @@
               <nu-badge>Popup position fix</nu-badge>
               <nu-badge>Locale formatting</nu-badge>
               <nu-inline id="feature-list" hidden>
+                <nu-badge>Styling shorthands</nu-badge>
                 <nu-badge>Custom scrollbars</nu-badge>
                 <nu-badge>Inline SVG</nu-badge>
                 <nu-badge>Blurred background</nu-badge>
@@ -386,8 +387,8 @@
 <!--            <nu-value list="list" placeholder="select any" color="special-text :empty[special-text 50%]"></nu-value>-->
 <!--            <nu-icon name="chevron-down" scale="^:pressed[flip-y]"></nu-icon>-->
 <!--            <nu-popupmenu id="list" link-value size="lg">-->
-<!--              <nu-menuitem value="login-form">login form</nu-menuitem>-->
-<!--              <nu-menuitem value="dropdown-menu">dropdown menu</nu-menuitem>-->
+<!--              <nu-option value="login-form">login form</nu-option>-->
+<!--              <nu-option value="dropdown-menu">dropdown menu</nu-option>-->
 <!--              <nu-line></nu-line>-->
 <!--              <nu-block size="xs" padding color="text 66%" text="w6 nowrap">More examples to come...</nu-block>-->
 <!--            </nu-popupmenu>-->
@@ -669,7 +670,7 @@
         <textarea>
           **NuML** is a markup language with a very **intuitive** syntax.
 
-          If you're experienced in web development you will need minutes to&nbsp;learn basics. Syntax is based on classic **HTML** tags, **CSS** & **ARIA** specifications.
+          If you're experienced in web development you will need minutes to&nbsp;learn basics. Syntax is based on classic **HTML** tags, **CSS** & **ARIA** specifications. Each element has almost the same styling **API**, which greatly facilitates the study.
         </textarea>
       </nu-markdown>
 
