@@ -400,12 +400,15 @@
     <nu-block id="example">
       <nu-attrs for="heading" level="4" size="h3"></nu-attrs>
 
-      <nu-grid as="section-block" columns="repeat(3, 1cl)|1cl 1cl|1cl" gap="6x 4x|4x">
-        <nu-attrs for="step" theme="tint" size="sm" text="w5"></nu-attrs>
+      <nu-grid as="section-block" columns="repeat(3, 1cl)||1cl" gap="4x">
+        <nu-attrs for="step" theme="tint" text="w5"></nu-attrs>
         <nu-attrs for="step-pane" content="space-between" items="start"></nu-attrs>
         <nu-attrs for="line" column="1 / -1"></nu-attrs>
+        <nu-attrs for="description" column="1 / -1" gap size="lg||md"></nu-attrs>
+        <nu-attrs for="code-block" column="span 2||1" gap></nu-attrs>
+        <nu-attrs for="preview" gap></nu-attrs>
 
-        <nu-flow gap column="|span 2|1">
+        <nu-flow as="description">
           <nu-heading>Prototype</nu-heading>
           <nu-block>
             Create interfaces using human-readable HTML with clear syntax. You can set styles for each
@@ -413,7 +416,7 @@
             <nu-link>Learn more</nu-link>
           </nu-block>
         </nu-flow>
-        <nu-flow gap>
+        <nu-flow as="code-block">
           <nu-pane as="step-pane">
             <nu-block as="step">
               <nu-b>Step 1.</nu-b>
@@ -435,7 +438,7 @@
             </textarea>
           </nu-code>
         </nu-flow>
-        <nu-flow gap>
+        <nu-flow as="preview">
           <nu-block as="step">
             Focus on input to see default focus styling.
           </nu-block>
@@ -455,7 +458,7 @@
 
         <nu-line></nu-line>
 
-        <nu-flow gap column="|span 2|1">
+        <nu-flow as="description">
           <nu-heading>Customize</nu-heading>
           <nu-block>
             Use attributes or context style definitions to customize your elements as you like. Syntax
@@ -463,7 +466,7 @@
             <nu-link>Learn more</nu-link>
           </nu-block>
         </nu-flow>
-        <nu-flow gap>
+        <nu-flow as="code-block">
           <nu-pane as="step-pane">
             <nu-block as="step">
               <nu-b>Step 2.</nu-b>
@@ -488,7 +491,7 @@
             </textarea>
           </nu-code>
         </nu-flow>
-        <nu-flow gap>
+        <nu-flow as="preview">
           <nu-block as="step">
             Focus on input to see "focus" state.
           </nu-block>
@@ -524,7 +527,7 @@
 
         <nu-line></nu-line>
 
-        <nu-flow gap column="|span 2|1">
+        <nu-flow as="description">
           <nu-heading>Behaviors</nu-heading>
           <nu-block>
             Use widgets and components or inject&nbsp;behaviors to implement basic&nbsp;logic. You can
@@ -532,7 +535,7 @@
             <nu-link>Learn more</nu-link>
           </nu-block>
         </nu-flow>
-        <nu-flow gap>
+        <nu-flow as="code-block">
           <nu-pane as="step-pane">
             <nu-block as="step">
               <nu-b>Step 3.</nu-b>
@@ -556,7 +559,7 @@
             </textarea>
           </nu-code>
         </nu-flow>
-        <nu-flow gap>
+        <nu-flow as="preview">
           <nu-block as="step">
             Click "Submit" to trigger validation and (if the form is valid) get the result.
           </nu-block>
@@ -616,7 +619,7 @@
               <nu-svg name="react" class="nu-dark-dim"></nu-svg>
             </nu-pane>
           </nu-pane>
-          <nu-block>
+          <nu-block size="lg||md">
             Add your favorite framework if you need more or put the code inside the existing
             application.
             <nu-link>Learn more</nu-link>
@@ -641,12 +644,12 @@
             Extend
             <nu-icon name="settings-outline" size="1em"></nu-icon>
           </nu-heading>
-          <nu-md>
+          <nu-md size="lg||md">
             <pre>
               Using **JavaScript** you can extend **numl** syntax: Create new **custom units**, **design tokens**, **style generators**, **elements**, **behaviors** and more...
             </pre>
           </nu-md>
-          <nu-block size="lg">
+          <nu-block size="xl">
             Possibilities are <nu-mark>ENDLESS</nu-mark>.
           </nu-block>
           <nu-pane size="lg||md" flow="row wrap">
