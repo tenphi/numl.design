@@ -80,21 +80,21 @@
           </nu-btn>
         </nu-pane>
 
-        <nu-btn special padding="1x .5x 1x 1x">
+        <nu-btn special>
           <nu-icon name="message-circle-outline"></nu-icon>
           <nu-el show="y|n|y|n">Join chat</nu-el>
           <nu-dropdownicon></nu-dropdownicon>
-          <nu-popupmenu to="!https://tele.click/telegram">
+          <nu-popup nx-listbox to="!https://tele.click/telegram" padding="0">
             <nu-props opacity-transition-time=".08s"></nu-props>
-            <nu-option to="!https://tele.click/numldesign" columns="1fr auto">
+            <nu-itembtn to="!https://tele.click/numldesign" columns="1fr auto">
               Telegram
               <nu-icon name="external-link" size="1em"></nu-icon>
-            </nu-option>
-            <nu-option to="!https://gitter.im/tenphi/numl" columns="1fr auto">
+            </nu-itembtn>
+            <nu-itembtn to="!https://gitter.im/tenphi/numl" columns="1fr auto">
               Gitter
               <nu-icon name="external-link" size="1em"></nu-icon>
-            </nu-option>
-          </nu-popupmenu>
+            </nu-itembtn>
+          </nu-popup>
         </nu-btn>
       </nu-pane>
     </nu-pane>
@@ -124,15 +124,12 @@
           <nu-b>design system</nu-b>.
         </nu-block>
         <nu-block>
-          Create modern
-          <nu-b>high-quality</nu-b>
-          interfaces using only
-          <nu-el text="nowrap"><nu-b>HTML</nu-b> syntax.</nu-el>
+          Markup language to create modern <nu-b>high-quality</nu-b> interfaces with any look.
         </nu-block>
       </nu-block>
       <nu-pane size="lg||md" gap="2x||1x" text="w5">
         <nu-attrs for="btn" padding="1x 2x||1x"></nu-attrs>
-        <nu-btn special>Get started</nu-btn>
+        <nu-btn special to="!http://localhost:8080/guide/getting-started">Get started</nu-btn>
         <nu-btn to="#features">
           Why NuML?
         </nu-btn>
@@ -279,7 +276,7 @@
                 </nu-block>
 
                 <nu-block>
-                  With <nu-b>NuML</nu-b> you'll get <nu-b>full-featured</nu-b> Design&nbsp;System with a <nu-b>bunch of elements and components</nu-b> <nu-link to="!/guide/getting-started">in seconds</nu-link>.
+                  With <nu-b>NuML</nu-b> you'll get full-featured Design&nbsp;System with a <nu-b>bunch of elements and components</nu-b> <nu-link to="!/guide/getting-started">in seconds</nu-link>.
                 </nu-block>
               </nu-flow>
             </nu-flow>
@@ -372,7 +369,7 @@
       <nu-heading as="section-header">Design with NuML</nu-heading>
 
       <nu-radiogroup value="login-form" gap flow="row wrap" items="center" text="w6">
-        <nu-btn value="login-form">Login form</nu-btn>
+        <nu-btn value="login-form">Form with validation</nu-btn>
 <!--        <nu-btn value="dropdown-menu">Dropdown menu</nu-btn>-->
         <nu-el color="special" size="xs">More examples to come...</nu-el>
       </nu-radiogroup>
@@ -386,12 +383,12 @@
 <!--          <nu-btn padding="1x 0 1x 1x" gap="0" control="example" special>-->
 <!--            <nu-value list="list" placeholder="select any" color="special-text :empty[special-text 50%]"></nu-value>-->
 <!--            <nu-icon name="chevron-down" scale="^:pressed[flip-y]"></nu-icon>-->
-<!--            <nu-popupmenu id="list" link-value size="lg">-->
+<!--            <nu-popup nx-listbox id="list" link-value size="lg">-->
 <!--              <nu-option value="login-form">login form</nu-option>-->
 <!--              <nu-option value="dropdown-menu">dropdown menu</nu-option>-->
 <!--              <nu-line></nu-line>-->
 <!--              <nu-block size="xs" padding color="text 66%" text="w6 nowrap">More examples to come...</nu-block>-->
-<!--            </nu-popupmenu>-->
+<!--            </nu-popup>-->
 <!--          </nu-btn>-->
 <!--          with <nu-el text="w6">NuML</nu-el>-->
 <!--        </nu-block>-->
@@ -423,9 +420,9 @@
               <nu-b>Step 1.</nu-b>
               Create a login form.
             </nu-block>
-            <nu-btn size="xs" special padding>
+            <nu-btn size="xs" special padding to="!https://numl.design/repl#N4IgzgxghgNgpiAXARgDQgLZQE4GsCuADkiADwB2+AtAGYD22GAfADrkAE7F1NAlnDAAmrDpy6UqMKACMBTAKpg42clAxxSAeglTZMEWPHVe5QvgAu7XoIC8LEPiUq1ce0y0STZ8yJbmPPPxCBka0QcJshtySMnIAClBgYADuDIIBMXohnNFeFla29oSJKWn27FhguO7axqYWvv61YQIR5Bn0jCIg6HSE5rx05GBIoOYAFnDqACoAnoQIiJhQJj0g4-iLAEwA7FvoxWDmAkg0sEroYFDm+NjXg+RIAKwADJfXt-dDcwskEI7mOgYNYAcygxEQLwAdE90NI0soAOrWCZINAgO6CXiOJDQ2Egcx3Ya8AbfXjqJAADje4AgkwpSygFjoawgQ0JiXMJCZgLW2DggnwEAFAFk6KTHozmSAAL6XXgAL0WmEEsqAA">
               <nu-icon name="external-link" size="1.25em"></nu-icon>
-<!--              <nu-tooltip>See the full code snippet in editor</nu-tooltip>-->
+              <nu-tooltip text="nowrap">See the full code snippet in editor</nu-tooltip>
               REPL
             </nu-btn>
           </nu-pane>
@@ -474,8 +471,9 @@
               Add a custom theme. Change border radius size. Design fancy-looking placeholders. Decrease
               gap.
             </nu-block>
-            <nu-btn size="xs" special padding>
+            <nu-btn size="xs" special padding to="!https://numl.design/repl#N4IgzgxghgNgpiAXARgDQgLZQE4GsCuADkiADwB2+AtIdgPaFgAE2UAJgJb5gC8AOiAB0AVgAeAgHykA9JRr1GEvuQrUALgAs4GOEw344-EACZhABgFMMdNkbV1ycAdKmz1WnUpVyoatdmYAMzpsIxgoACM4GAFlJiZCcIhDAXtCJnhAtSZkUSZjcRAmAC8jSLoANycitThRNSMAd2FLEI4Acw5yOwYMuCzY8njIWBSQAD1EYIhuAG1BAHZhAF0mRG1CNQBPWeRVxZai6yqjSem5s1X1jE2dsxzBU1FVixBXHz8Ar1UqYOwMJjtKCELzxH6BGB0Rqg+JMH5dQj4NTtehEPRwDoaBoCAAchQS7E45HaRmMIjyuRyFMKMNhcLk4SiMAkAFUwHBsOQoDoZAzItFabD4eREdkOLYBNwOVydJZElBkho6DA2ByjJYUVCjMhJLzqAikYK9VQDcjUSC4nC3L9IdDLeDbUa5KbNWitJjsSA8XLCV0SQIyWIqcHcpJLXSfoyBQAFKBgMCNEJsY1R5nhoXOkVIpjioyEOMJpNypJwJUqtWxIqaxra3XW01G+tZs10Igw40QqHfa1-DBeEDoBhqDgOMBIUCabRwAAqW0ICEQmCgXQHIH0C+MC2M6HzYFqMCQgVg7PQYF8+FYw4cSHMp-Pl5H5Fn85IMz3dAwq6BxEQZhE6AiJMOQAdXFTQkDQEBWE4bgkD-YR0H8KByDADgryfDgdCQHEzFPCAPAXEAoCROhVwgBwkL3EhiPsVdsDgNh8GSNgAFk6HQ6iSJAABfU8OGKQiMDYHigA">
               <nu-icon name="external-link" size="1.25em"></nu-icon>
+              <nu-tooltip text="nowrap">See the full code snippet in editor</nu-tooltip>
               REPL
             </nu-btn>
           </nu-pane>
@@ -540,8 +538,9 @@
               <nu-b>Step 3.</nu-b>
               Add form validation. Add simple data output (for debug)
             </nu-block>
-            <nu-btn size="xs" special padding>
+            <nu-btn size="xs" special padding to="!https://numl.design/repl#N4IgzgxghgNgpiAXARgDQgLZQE4GsCuADkiADwB2+AtIdgPaFgAE2UAJgJb5gC8AOiAB0AVgAeAgHykA9JRr1GEvuQrUALgAs4GOEw344-EACZhABgFMMdNkbV1ycSTLmbtcJStdadTclB0jOGx6bEt9QwFkS2tbATUOcjVnWXUfD2VVKig1NWxmADM6bCMCjjgYNks3QIFERIA3WA42AG1g0IBdFLkcvLBPLL785SYx8YmikoEYKAAjCoFRiZXCWYhIkHtCJngCtSZkUSZjcRAmAC8jeboGp3O1OFE1IwB3YUtijgBzRLsGXZwfZLcgrFaQWCbAB6iCKEG4rUEAHZhJ0mIhtIQ1ABPVrINHIj4gZZgsbWO5GGFwhFmNEYjBY3FmQ6CUyiNEWYmg0ljCB0GDFSmwujwsCtR7PKhgOj7OmYnHip4HcwAUjRErUUplyS5PLGeSg5DAHASDjs6VQTANRqmGB61GGA0ycltTD5SXoMCMdHwakIvsRTRgBm652+UEIRiOkmWWTKFTYngmWUS-rU33oRD0cB+GheAgAHGcmIR2JxyN8jMYRMcjoda2ckyssrMFjAJABVMDBfw6FzUVsVJvJuSp31MFpGbg9gL3EvrOAaflsYJGSwZuivKP2qhjtTDpj93fkNMbogHrIQLQQXBMKZT7vYXtzqBgR-5kDYOAAR3wHC-VQgAeYxdjOvgcMwX6-v+cBVNyYxHlecA3k2R7xpUqEuuUGEkoeo4nr6Z47FouYfkWlilmw5aVgI1ZiPWDHRkBuEIXIg7tgACq+YCvMUbBHuxwF4dQe4TnEIClm+vHYIB85QBsS6VKuSxhvQW5RDEr64FIqTHmmF66XuREXnISE3negoCJJPF8ZY3HBB+UF-gBMbweMXFSXxE6QT+zmwbhiHXtpsa6ehiaxnIcxqKCYCEMhHCwEw8mmuQRhgPgcwYCakgAMoZVlahHlF5CDKFxQYIMkUCuZtzBAUArqSAUC+nQliQJ6MBzDgTCvC0mhGFgtYAGyuax1BBgYYner6aY7hNGQqLpczVdpIDoAwKVgEgoA1HAAAq2JxSQWCJGtIAREgxhIsY6CSY8MBIAUsDdugYA5PgrApUg5ive9n0cA4B1HYgICivYGBneGxCIGYIjoHMfHBAA6n1GhIGgn7sFwW0w3DWysEaJoA+Qe0cDoSAFmYr1IeTIPNfYZ3ugaYBqCQ9N0GdAH4BsbAALJ0F9dMtSAAC+r0cBcCAgxgbCi0AA">
               <nu-icon name="external-link" size="1.25em"></nu-icon>
+              <nu-tooltip text="nowrap">See the full code snippet in editor</nu-tooltip>
               REPL
             </nu-btn>
           </nu-pane>
@@ -780,16 +779,16 @@
         </pre>
       </nu-markdown>
 
-      <nu-flow gap>
-        <nu-el size="lg||md">Learn more in our Guide:</nu-el>
+<!--      <nu-flow gap>-->
+<!--        <nu-el size="lg||md">Learn more in our Guide:</nu-el>-->
 
-        <nu-pane size="md" flow="row wrap">
-          <nu-btn special>Basics</nu-btn>
-          <nu-btn special>Custom units</nu-btn>
-          <nu-btn special>State modifiers</nu-btn>
-          <nu-btn special>Batch styling</nu-btn>
-        </nu-pane>
-      </nu-flow>
+<!--        <nu-pane size="md" flow="row wrap">-->
+<!--          <nu-btn special>Basics</nu-btn>-->
+<!--          <nu-btn special>Custom units</nu-btn>-->
+<!--          <nu-btn special>State modifiers</nu-btn>-->
+<!--          <nu-btn special>Batch styling</nu-btn>-->
+<!--        </nu-pane>-->
+<!--      </nu-flow>-->
 
       <!--**Try to get** similar result with plain **CSS** or with your favorite **CSS-framework**.-->
     </nu-flow>
@@ -892,25 +891,25 @@
         </nu-flex>
       </nu-grid>
 
-      <nu-flow gap>
-          <nu-el size="lg||md">See more Layout examples in our Storybook:</nu-el>
+<!--      <nu-flow gap>-->
+<!--        <nu-el size="lg||md">See more Layout examples in our Storybook:</nu-el>-->
 
-          <nu-pane size="md" flow="row wrap">
-            <nu-btn special>Basic layouts</nu-btn>
-            <nu-btn special>Flex layouts</nu-btn>
-            <nu-btn special>Grid layouts</nu-btn>
-            <nu-btn special>Complex layouts</nu-btn>
-          </nu-pane>
-        </nu-flow>
+<!--        <nu-pane size="md" flow="row wrap">-->
+<!--          <nu-btn special>Basic layouts</nu-btn>-->
+<!--          <nu-btn special>Flex layouts</nu-btn>-->
+<!--          <nu-btn special>Grid layouts</nu-btn>-->
+<!--          <nu-btn special>Complex layouts</nu-btn>-->
+<!--        </nu-pane>-->
+<!--      </nu-flow>-->
 
-        <nu-flow gap>
-          <nu-el size="lg||md">Learn more in our Guide:</nu-el>
+<!--      <nu-flow gap>-->
+<!--        <nu-el size="lg||md">Learn more in our Guide:</nu-el>-->
 
-          <nu-pane size="md">
-            <nu-btn special>Responsive styles</nu-btn>
-            <nu-btn special>Complex styles</nu-btn>
-          </nu-pane>
-        </nu-flow>
+<!--        <nu-pane size="md">-->
+<!--          <nu-btn special>Responsive styles</nu-btn>-->
+<!--          <nu-btn special>Complex styles</nu-btn>-->
+<!--        </nu-pane>-->
+<!--      </nu-flow>-->
     </nu-flow>
   </nu-flow>
 
@@ -1061,14 +1060,14 @@
         </nu-flex>
       </nu-block>
 
-      <nu-flow gap>
-        <nu-el size="lg||md">Learn more in our Guide:</nu-el>
+<!--      <nu-flow gap>-->
+<!--        <nu-el size="lg||md">Learn more in our Guide:</nu-el>-->
 
-        <nu-pane size="md">
-          <nu-btn special>Theme definitions</nu-btn>
-          <nu-btn special>Using colors</nu-btn>
-        </nu-pane>
-      </nu-flow>
+<!--        <nu-pane size="md">-->
+<!--          <nu-btn special>Theme definitions</nu-btn>-->
+<!--          <nu-btn special>Using colors</nu-btn>-->
+<!--        </nu-pane>-->
+<!--      </nu-flow>-->
 
     </nu-flow>
   </nu-flow>
@@ -1094,7 +1093,7 @@
 
       <nu-pane size="lg" gap="2x||1x">
         <nu-attrs for="btn" padding="1x 2x||1x"></nu-attrs>
-        <nu-btn special>I'm ready to start</nu-btn>
+        <nu-btn special to="!http://localhost:8080/guide/getting-started">I'm ready to start</nu-btn>
       </nu-pane>
     </nu-flow>
   </nu-flow>
