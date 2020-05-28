@@ -11,7 +11,7 @@
         href="/images/nude-logo-16-dark.png">
   <title>numl – unity of design & code</title>
   <meta charset="utf-8">
-  <meta name="Description" content="Create modern high-quality interfaces using only HTML syntax.">
+  <meta name="Description" content="Markup language to create modern high-quality interfaces with any look.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>nu-root {
     opacity: 0;
@@ -35,13 +35,13 @@
     for="section" gap="4x" flow="column" width="100%" fill="subtle :even[bg]"
     items="center"
     padding="10x 0||5x 0"></nu-attrs>
-  <nu-attrs for="section-block" place="side-space" width="20 100% 1112px"
+  <nu-attrs for="section-block" place="space-around" width="20 100% 1112px"
             padding="4x||2x"></nu-attrs>
   <nu-attrs for="section-header" size="h1||h3"></nu-attrs>
   <nu-attrs for="bold" text="w6" force></nu-attrs>
 
-  <nu-topbar
-    as="section" padding="0" border="0"
+  <nu-header
+    as="section" padding="0" border="0" place="fixed top"
     theme="special :sticky[main strong]" fill="clear :sticky[bg]" shadow="0 :sticky[1 special]"
     height="13x :sticky[9x]|13x :sticky[7x]">
     <nu-props
@@ -58,24 +58,24 @@
 
         <nu-el
           text="w7" size="md" transition="opacity"
-          opacity="^topbar:sticky[0] 1|^topbar:sticky[0] 1|^topbar:sticky[0] 1|0">v0.11.0</nu-el>
+          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.0</nu-el>
       </nu-pane>
 
       <nu-pane size="md" text="w5">
         <nu-attrs for="btn" padding="1x"></nu-attrs>
 
-        <nu-btn show="^root:dev[y] n" clear checkbox control=":root[data-nu-outline]">
+        <nu-btn show="^root:dev[y] n" clear toggle control=":root[data-nu-outline]">
           <nu-icon name="grid-outline"></nu-icon>
         </nu-btn>
 
-        <nu-pane gap="1x|0" show="^topbar:sticky[y|||n] y">
+        <nu-pane gap="1x|0" show="^header:sticky[y|||n] y">
           <nu-btn clear to="!https://twitter.com/numldesign">
-            <nu-icon name="^topbar twitter :sticky[twitter-outline]"></nu-icon>
+            <nu-icon name="^header twitter :sticky[twitter-outline]"></nu-icon>
             <nu-el show="y|n">Twitter</nu-el>
           </nu-btn>
 
           <nu-btn clear to="!https://github.com/tenphi/numl">
-            <nu-icon name="^topbar github :sticky[github-outline]"></nu-icon>
+            <nu-icon name="^header github :sticky[github-outline]"></nu-icon>
             <nu-el show="y|n">Github</nu-el>
           </nu-btn>
         </nu-pane>
@@ -98,10 +98,10 @@
         </nu-btn>
       </nu-pane>
     </nu-pane>
-  </nu-topbar>
+  </nu-header>
 
-  <nu-flow
-    as="section" padding="26x 0 16x||14x 0 4x" theme="special"
+  <nu-section
+    padding="26x 0 16x||14x 0 4x" theme="special"
     image="linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0))">
     <nu-flow as="section-block" gap="4x">
       <nu-block move="-2b 0">
@@ -129,7 +129,7 @@
       </nu-block>
       <nu-pane size="lg||md" gap="2x||1x" text="w5">
         <nu-attrs for="btn" padding="1x 2x||1x"></nu-attrs>
-        <nu-btn special to="!http://localhost:8080/guide/getting-started">Get started</nu-btn>
+        <nu-btn special to="!/guide/getting-started">Get started</nu-btn>
         <nu-btn to="#features">
           Why NuML?
         </nu-btn>
@@ -138,16 +138,16 @@
         </nu-btn>
       </nu-pane>
     </nu-flow>
-  </nu-flow>
+  </nu-section>
 
-  <nu-block id="nav"
+  <nu-block id="nav-float"
     place="sticky top" z="front" theme="tint strong" height="0"
     opacity=":sticky[1] 0" transition="opacity" interactive="n">
     <nu-props opacity-transition-time=".5s"></nu-props>
     <nu-block
       as="section-block" padding="4.5 left||3 left"
       show="^:sticky[y] n">
-      <nu-pane padding="2x|1x" gap="1x|0" interactive="^#nav:sticky[y] n" inline>
+      <nu-nav padding="2x|1x" gap="1x|0" interactive="^#nav-float:sticky[y] n" inline>
         <nu-attrs for="btn" border=":current[3b inside bottom color(special)] 0" radius="1r 1r 0 0"></nu-attrs>
 
         <nu-btn padding clear to="#examples">
@@ -169,11 +169,11 @@
           <nu-icon name="color-palette-outline"></nu-icon>
           <nu-el show="y||n">Themeable</nu-el>
         </nu-btn>
-      </nu-pane>
+      </nu-nav>
     </nu-block>
   </nu-block>
 
-  <nu-flow id="features" as="section" padding="8x 2x||4x 2x|4x 1x">
+  <nu-section id="features" padding="8x 2x||4x 2x|4x 1x">
     <nu-flow as="section-block" gap="8x">
       <nu-flow gap="4x">
         <nu-attrs
@@ -190,7 +190,7 @@
           Why NuML?
         </nu-heading>
 
-        <nu-grid columns="repeat(4, 1cl)|1cl 1cl|1cl" gap="3x">
+        <nu-grid columns="repeat(4, 1pr)|1pr 1pr|1pr" gap="3x">
           <nu-cardbtn as="feature" theme="blue tint" to="#basics">
             <nu-icon as="feature-icon" name="bulb-outline"></nu-icon>
             <nu-heading level="3" size="h4">
@@ -245,10 +245,10 @@
           <nu-block>
             <nu-attrs
               for="btn" clear control="description" padding
-              text="wrap" toggle=":active[1]" width="100%" content="start"></nu-attrs>
+              text="wrap" pressing=":active[1]" width="100%" content="start"></nu-attrs>
 
             <nu-flow gap>
-              <nu-btn checkbox>
+              <nu-btn toggle>
                 <nu-dropdownicon></nu-dropdownicon>
                 <nu-heading>You probably <nu-u>need</nu-u> a&nbsp;design&nbsp;system</nu-heading>
               </nu-btn>
@@ -265,7 +265,7 @@
             </nu-flow>
 
             <nu-flow gap>
-              <nu-btn checkbox>
+              <nu-btn toggle>
                 <nu-dropdownicon></nu-dropdownicon>
                 <nu-heading>Creating and maintaining a&nbsp;design&nbsp;system on your own is&nbsp;tough</nu-heading>
               </nu-btn>
@@ -282,7 +282,7 @@
             </nu-flow>
 
             <nu-flow gap>
-              <nu-btn checkbox>
+              <nu-btn toggle>
                 <nu-dropdownicon></nu-dropdownicon>
                 <nu-heading>Customization & future-proof are requirements</nu-heading>
               </nu-btn>
@@ -293,7 +293,7 @@
             </nu-flow>
 
             <nu-flow gap>
-              <nu-btn checkbox>
+              <nu-btn toggle>
                 <nu-dropdownicon></nu-dropdownicon>
                 <nu-heading>There is <nu-u>no</nu-u> time to wait</nu-heading>
               </nu-btn>
@@ -358,13 +358,13 @@
       </nu-flow>
 
     </nu-flow>
-  </nu-flow>
+  </nu-section>
 
-  <nu-flow id="examples" as="section" gap="0">
+  <nu-section id="examples" gap="0">
     <nu-attrs for="code" padding="1x 2x" border overflow="auto" scrollbar width="100%"></nu-attrs>
 
     <nu-flow as="section-block" gap="4x">
-      <nu-attrs for="btn" fill=":pressed[special-bg] bg" color toggle=":active[1]"></nu-attrs>
+      <nu-attrs for="btn" fill=":pressed[special-bg] bg" color pressing=":active[1]"></nu-attrs>
 
       <nu-heading as="section-header">Design with NuML</nu-heading>
 
@@ -398,7 +398,7 @@
     <nu-block id="example">
       <nu-attrs for="heading" level="4" size="h3"></nu-attrs>
 
-      <nu-grid as="section-block" columns="repeat(3, 1cl)||1cl" gap="4x">
+      <nu-grid as="section-block" columns="repeat(3, 1pr)||1pr" gap="4x">
         <nu-attrs for="step" theme="tint" text="w5"></nu-attrs>
         <nu-attrs for="step-pane" content="space-between" items="start"></nu-attrs>
         <nu-attrs for="line" column="1 / -1"></nu-attrs>
@@ -471,7 +471,7 @@
               Add a custom theme. Change border radius size. Design fancy-looking placeholders. Decrease
               gap.
             </nu-block>
-            <nu-btn size="xs" special padding to="!https://numl.design/repl#N4IgzgxghgNgpiAXARgDQgLZQE4GsCuADkiADwB2+AtIdgPaFgAE2UAJgJb5gC8AOiAB0AVgAeAgHykA9JRr1GEvuQrUALgAs4GOEw344-EACZhABgFMMdNkbV1ycAdKmz1WnUpVyoatdmYAMzpsIxgoACM4GAFlJiZCcIhDAXtCJnhAtSZkUSZjcRAmAC8jSLoANycitThRNSMAd2FLEI4Acw5yOwYMuCzY8njIWBSQAD1EYIhuAG1BAHZhAF0mRG1CNQBPWeRVxZai6yqjSem5s1X1jE2dsxzBU1FVixBXHz8Ar1UqYOwMJjtKCELzxH6BGB0Rqg+JMH5dQj4NTtehEPRwDoaBoCAAchQS7E45HaRmMIjyuRyFMKMNhcLk4SiMAkAFUwHBsOQoDoZAzItFabD4eREdkOLYBNwOVydJZElBkho6DA2ByjJYUVCjMhJLzqAikYK9VQDcjUSC4nC3L9IdDLeDbUa5KbNWitJjsSA8XLCV0SQIyWIqcHcpJLXSfoyBQAFKBgMCNEJsY1R5nhoXOkVIpjioyEOMJpNypJwJUqtWxIqaxra3XW01G+tZs10Igw40QqHfa1-DBeEDoBhqDgOMBIUCabRwAAqW0ICEQmCgXQHIH0C+MC2M6HzYFqMCQgVg7PQYF8+FYw4cSHMp-Pl5H5Fn85IMz3dAwq6BxEQZhE6AiJMOQAdXFTQkDQEBWE4bgkD-YR0H8KByDADgryfDgdCQHEzFPCAPAXEAoCROhVwgBwkL3EhiPsVdsDgNh8GSNgAFk6HQ6iSJAABfU8OGKQiMDYHigA">
+            <nu-btn size="xs" special padding to="!https://numl.design/repl#N4IgzgxghgNgpiAXARgDQgLZQE4GsCuADkiADwB2+AtIdgPaFgAE2UAJgJb5gC8AOiAB0AVgAeAgHykA9JRr1GEvuQrUALgAs4GOEw344-EACZhABgFMMdNkbV1ycSTLmbtcJSrlQ1a7MwAzOmwjGCgAIzgYAWUmJkIwiEMBe0ImeAC1JmRRJmNxECYALyMIugA3J0K1OFE1IwB3YUtgjgBzDnI7BnS4TJjyOMhYZJAAPUQgiG4AbUEAdmEAXSZEbUI1AE8Z5BWF5sLrSqMJqdmzFbWMDe2zbMFTURWLEClZah8-ME9VKiDsDBMNpQQieOK-AIwOgNMFxJi-TqEfBqNr0Ih6ODtDT1AQADgK8XYnHIbSMxhEuRy2UpBVhcPhcjCkRgEgAqmA4NhyFAdC5qEyonS4QjyEishxbAJuJzuTpLAkoEkNHQYGxOUZLKjoUZkM53lREcihXyDaLkVqiLCTZDoVa5DaYbFhXJDSi0WktFicSB8fKiZ1SQJyWJqaGcpInfTfgKWQAFKBgMANYJsE0xoXgl1m8WSkCEBNJlPyxJwZWq9UxQpaho6vVZsXG-Wui2gp3WqGOlT6-4YTwgdAMNQcBxgJCgNw6AAqm0ICEQmCgnX7IH0c+M82M6HzYBqMCQAVgHPQYB8+FYQ4cSHMx9P5+H5Gns5I0x3dAwy+BxEQZhE6HCKc5AB1CVNCQNAQFYThuCQH9hHQPwoHIMAOAvB8OB0JBcTMY8IC0DD5ygZE6GXCAHAQncSEI+xl2wOA2HwJI2AAWToVDKKIkAAF9jw4Io50wNguKAA">
               <nu-icon name="external-link" size="1.25em"></nu-icon>
               <nu-tooltip text="nowrap">See the full code snippet in editor</nu-tooltip>
               REPL
@@ -602,7 +602,7 @@
 
       <nu-line></nu-line>
 
-      <nu-grid columns="1cl 1cl||1cl" gap="4x" as="section-block">
+      <nu-grid columns="1pr 1pr||1pr" gap="4x" as="section-block">
         <nu-flow gap>
           <nu-pane>
             <nu-heading>
@@ -655,9 +655,9 @@
         </nu-flow>
       </nu-grid>
     </nu-block>
-  </nu-flow>
+  </nu-section>
 
-  <nu-flow id="basics" as="section">
+  <nu-section id="basics">
     <nu-flow as="section-block" size="lg||md" gap="4x">
       <nu-attrs
         for="code" fill="diff" padding inline border
@@ -696,10 +696,10 @@
 <!--        </nu-markdown>-->
 <!--        <nu-markdown>-->
 <!--          <pre>-->
-<!--            Let's try more attributes to change button size and border radius. Then we can add text transformation. And let's make it a checkbox to actually see **pressed** state.-->
+<!--            Let's try more attributes to change button size and border radius. Then we can add text transformation. And let's make it a toggle button to actually see **pressed** state.-->
 <!--          </pre>-->
 <!--        </nu-markdown>-->
-      <nu-grid columns="15 1fr||1cl" content="space-around" gap="2x" size="md" width="max">
+      <nu-grid columns="15 1fr||1pr" content="space-around" gap="2x" size="md" width="max">
         <nu-block place="start end" size="lg" show="y||n">
           <nu-el>Preview</nu-el>
           <nu-icon name="eye-outline"></nu-icon>
@@ -727,7 +727,7 @@
 
         <nu-flow place="start end||start" gap>
           <nu-btn
-            checkbox
+            toggle
             special radius=".5r"
             size="lg" text="uppercase">
             Button
@@ -738,7 +738,7 @@
           <nu-code>
             <textarea>
               &lt;nu-btn
-                checkbox special
+                toggle special
                 radius=".5r" size="lg" text="uppercase">
                 Button
               &lt;/nu-btn>
@@ -748,10 +748,10 @@
 
         <nu-flow place="start end||start" gap>
           <nu-btn
-            checkbox
+            toggle
             special radius=".5r"
             size="lg" text="uppercase"
-            toggle=":active[1x]" padding="1x">
+            pressing=":active[1x]" padding="1x">
             <nu-icon name="square ^:pressed[checkmark-square-2]"></nu-icon>
             Button
           </nu-btn>
@@ -761,9 +761,9 @@
           <nu-code>
             <textarea>
               &lt;nu-btn
-                checkbox special
+                toggle special
                 radius=".5r" size="lg" text="uppercase"
-                toggle=":active[1x]" padding="1x">
+                pressing=":active[1x]" padding="1x">
                 &lt;nu-icon
                   name="^:pressed[checkmark-square-2] square"/>
                 Button
@@ -775,7 +775,7 @@
 
       <nu-markdown>
         <pre>
-          So **in just few seconds** we created a nice-looking custom-designed checkbox button with **accessibility** attributes and beautiful icon inside that **changes itself depending on button state** with transition.
+          So **in just few seconds** we created a nice-looking custom-designed toggle button with **accessibility** attributes and beautiful icon inside that **changes itself depending on button state** with transition.
         </pre>
       </nu-markdown>
 
@@ -792,10 +792,10 @@
 
       <!--**Try to get** similar result with plain **CSS** or with your favorite **CSS-framework**.-->
     </nu-flow>
-  </nu-flow>
+  </nu-section>
 
 
-  <nu-flow id="responsive" as="section">
+  <nu-section id="responsive">
     <nu-flow as="section-block" gap="4x">
       <nu-heading as="section-header">Responsive layouts</nu-heading>
 
@@ -807,7 +807,7 @@
         to declare style value for each responsive zone.
       </nu-block>
 
-      <nu-grid columns="auto 1fr|1cl" gap="4x">
+      <nu-grid columns="auto 1fr|1pr" gap="4x">
 
         <nu-flow gap="4x">
           <nu-card border overflow="auto" scrollbar fill="diff" shadow>
@@ -911,10 +911,10 @@
 <!--        </nu-pane>-->
 <!--      </nu-flow>-->
     </nu-flow>
-  </nu-flow>
+  </nu-section>
 
 
-  <nu-flow id="theming" as="section" gap="4x">
+  <nu-section id="theming" gap="4x">
     <nu-theme id="demo-theme" hue="272"></nu-theme>
 
     <nu-flow as="section-block" gap="4x||2x" size="lg||md">
@@ -1070,11 +1070,11 @@
 <!--      </nu-flow>-->
 
     </nu-flow>
-  </nu-flow>
+  </nu-section>
 
 
-  <nu-flow
-    as="section" theme="special" padding="4x 0"
+  <nu-section
+    theme="special" padding="4x 0"
     image="linear-gradient(to bottom, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0))">
     <nu-flow as="section-block" gap="4x">
       <nu-block move="-2b 0" grow="1">
@@ -1093,17 +1093,17 @@
 
       <nu-pane size="lg" gap="2x||1x">
         <nu-attrs for="btn" padding="1x 2x||1x"></nu-attrs>
-        <nu-btn special to="!http://localhost:8080/guide/getting-started">I'm ready to start</nu-btn>
+        <nu-btn special to="!/guide/getting-started">I'm ready to start</nu-btn>
       </nu-pane>
     </nu-flow>
-  </nu-flow>
+  </nu-section>
 
 
-  <nu-flow id="footer" as="section" padding="4x 0||4x 0">
+  <nu-footer id="footer" as="section" padding="4x 0||4x 0">
     <nu-flow as="section-block" gap="4x">
       <nu-attrs for="heading" level="4" size="h4|h5" padding="bottom"></nu-attrs>
 
-      <nu-grid columns="1cl 1cl 1cl||1cl 1cl|1cl" gap="4x">
+      <nu-grid columns="1pr 1pr 1pr||1pr 1pr|1pr" gap="4x">
         <nu-flow gap>
           <nu-heading>
             Designed and coded&nbsp;by
@@ -1234,7 +1234,7 @@
           </pre>
         </nu-markdown>
     </nu-flow>
-  </nu-flow>
+  </nu-footer>
 
   <nu-block place="top right 150vh 1" height="100% - 150vh" interactive="no" show="y|n">
     <nu-btn
