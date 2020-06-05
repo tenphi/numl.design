@@ -21,7 +21,7 @@
 <script src="scripts/index.js"></script>
 <noscript>JavaScript is required to see this page.</noscript>
 
-<nu-root responsive="1112px|800px|640px" id="root" place="relative">
+<nu-root responsive="1112px|800px|640px" id="root" box="y">
   <nu-theme id="main-theme" hue="272"></nu-theme>
   <nu-theme name="blue" hue="232" mod="dim"></nu-theme>
   <nu-theme name="green" hue="154" mod="dim"></nu-theme>
@@ -105,7 +105,7 @@
     image="linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0))">
     <nu-flow as="section-block" gap="4x">
       <nu-block move="-2b 0">
-        <nu-heading size="8x" inline place="relative">
+        <nu-heading size="8x" inline box="y">
           numl
           <nu-el size="4x">unity of design&code</nu-el>
           <nu-block place="top left -.5x .4x" size="md" color="text 66%">
@@ -127,14 +127,24 @@
           Markup language to create modern <nu-b>high-quality</nu-b> interfaces with any look.
         </nu-block>
       </nu-block>
-      <nu-pane size="lg||md" gap="2x||1x" text="w5">
+      <nu-pane size="lg||md" gap="2x||1x" text="w5" flow="row wrap">
         <nu-attrs for="btn" padding="1x 2x||1x"></nu-attrs>
-        <nu-btn special to="!/guide/getting-started">Get started</nu-btn>
+        <nu-attrs for="icon"></nu-attrs>
+        <nu-btn special to="/guide/getting-started">
+          <nu-icon name="^:hover[book-open] :focus[book-open] :hover:focus[book-open] book"></nu-icon>
+          Get started
+        </nu-btn>
         <nu-btn to="#features">
-          Why NuML?
+          <nu-icon name="^:hover[arrowhead-down] :focus[arrowhead-down] :hover:focus[arrowhead-down] question-mark-circle-outline"></nu-icon>
+          Why Numl?
         </nu-btn>
         <nu-btn to="#examples">
-          Examples
+          <nu-icon name="^:hover[arrowhead-down] :focus[arrowhead-down] :hover:focus[arrowhead-down] play-circle-outline"></nu-icon>
+          Usage
+        </nu-btn>
+        <nu-btn to="!/storybook">
+          <nu-icon name="^:hover[layout] :focus[layout] :hover:focus[layout] layout-outline"></nu-icon>
+          Storybook
         </nu-btn>
       </nu-pane>
     </nu-flow>
@@ -150,9 +160,9 @@
       <nu-nav padding="2x|1x" gap="1x|0" interactive="^#nav-float:sticky[y] n" inline>
         <nu-attrs for="btn" border=":current[3b inside bottom color(special)] 0" radius="1r 1r 0 0"></nu-attrs>
 
-        <nu-btn padding clear to="#examples">
+        <nu-btn padding clear to="#usage">
           <nu-icon name="play-circle-outline"></nu-icon>
-          <nu-el show="y||n">Examples</nu-el>
+          <nu-el show="y||n">Usage</nu-el>
         </nu-btn>
 
         <nu-btn padding clear to="#basics">
@@ -187,7 +197,7 @@
         <nu-attrs for="heading"></nu-attrs>
 
         <nu-heading as="section-header">
-          Why NuML?
+          Why Numl?
         </nu-heading>
 
         <nu-grid columns="repeat(4, 1pr)|1pr 1pr|1pr" gap="3x">
@@ -238,8 +248,8 @@
       </nu-flow>
 
       <nu-flow gap size="lg||md">
-        <nu-attrs for="heading" level="3" size="h3||h5" color="inherit"></nu-attrs>
-        <nu-attrs for="container" gap padding="0 0 3x 6x||0 0 2x 5x"></nu-attrs>
+        <nu-attrs for="heading" level="3" size="h4||h5" text="bold" color="inherit"></nu-attrs>
+        <nu-attrs for="container" gap padding="0 0 3x 6x||0 0 2x 5x" effect="collapse"></nu-attrs>
 
         <nu-flow place="side-space" width="max 85%|100%" gap="4x">
           <nu-block>
@@ -250,7 +260,7 @@
             <nu-flow gap>
               <nu-btn toggle>
                 <nu-dropdownicon></nu-dropdownicon>
-                <nu-heading>You probably <nu-u>need</nu-u> a&nbsp;design&nbsp;system</nu-heading>
+                <nu-el as="heading">You probably <nu-u>need</nu-u> a&nbsp;design&nbsp;system</nu-el>
               </nu-btn>
 
               <nu-flow id="description" as="container" hidden>
@@ -259,7 +269,7 @@
                 </nu-block>
 
                 <nu-block>
-                  <nu-b>NuML</nu-b> gives you insane level of <nu-b>consistency</nu-b> and <nu-b>controllability</nu-b>. This will make it easier for you to scale your application as it grows.
+                  <nu-b>Numl</nu-b> gives you insane level of <nu-b>consistency</nu-b> and <nu-b>controllability</nu-b>. This will make it easier for you to scale your application as it grows.
                 </nu-block>
               </nu-flow>
             </nu-flow>
@@ -271,12 +281,12 @@
               </nu-btn>
 
               <nu-flow id="description" as="container" hidden>
-                <nu-block>
+                <Ynu-block>
                   It consumes a lot of time and requires high&nbsp;level of&nbsp;expertise in your team.
-                </nu-block>
+                </Ynu-block>
 
                 <nu-block>
-                  With <nu-b>NuML</nu-b> you'll get full-featured Design&nbsp;System with a <nu-b>bunch of elements and components</nu-b> <nu-link to="!/guide/getting-started">in seconds</nu-link>.
+                  With <nu-b>Numl</nu-b> you'll get full-featured Design&nbsp;System with a <nu-b>bunch of elements and components</nu-b> <nu-link to="!/guide/getting-started">in seconds</nu-link>.
                 </nu-block>
               </nu-flow>
             </nu-flow>
@@ -288,7 +298,7 @@
               </nu-btn>
 
               <nu-block id="description" as="container" hidden>
-                In <nu-b>NuML</nu-b> everything is <nu-b>customizable</nu-b> to&nbsp;the&nbsp;core and uses generation techniques to&nbsp;give you the&nbsp;newest features of&nbsp;the&nbsp;platform (like <nu-b>Flex gap</nu-b>). It means the&nbsp;markup of&nbsp;your project will&nbsp;be up-to-date with <nu-b>the&nbsp;latest web&nbsp;standards</nu-b> and <nu-b>best&nbsp;practices</nu-b> for at least the <nu-b>next decade</nu-b>.
+                In <nu-b>Numl</nu-b> everything is <nu-b>customizable</nu-b> to&nbsp;the&nbsp;core and uses generation techniques to&nbsp;give you the&nbsp;newest features of&nbsp;the&nbsp;platform (like <nu-b>Flex gap</nu-b>). It means the&nbsp;markup of&nbsp;your project will&nbsp;be up-to-date with <nu-b>the&nbsp;latest web&nbsp;standards</nu-b> and <nu-b>best&nbsp;practices</nu-b> for at least the <nu-b>next decade</nu-b>.
               </nu-block>
             </nu-flow>
 
@@ -300,11 +310,11 @@
 
               <nu-flow id="description" as="container" hidden>
                 <nu-block>
-                  <nu-b>NuML</nu-b> don't require a build step. Everything is happening in runtime.
+                  <nu-b>Numl</nu-b> don't require a build step. Everything is happening in runtime.
                 </nu-block>
 
                 <nu-block>
-                  Simply <nu-link>add NuML script</nu-link> to your page and <nu-b>start prototyping</nu-b>.
+                  Simply <nu-link>add Numl script</nu-link> to your page and <nu-b>start prototyping</nu-b>.
                 </nu-block>
 
                 <nu-block>
@@ -360,13 +370,13 @@
     </nu-flow>
   </nu-section>
 
-  <nu-section id="examples" gap="0">
+  <nu-section id="usage" gap="0">
     <nu-attrs for="code" padding="1x 2x" border overflow="auto" scrollbar width="100%"></nu-attrs>
 
     <nu-flow as="section-block" gap="4x">
-      <nu-attrs for="btn" fill=":pressed[special-bg] bg" color pressing=":active[1]"></nu-attrs>
+      <nu-attrs for="btn" fill=":pressed[special-bg] bg" color inset="n :active[y]"></nu-attrs>
 
-      <nu-heading as="section-header">Design with NuML</nu-heading>
+      <nu-heading as="section-header">Design with Numl</nu-heading>
 
       <nu-radiogroup value="login-form" gap flow="row wrap" items="center" text="w6">
         <nu-btn value="login-form">Form with validation</nu-btn>
@@ -390,7 +400,7 @@
 <!--              <nu-block size="xs" padding color="text 66%" text="w6 nowrap">More examples to come...</nu-block>-->
 <!--            </nu-popup>-->
 <!--          </nu-btn>-->
-<!--          with <nu-el text="w6">NuML</nu-el>-->
+<!--          with <nu-el text="w6">Numl</nu-el>-->
 <!--        </nu-block>-->
 <!--      </nu-pane>-->
 <!--    </nu-block>-->
@@ -649,8 +659,8 @@
             Possibilities are <nu-mark>ENDLESS</nu-mark>.
           </nu-block>
           <nu-pane size="lg||md" flow="row wrap">
-            <nu-btn special to="!/storybook">Visit our Storybook</nu-btn>
-            <nu-btn special to="!/repl">Try our REPL</nu-btn>
+            <nu-btn special to="!/storybook">Visit Storybook</nu-btn>
+            <nu-btn special to="!/repl">Try out REPL</nu-btn>
           </nu-pane>
         </nu-flow>
       </nu-grid>
@@ -667,7 +677,7 @@
 
       <nu-markdown>
         <textarea>
-          **NuML** is a markup language with a very **intuitive** syntax.
+          **Numl** is a markup language with a very **intuitive** syntax.
 
           If you're experienced in web development you will need minutes to&nbsp;learn basics. Syntax is based on classic **HTML** tags, **CSS** & **ARIA** specifications. Each element has almost the same styling **API**, which greatly facilitates the study.
         </textarea>
@@ -677,7 +687,7 @@
 
 <!--      <nu-markdown>-->
 <!--        <pre>-->
-<!--          **NuML** is based on so-called ==Atomic approach==. But instead of atomic classes (like in popular framework **Tailwind**) it uses attributes and allows any value you provide. You can even use custom units like ==x== (default gap) for short.-->
+<!--          **Numl** is based on so-called ==Atomic approach==. But instead of atomic classes (like in popular framework **Tailwind**) it uses attributes and allows any value you provide. You can even use custom units like ==x== (default gap) for short.-->
 <!--        </pre>-->
 <!--      </nu-markdown>-->
 
@@ -751,7 +761,7 @@
             toggle
             special radius=".5r"
             size="lg" text="uppercase"
-            pressing=":active[1x]" padding="1x">
+            inset=":active[1x]" padding="1x">
             <nu-icon name="square ^:pressed[checkmark-square-2]"></nu-icon>
             Button
           </nu-btn>
@@ -763,7 +773,7 @@
               &lt;nu-btn
                 toggle special
                 radius=".5r" size="lg" text="uppercase"
-                pressing=":active[1x]" padding="1x">
+                inset=":active[1x]" padding="1x">
                 &lt;nu-icon
                   name="^:pressed[checkmark-square-2] square"/>
                 Button
@@ -1078,7 +1088,7 @@
     image="linear-gradient(to bottom, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0))">
     <nu-flow as="section-block" gap="4x">
       <nu-block move="-2b 0" grow="1">
-        <nu-heading size="8x" inline place="relative">
+        <nu-heading size="8x" inline box="y">
           numl
           <nu-el size="4x">unity of design&code</nu-el>
           <nu-block place="top left -.5x .4x" size="md" color="text 66%">
@@ -1093,7 +1103,10 @@
 
       <nu-pane size="lg" gap="2x||1x">
         <nu-attrs for="btn" padding="1x 2x||1x"></nu-attrs>
-        <nu-btn special to="!/guide/getting-started">I'm ready to start</nu-btn>
+        <nu-btn special to="!/guide/getting-started">
+          <nu-icon name="^:hover[book-open] :focus[book-open] :hover:focus[book-open] book"></nu-icon>
+          I'm ready to start
+        </nu-btn>
       </nu-pane>
     </nu-flow>
   </nu-section>
@@ -1133,7 +1146,7 @@
           </nu-block>
 
           <nu-block>
-            <nu-b>NuML</nu-b> is an indi-project for now. We will be appreciated for any help and feedback!
+            <nu-b>Numl</nu-b> is an indi-project for now. We will be appreciated for any help and feedback!
           </nu-block>
 
           <nu-heading padding="top">
@@ -1159,11 +1172,11 @@
           </nu-block>
 
           <nu-block>
-            <nu-link to="!https://github.com/jonschlinkert">@jonschlinkert</nu-link> - For the <nu-link to="!https://github.com/jonschlinkert/remarkable">remarkable</nu-link> parser that is used in <nu-b>NuML</nu-b> to convert Markdown.
+            <nu-link to="!https://github.com/jonschlinkert">@jonschlinkert</nu-link> - For the <nu-link to="!https://github.com/jonschlinkert/remarkable">remarkable</nu-link> parser that is used in <nu-b>Numl</nu-b> to convert Markdown.
           </nu-block>
 
           <nu-block>
-            <nu-link to="!https://github.com/lrsjng">@lrsjng</nu-link> - For lightweight tokenizer <nu-link to="!https://github.com/lrsjng/lolight">lolight</nu-link> that NuML code tokenizer is based on.
+            <nu-link to="!https://github.com/lrsjng">@lrsjng</nu-link> - For lightweight tokenizer <nu-link to="!https://github.com/lrsjng/lolight">lolight</nu-link> that Numl code tokenizer is based on.
           </nu-block>
         </nu-flow>
 
@@ -1230,7 +1243,7 @@
 
         <nu-markdown theme="tone" size="md" padding="4x right">
           <pre>
-            ==FYI==: This page is made using **NuML** with **zero CSS** assets and **tiny JS** script. See the [source code](!https://github.com/tenphi/numl.design) to learn more.
+            ==FYI==: This page is made using **Numl** with **zero CSS** assets and **tiny JS** script. See the [source code](!https://github.com/tenphi/numl.design) to learn more.
           </pre>
         </nu-markdown>
     </nu-flow>
