@@ -58,7 +58,7 @@
 
         <nu-el
           text="w7" size="md" transition="opacity"
-          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.12</nu-el>
+          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.13</nu-el>
       </nu-pane>
 
       <nu-pane size="md" text="w5">
@@ -142,7 +142,7 @@
           <nu-icon name="^:hover[arrowhead-down] :focus[arrowhead-down] :hover:focus[arrowhead-down] play-circle-outline"></nu-icon>
           Usage
         </nu-btn>
-        <nu-btn to="!/storybook">
+        <nu-btn to="/storybook">
           <nu-icon name="^:hover[layout] :focus[layout] :hover:focus[layout] layout-outline"></nu-icon>
           Storybook
         </nu-btn>
@@ -260,7 +260,7 @@
             <nu-flow gap>
               <nu-btn toggle>
                 <nu-dropdownicon></nu-dropdownicon>
-                <nu-el as="heading">You probably <nu-u>need</nu-u> a&nbsp;design&nbsp;system</nu-el>
+                <nu-el as="heading">You probably <nu-in text="u">need</nu-in> a&nbsp;design&nbsp;system</nu-el>
               </nu-btn>
 
               <nu-flow id="description" as="container" hidden>
@@ -761,7 +761,7 @@
             toggle
             special radius=".5r"
             size="lg" text="uppercase"
-            inset=":active[1x]" padding="1x">
+            inset="n :active[1x]" padding="1x">
             <nu-icon name="square ^:pressed[checkmark-square-2]"></nu-icon>
             Button
           </nu-btn>
@@ -773,7 +773,7 @@
               &lt;nu-btn
                 toggle special
                 radius=".5r" size="lg" text="uppercase"
-                inset=":active[1x]" padding="1x">
+                inset="n :active[1x]" padding="1x">
                 &lt;nu-icon
                   name="^:pressed[checkmark-square-2] square"/>
                 Button
@@ -789,16 +789,18 @@
         </pre>
       </nu-markdown>
 
-<!--      <nu-flow gap>-->
-<!--        <nu-el size="lg||md">Learn more in our Guide:</nu-el>-->
+      <nu-flow gap>
+        <nu-el size="lg||md">Learn more in our Guide:</nu-el>
 
-<!--        <nu-pane size="md" flow="row wrap">-->
-<!--          <nu-btn special>Basics</nu-btn>-->
+        <nu-pane size="md" flow="row wrap">
+          <nu-btn special to="!https://numl.design/guide/basics/base-syntax">
+            Base syntax
+          </nu-btn>
 <!--          <nu-btn special>Custom units</nu-btn>-->
 <!--          <nu-btn special>State modifiers</nu-btn>-->
 <!--          <nu-btn special>Batch styling</nu-btn>-->
-<!--        </nu-pane>-->
-<!--      </nu-flow>-->
+        </nu-pane>
+      </nu-flow>
 
       <!--**Try to get** similar result with plain **CSS** or with your favorite **CSS-framework**.-->
     </nu-flow>
@@ -1103,7 +1105,7 @@
 
       <nu-pane size="lg" gap="2x||1x">
         <nu-attrs for="btn" padding="1x 2x||1x"></nu-attrs>
-        <nu-btn special to="!/guide/getting-started">
+        <nu-btn special to="/guide/getting-started">
           <nu-icon name="^:hover[book-open] :focus[book-open] :hover:focus[book-open] book"></nu-icon>
           I'm ready to start
         </nu-btn>
@@ -1187,23 +1189,23 @@
 
           <nu-list size="md">
             <nu-listitem>
-              <nu-link>REPL</nu-link>
+              <nu-link to="/repl">REPL</nu-link>
             </nu-listitem>
 
             <nu-listitem>
-              <nu-link>Guide</nu-link>
+              <nu-link to="/guide/getting-started">Guide</nu-link>
             </nu-listitem>
 
             <nu-listitem>
-              <nu-link>Storybook</nu-link>
+              <nu-link to="/storybook">Storybook</nu-link>
             </nu-listitem>
 
             <nu-listitem>
-              <nu-link>API Reference</nu-link>
+              <nu-link to="/reference/elements/nu-el">API Reference</nu-link>
             </nu-listitem>
 
             <nu-listitem>
-              <nu-link>NUDE Framework</nu-link>
+              <nu-link to="/framework/what-is-nude">NUDE Framework</nu-link>
             </nu-listitem>
           </nu-list>
         </nu-flow>
