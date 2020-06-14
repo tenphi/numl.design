@@ -190,7 +190,7 @@
           for="feature"
           gap="1x 2x" clear shadow="1.5 :hover[1]" text="w5"
           display="block||grid" flow="column||row" columns="auto 1fr" rows="auto 1fr"></nu-attrs>
-        <nu-attrs for="feature-icon" size="5x" place="top right 2.5x 2x||start" move="0||0 .5x" row="span 2"></nu-attrs>
+        <nu-attrs for="feature-icon" size="5x" place="top right 2x 1x||start" move="0||0 .5x" row="span 2"></nu-attrs>
         <nu-attrs
           for="feature-action" name="arrowhead-down"
           opacity="^card :hover[1] :focus[1] :hover:focus[1] .5" size="1em"></nu-attrs>
@@ -248,10 +248,10 @@
       </nu-flow>
 
       <nu-flow gap size="lg||md">
-        <nu-attrs for="heading" level="3" size="h4||h5" text="bold" color="inherit"></nu-attrs>
+        <nu-attrs for="heading" level="3" size="h4||h5" text="bold wrap" color="inherit"></nu-attrs>
         <nu-attrs for="container" gap padding="0 0 3x 6x||0 0 2x 5x" effect="collapse"></nu-attrs>
 
-        <nu-flow place="side-space" width="max 85%|100%" gap="4x">
+        <nu-flow place="space-around" width="max 85%|100%" gap="4x">
           <nu-block>
             <nu-attrs
               for="btn" clear control="description" padding
@@ -277,7 +277,7 @@
             <nu-flow gap>
               <nu-btn toggle>
                 <nu-dropdownicon></nu-dropdownicon>
-                <nu-heading>Creating and maintaining a&nbsp;design&nbsp;system on your own is&nbsp;tough</nu-heading>
+                <nu-el as="heading">Creating and maintaining a&nbsp;design&nbsp;system on your own is&nbsp;tough</nu-el>
               </nu-btn>
 
               <nu-flow id="description" as="container" hidden>
@@ -294,7 +294,7 @@
             <nu-flow gap>
               <nu-btn toggle>
                 <nu-dropdownicon></nu-dropdownicon>
-                <nu-heading>Customization & future-proof are requirements</nu-heading>
+                <nu-el as="heading">Customization & future-proof are requirements</nu-el>
               </nu-btn>
 
               <nu-block id="description" as="container" hidden>
@@ -305,7 +305,7 @@
             <nu-flow gap>
               <nu-btn toggle>
                 <nu-dropdownicon></nu-dropdownicon>
-                <nu-heading>There is <nu-u>no</nu-u> time to wait</nu-heading>
+                <nu-el as="heading">There is <nu-u>no</nu-u> time to wait</nu-el>
               </nu-btn>
 
               <nu-flow id="description" as="container" hidden>
@@ -610,9 +610,9 @@
         </nu-flow>
       </nu-grid>
 
-      <nu-line></nu-line>
-
       <nu-grid columns="1pr 1pr||1pr" gap="4x" as="section-block">
+        <nu-line column="1 / -1"></nu-line>
+
         <nu-flow gap>
           <nu-pane>
             <nu-heading>
@@ -933,7 +933,7 @@
       <nu-flow gap>
         <nu-heading as="section-header">Theming</nu-heading>
 
-        <nu-pane size="lg h1||md h1" flow="row wrap" gap="0 1x">
+        <nu-pane size="lg h1||md h1" flow="row wrap" gap="0 2x">
           <nu-el text="nowrap">Choose a <nu-strong>hue</nu-strong></nu-el>
           <nu-slider id="hue-slider" control="demo-theme[hue] hue[.value]" value="272" min="0" max="359" width="12"></nu-slider>
           <nu-btn special control="demo-theme[hue] hue-slider[.value]" value="272" size="xs">reset</nu-btn>
