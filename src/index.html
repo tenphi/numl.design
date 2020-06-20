@@ -57,8 +57,8 @@
         </nu-blocklink>
 
         <nu-el
-          text="w7" size="md" transition="opacity"
-          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.13</nu-el>
+          text="b" size="md" transition="opacity"
+          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.18</nu-el>
       </nu-pane>
 
       <nu-pane size="md" text="w5">
@@ -102,7 +102,7 @@
 
   <nu-section
     padding="26x 0 16x||14x 0 4x" theme="special"
-    image="linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0))">
+    image="linear(-20deg, hsi(260), hsi(290))">
     <nu-flow as="section-block" gap="4x">
       <nu-block move="-2b 0">
         <nu-heading size="8x" inline box="y">
@@ -134,15 +134,15 @@
           <nu-icon name="^:hover[book-open] :focus[book-open] :hover:focus[book-open] book"></nu-icon>
           Get started
         </nu-btn>
-        <nu-btn to="#features">
+        <nu-btn to="#features" clear>
           <nu-icon name="^:hover[arrowhead-down] :focus[arrowhead-down] :hover:focus[arrowhead-down] question-mark-circle-outline"></nu-icon>
           Why Numl?
         </nu-btn>
-        <nu-btn to="#examples">
+        <nu-btn to="#examples" clear>
           <nu-icon name="^:hover[arrowhead-down] :focus[arrowhead-down] :hover:focus[arrowhead-down] play-circle-outline"></nu-icon>
           Usage
         </nu-btn>
-        <nu-btn to="/storybook">
+        <nu-btn to="/storybook" clear>
           <nu-icon name="^:hover[layout] :focus[layout] :hover:focus[layout] layout-outline"></nu-icon>
           Storybook
         </nu-btn>
@@ -248,7 +248,7 @@
       </nu-flow>
 
       <nu-flow gap size="md">
-        <nu-attrs for="h3" level="3" size="h4||h5" padding="top 1em" theme="tone strong"></nu-attrs>
+        <nu-attrs for="h3" level="3" size="h4||h5" padding="top 1em"></nu-attrs>
         <nu-attrs for="container" gap effect="collapse"></nu-attrs>
 
         <nu-heading level="2" size="h2||h3">Design System as a&nbsp;Service</nu-heading>
@@ -278,7 +278,7 @@
           Make your project unique
         </nu-h3>
         <nu-block>
-          <nu-strong>Numl</nu-strong> is not like other design systems. Any little thing changes <nu-strong>easily</nu-strong>, which gives you an incredible level of <nu-strong>control</nu-strong>, but at the same time preserves the <nu-strong>integrity</nu-strong> of your design. Because of this feature, <nu-strong>Numl</nu-strong> can be considered as a <nu-em>framework for design systems</nu-em>. A unique theme system will turn the coloring of elements into pleasure, as well as give your site a <nu-strong>dark theme</nu-strong> and <nu-strong>high contrast mode</nu-strong> without any effort.
+          <nu-strong>Numl</nu-strong> is not like other design systems. Any property or decoration changes <nu-strong>easily</nu-strong>, which gives you an incredible level of <nu-strong>control</nu-strong>, but at the same time preserves the <nu-strong>integrity</nu-strong> of your design. Because of this feature, <nu-strong>Numl</nu-strong> can be considered as a <nu-em>framework for design systems</nu-em>. A unique theme system will turn the coloring of elements into pleasure, as well as give your site a <nu-strong>dark theme</nu-strong> and <nu-strong>high contrast mode</nu-strong> without any effort.
         </nu-block>
       </nu-flow>
 
