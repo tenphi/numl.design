@@ -23,12 +23,12 @@
 
 <nu-root responsive="1112px|800px|640px" id="root" box="y">
   <nu-theme id="main-theme" hue="272"></nu-theme>
-  <nu-theme name="blue" hue="232" mod="dim"></nu-theme>
-  <nu-theme name="green" hue="154" mod="dim"></nu-theme>
-  <nu-theme name="orange" hue="45" mod="dim"></nu-theme>
-  <nu-theme name="purple" hue="301" mod="dim"></nu-theme>
-  <nu-theme name="lime" hue="96" mod="dim"></nu-theme>
-  <nu-theme name="red" hue="1" mod="dim"></nu-theme>
+  <nu-theme name="blue" hue="232" mod="dim" pastel></nu-theme>
+  <nu-theme name="green" hue="154" mod="dim" pastel></nu-theme>
+<!--  <nu-theme name="orange" hue="45" mod="dim"></nu-theme>-->
+  <nu-theme name="purple" hue="301" mod="dim" pastel></nu-theme>
+<!--  <nu-theme name="lime" hue="96" mod="dim"></nu-theme>-->
+  <nu-theme name="red" hue="1" mod="dim" pastel></nu-theme>
 
   <nu-attrs
     role="article"
@@ -234,7 +234,7 @@
             </nu-block>
           </nu-cardbtn>
 
-          <nu-cardbtn as="feature" theme="lime tint" to="!https://github.com/tenphi/numl">
+          <nu-cardbtn as="feature" theme="purple tint" to="!https://github.com/tenphi/numl">
             <nu-icon as="feature-icon" name="code-outline"></nu-icon>
             <nu-heading level="3" size="h4">
               Free
@@ -799,7 +799,7 @@
 
           <nu-flex flow="row wrap" gap="1x 2x">
             <nu-block>
-              <nu-mark theme="red" special>* responsive breakpoints</nu-mark>
+              <nu-mark fill="hsi(1, 70)" special>* responsive breakpoints</nu-mark>
             </nu-block>
 
             <nu-block>
