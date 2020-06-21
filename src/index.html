@@ -58,7 +58,7 @@
 
         <nu-el
           text="b" size="md" transition="opacity"
-          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.18</nu-el>
+          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.19</nu-el>
       </nu-pane>
 
       <nu-pane size="md" text="w5">
@@ -84,7 +84,7 @@
           <nu-icon name="message-circle-outline"></nu-icon>
           <nu-el show="y|n|y|n">Join chat</nu-el>
           <nu-dropdownicon></nu-dropdownicon>
-          <nu-popup nx-listbox to="!https://tele.click/telegram" padding="0">
+          <nu-popup nx-listbox padding="0">
             <nu-props opacity-transition-time=".08s"></nu-props>
             <nu-itembtn to="!https://tele.click/numldesign" columns="1fr auto">
               Telegram
@@ -102,7 +102,7 @@
 
   <nu-section
     padding="26x 0 16x||14x 0 4x" theme="special"
-    image="linear(-20deg, hsi(260), hsi(290))">
+    image="linear(-20deg, hsi(260, 70), hsi(290, 70))">
     <nu-flow as="section-block" gap="4x">
       <nu-block move="-2b 0">
         <nu-heading size="8x" inline box="y">
@@ -138,7 +138,7 @@
           <nu-icon name="^:hover[arrowhead-down] :focus[arrowhead-down] :hover:focus[arrowhead-down] question-mark-circle-outline"></nu-icon>
           Why Numl?
         </nu-btn>
-        <nu-btn to="#examples" clear>
+        <nu-btn to="#usage" clear>
           <nu-icon name="^:hover[arrowhead-down] :focus[arrowhead-down] :hover:focus[arrowhead-down] play-circle-outline"></nu-icon>
           Usage
         </nu-btn>
@@ -1047,7 +1047,7 @@
 
   <nu-section
     theme="special" padding="4x 0"
-    image="linear(-20deg, hsi(260), hsi(290))">
+    image="linear(-20deg, hsi(260, 70), hsi(290, 70))">
     <nu-flow as="section-block" gap="4x">
       <nu-block move="-2b 0" grow="1">
         <nu-heading size="8x" inline box="y">
