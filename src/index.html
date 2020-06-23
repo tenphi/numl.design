@@ -39,6 +39,10 @@
             padding="4x||2x"></nu-attrs>
   <nu-attrs for="section-header" size="h1||h3"></nu-attrs>
   <nu-attrs for="bold" text="w6" force></nu-attrs>
+  <nu-attrs for="from-left" nx-appear move="-8x 0 :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
+  <nu-attrs for="from-right" nx-appear move="8x 0 :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
+  <nu-attrs for="from-bottom" nx-appear move="0 8x :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
+  <nu-attrs for="from-top" nx-appear move="0 -4x :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
 
   <nu-header
     as="section" padding="0" border="0" place="fixed top"
@@ -51,17 +55,17 @@
     <nu-pane
       as="section-block" content="space-between" height="100%" transition="height"
       padding="2x 4x||1x 2x">
-      <nu-pane color="special">
+      <nu-pane as="from-left" color="special" opacity="0 :appear[1]">
         <nu-blocklink to="#root" radius="2x" hoverable="1.5x">
           <nu-svg name="nude-logo-small" width="5x||4x" height="5x||4x" display="block"></nu-svg>
         </nu-blocklink>
 
         <nu-el
           text="b" size="md" transition="opacity"
-          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.19</nu-el>
+          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.20</nu-el>
       </nu-pane>
 
-      <nu-pane size="md" text="w5">
+      <nu-pane as="from-right" size="md" text="w5" opacity="0 :appear[1]">
         <nu-attrs for="btn" padding="1x"></nu-attrs>
 
         <nu-btn show="^root:dev[y] n" clear toggle control=":root[data-nu-outline]">
@@ -102,7 +106,7 @@
 
   <nu-section
     padding="26x 0 16x||14x 0 4x" theme="special"
-    image="linear(-20deg, hsi(260, 70), hsi(290, 70))">
+    image="linear(-20deg, hue(260 70 special), hue(290 70 special))" box="y">
     <nu-flow as="section-block" gap="4x">
       <nu-block move="-2b 0">
         <nu-heading size="8x" inline box="y">
@@ -127,7 +131,7 @@
           Markup language to create modern <nu-strong>high-quality</nu-strong> interfaces with any look.
         </nu-block>
       </nu-block>
-      <nu-pane size="lg||md" gap="2x||1x" text="w5" flow="row wrap">
+      <nu-pane as="from-bottom" nx-appear="timeout:500" opacity="0 :appear[1]" size="lg||md" gap="2x||1x" text="w5" flow="row wrap">
         <nu-attrs for="btn" padding="1x 2x||1x"></nu-attrs>
         <nu-attrs for="icon"></nu-attrs>
         <nu-btn special to="/guide/getting-started">
@@ -188,20 +192,20 @@
       <nu-flow gap="4x">
         <nu-attrs
           for="feature"
-          gap="1x 2x" clear shadow="1.5 :hover[1]" text="w5"
-          display="block||grid" flow="column||row" columns="auto 1fr" rows="auto 1fr"></nu-attrs>
-        <nu-attrs for="feature-icon" size="5x" place="top right 2x 1x||start" move="0||0 .5x" row="span 2"></nu-attrs>
+          gap clear shadow="1.5 :hover[1]" text="w5"
+          display="grid" flow="column||row" columns="auto 1fr" rows="auto 1fr"></nu-attrs>
+        <nu-attrs for="feature-icon" size="5x" place="top right 1x||start" move="0||0 .5x" row="span 2"></nu-attrs>
         <nu-attrs
           for="feature-action" name="arrowhead-down"
           opacity="^card :hover[1] :focus[1] :hover:focus[1] .5" size="1em"></nu-attrs>
         <nu-attrs for="heading"></nu-attrs>
 
-        <nu-heading as="section-header">
+        <nu-h2 as="section-header from-left" opacity="0 :appear[1]">
           Why Numl?
-        </nu-heading>
+        </nu-h2>
 
         <nu-grid columns="repeat(4, 1pr)|1pr 1pr|1pr" gap="3x">
-          <nu-cardbtn as="feature" theme="blue tint" to="#basics">
+          <nu-cardbtn as="feature from-bottom" theme="blue tint" to="#basics" opacity="0 :appear[1]" nx-appear="timeout:200">
             <nu-icon as="feature-icon" name="bulb-outline"></nu-icon>
             <nu-heading level="3" size="h4">
               Easy to learn
@@ -212,7 +216,7 @@
             </nu-block>
           </nu-cardbtn>
 
-          <nu-cardbtn as="feature" theme="green tint" to="#responsive">
+          <nu-cardbtn as="feature from-bottom" theme="green tint" to="#responsive" opacity="0 :appear[1]" nx-appear="timeout:400">
             <nu-icon as="feature-icon" name="layout-outline"></nu-icon>
             <nu-heading level="3" size="h4">
               Responsive
@@ -223,7 +227,7 @@
             </nu-block>
           </nu-cardbtn>
 
-          <nu-cardbtn as="feature" theme="red tint" to="#theming">
+          <nu-cardbtn as="feature from-bottom" theme="red tint" to="#theming" opacity="0 :appear[1]" nx-appear="timeout:600">
             <nu-icon as="feature-icon" name="color-palette-outline"></nu-icon>
             <nu-heading level="3" size="h4">
               Themeable
@@ -234,7 +238,7 @@
             </nu-block>
           </nu-cardbtn>
 
-          <nu-cardbtn as="feature" theme="purple tint" to="!https://github.com/tenphi/numl">
+          <nu-cardbtn as="feature from-bottom" theme="purple tint" to="!https://github.com/tenphi/numl" opacity="0 :appear[1]" nx-appear="timeout:800">
             <nu-icon as="feature-icon" name="code-outline"></nu-icon>
             <nu-heading level="3" size="h4">
               Free
@@ -250,39 +254,48 @@
       <nu-flow gap size="md">
         <nu-attrs for="h3" level="3" size="h4||h5" padding="top 1em"></nu-attrs>
         <nu-attrs for="container" gap effect="collapse"></nu-attrs>
+        <nu-attrs for="flow" gap></nu-attrs>
 
-        <nu-heading level="2" size="h2||h3">Design System as a&nbsp;Service</nu-heading>
+        <nu-h3 size="h2||h3" as="from-left" opacity="0 :appear[1]">Design System as a&nbsp;Service</nu-h3>
 
-        <nu-h3>
-          You probably <nu-in text="u">need</nu-in> a&nbsp;design&nbsp;system
-        </nu-h3>
-        <nu-block>
-          Modern web development is <nu-strong>very complex</nu-strong> with dozens of new standards and tools every day, which even the most experienced web developer cannot learn fast enough. To be able to create <nu-strong>high-quality</nu-strong> web interfaces it's required to have abstractions. A <nu-strong>Design system</nu-strong> is one of these abstractions, and <nu-strong>Numl</nu-strong> is one of the most advanced design systems so far with a set of unique features.
-        </nu-block>
+        <nu-flow as="from-bottom" opacity="0 :appear[1]">
+          <nu-h3>
+            You probably <nu-in text="u">need</nu-in> a&nbsp;design&nbsp;system
+          </nu-h3>
+          <nu-block>
+            Modern web development is <nu-strong>very complex</nu-strong> with dozens of new standards and tools every day, which even the most experienced web developer cannot learn fast enough. To be able to create <nu-strong>high-quality</nu-strong> web interfaces it's required to have abstractions. A <nu-strong>Design system</nu-strong> is one of these abstractions, and <nu-strong>Numl</nu-strong> is one of the most advanced design systems so far with a set of unique features.
+          </nu-block>
+        </nu-flow>
 
-        <nu-h3>
-          Creating and maintaining a design system on your own is tough
-        </nu-h3>
-        <nu-block>
-          It consumes a lot of time and requires a <nu-strong>high level of expertise</nu-strong> in your team. You would have to hire experts in UX, Mobile UX, Javascript, CSS, SEO, Accessibility, Design, Typography, Frontend Architecture, etc... With <nu-strong>Numl</nu-strong> you will be able to create high-quality web interfaces with the power of a small team of frontend engineers with the middle level of expertise.
-        </nu-block>
+        <nu-flow as="from-bottom" opacity="0 :appear[1]">
+          <nu-h3>
+            Creating and maintaining a design system on your own is tough
+          </nu-h3>
+          <nu-block>
+            It consumes a lot of time and requires a <nu-strong>high level of expertise</nu-strong> in your team. You would have to hire experts in UX, Mobile UX, Javascript, CSS, SEO, Accessibility, Design, Typography, Frontend Architecture, etc... With <nu-strong>Numl</nu-strong> you will be able to create high-quality web interfaces with the power of a small team of frontend engineers with the middle level of expertise.
+          </nu-block>
+        </nu-flow>
 
-        <nu-h3>
-          Technologies are constantly becoming obsolete
-        </nu-h3>
-        <nu-block>
-          To keep your site up to date, you need tools that evolve with technology. <nu-strong>Numl</nu-strong> is not bound to the framework and is based on modern web standards, and also uses code generation techniques, which allows you to use the most advanced technologies and practices, as well as update them, updating the design system, rather than rewriting your entire codebase.
-        </nu-block>
+        <nu-flow as="from-bottom" opacity="0 :appear[1]">
+          <nu-h3>
+            Technologies are constantly becoming obsolete
+          </nu-h3>
+          <nu-block>
+            To keep your site up to date, you need tools that evolve with technology. <nu-strong>Numl</nu-strong> is not bound to the framework and is based on modern web standards, and also uses code generation techniques, which allows you to use the most advanced technologies and practices, as well as update them, updating the design system, rather than rewriting your entire codebase.
+          </nu-block>
+        </nu-flow>
 
-        <nu-h3>
-          Make your project unique
-        </nu-h3>
-        <nu-block>
-          <nu-strong>Numl</nu-strong> is not like other design systems. Any property or decoration changes <nu-strong>easily</nu-strong>, which gives you an incredible level of <nu-strong>control</nu-strong>, but at the same time preserves the <nu-strong>integrity</nu-strong> of your design. Because of this feature, <nu-strong>Numl</nu-strong> can be considered as a <nu-em>framework for design systems</nu-em>. A unique theme system will turn the coloring of elements into pleasure, as well as give your site a <nu-strong>dark theme</nu-strong> and <nu-strong>high contrast mode</nu-strong> without any effort.
-        </nu-block>
+        <nu-flow as="from-bottom" opacity="0 :appear[1]">
+          <nu-h3>
+            Make your project unique
+          </nu-h3>
+          <nu-block>
+            <nu-strong>Numl</nu-strong> is not like other design systems. Any property or decoration changes <nu-strong>easily</nu-strong>, which gives you an incredible level of <nu-strong>control</nu-strong>, but at the same time preserves the <nu-strong>integrity</nu-strong> of your design. Because of this feature, <nu-strong>Numl</nu-strong> can be considered as a <nu-em>framework for design systems</nu-em>. A unique theme system will turn the coloring of elements into pleasure, as well as give your site a <nu-strong>dark theme</nu-strong> and <nu-strong>high contrast mode</nu-strong> without any effort.
+          </nu-block>
+        </nu-flow>
       </nu-flow>
 
-      <nu-flow place="space-around" gap="4x">
+      <nu-flow place="space-around" gap="4x" as="from-bottom" opacity="0 :appear[1]">
         <nu-flow gap>
           <nu-heading level="4" size="h3||h5">Features</nu-heading>
 
@@ -296,7 +309,7 @@
             <nu-badge>Dark scheme</nu-badge>
             <nu-badge>High contrast mode</nu-badge>
             <nu-badge>Shadow DOM support</nu-badge>
-            <nu-badge>Accessible colors</nu-badge>
+            <nu-badge>Adaptive colors</nu-badge>
             <nu-badge>Various icon sets</nu-badge>
             <nu-badge>Popup position fix</nu-badge>
             <nu-badge>Locale formatting</nu-badge>
@@ -799,7 +812,7 @@
 
           <nu-flex flow="row wrap" gap="1x 2x">
             <nu-block>
-              <nu-mark fill="hsi(1, 70)" special>* responsive breakpoints</nu-mark>
+              <nu-mark fill="hue(1 70 special)" special>* responsive breakpoints</nu-mark>
             </nu-block>
 
             <nu-block>
@@ -895,7 +908,10 @@
 
         <nu-pane size="lg h1||md h1" flow="row wrap" gap="0 2x">
           <nu-el text="nowrap">Choose a <nu-strong>hue</nu-strong></nu-el>
-          <nu-slider id="hue-slider" control="demo-theme[hue] hue[.value]" value="272" min="0" max="359" width="12"></nu-slider>
+          <nu-slider
+            id="hue-slider" control="demo-theme[hue] hue[.value]" value="272" min="0" max="359"
+            width="12" theme="tint"
+            image="linear(to right, hue(0 s), hue(90 s), hue(180 s), hue(270 s), hue(0 s))"></nu-slider>
           <nu-btn special control="demo-theme[hue] hue-slider[.value]" value="272" size="xs">reset</nu-btn>
         </nu-pane>
       </nu-flow>
@@ -1047,7 +1063,7 @@
 
   <nu-section
     theme="special" padding="4x 0"
-    image="linear(-20deg, hsi(260, 70), hsi(290, 70))">
+    image="linear(-20deg, hue(260 70 special), hue(290 70 special))">
     <nu-flow as="section-block" gap="4x">
       <nu-block move="-2b 0" grow="1">
         <nu-heading size="8x" inline box="y">
