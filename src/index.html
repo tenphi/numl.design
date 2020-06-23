@@ -84,9 +84,9 @@
           </nu-btn>
         </nu-pane>
 
-        <nu-btn special>
+        <nu-btn special labelledby="label">
           <nu-icon name="message-circle-outline"></nu-icon>
-          <nu-el show="y|n|y|n">Join chat</nu-el>
+          <nu-el id="label" show="y|n|y|n">Join chat</nu-el>
           <nu-dropdownicon></nu-dropdownicon>
           <nu-popup nx-listbox padding="0">
             <nu-props opacity-transition-time=".08s"></nu-props>
@@ -106,7 +106,7 @@
 
   <nu-section
     padding="26x 0 16x||14x 0 4x" theme="special"
-    image="linear(-20deg, hue(260 70 special), hue(290 70 special))" box="y">
+    image="linear(-20deg, hue(260 70 special), hue(290 70 special))||linear(-40deg, hue(265 70 special), hue(285 70 special))" box="y">
     <nu-flow as="section-block" gap="4x">
       <nu-block move="-2b 0">
         <nu-heading size="8x" inline box="y">
