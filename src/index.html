@@ -13,6 +13,9 @@
   <meta charset="utf-8">
   <meta name="Description" content="Markup language to create modern high-quality interfaces with any look.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="pragma" content="no-cache" />
   <style>nu-root {
     opacity: 0;
   }</style>
@@ -21,7 +24,7 @@
 <script src="scripts/index.js"></script>
 <noscript>JavaScript is required to see this page.</noscript>
 
-<nu-root responsive="1112px|800px|640px" id="root" box="y">
+<nu-root responsive="1112px|800px|640px|375px" id="root" box="y">
   <nu-theme id="main-theme" hue="272"></nu-theme>
   <nu-theme name="blue" hue="232" mod="dim" pastel></nu-theme>
   <nu-theme name="green" hue="154" mod="dim" pastel></nu-theme>
@@ -62,7 +65,7 @@
 
         <nu-el
           text="b" size="md" transition="opacity"
-          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.21</nu-el>
+          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.23</nu-el>
       </nu-pane>
 
       <nu-pane as="from-right" size="md" text="w5" opacity="0 :appear[1]">
@@ -72,7 +75,7 @@
           <nu-icon name="grid-outline"></nu-icon>
         </nu-btn>
 
-        <nu-pane gap="1x|0" show="^header:sticky[y|||n] y">
+        <nu-pane gap="1x|0" show="^header:sticky[y|||n] [y||||n]">
           <nu-btn clear to="!https://twitter.com/numldesign">
             <nu-icon name="^header twitter :sticky[twitter-outline]"></nu-icon>
             <nu-el show="y|n">Twitter</nu-el>
@@ -120,7 +123,7 @@
       <!--        <nu-heading level="2">-->
       <!--          -->
       <!--        </nu-heading>-->
-      <nu-block size="lg">
+      <nu-block size="lg|||md">
         <nu-block>
           Your
           <nu-strong>code</nu-strong>
@@ -205,7 +208,7 @@
         </nu-h2>
 
         <nu-grid columns="repeat(4, 1pr)|1pr 1pr|1pr" gap="3x">
-          <nu-cardbtn as="feature from-bottom" theme="blue tint" to="#basics" opacity="0 :appear[1]" nx-appear="timeout:200">
+          <nu-cardbtn as="feature from-bottom" theme="blue tint" to="#basics" opacity="0 :appear[1]" nx-appear="timeout(200)">
             <nu-icon as="feature-icon" name="bulb-outline"></nu-icon>
             <nu-heading level="3" size="h4">
               Easy to learn
@@ -216,7 +219,7 @@
             </nu-block>
           </nu-cardbtn>
 
-          <nu-cardbtn as="feature from-bottom" theme="green tint" to="#responsive" opacity="0 :appear[1]" nx-appear="timeout:400">
+          <nu-cardbtn as="feature from-bottom" theme="green tint" to="#responsive" opacity="0 :appear[1]" nx-appear="timeout(400)">
             <nu-icon as="feature-icon" name="layout-outline"></nu-icon>
             <nu-heading level="3" size="h4">
               Responsive
@@ -227,7 +230,7 @@
             </nu-block>
           </nu-cardbtn>
 
-          <nu-cardbtn as="feature from-bottom" theme="red tint" to="#theming" opacity="0 :appear[1]" nx-appear="timeout:600">
+          <nu-cardbtn as="feature from-bottom" theme="red tint" to="#theming" opacity="0 :appear[1]" nx-appear="timeout(600)">
             <nu-icon as="feature-icon" name="color-palette-outline"></nu-icon>
             <nu-heading level="3" size="h4">
               Themeable
@@ -238,7 +241,7 @@
             </nu-block>
           </nu-cardbtn>
 
-          <nu-cardbtn as="feature from-bottom" theme="purple tint" to="!https://github.com/tenphi/numl" opacity="0 :appear[1]" nx-appear="timeout:800">
+          <nu-cardbtn as="feature from-bottom" theme="purple tint" to="!https://github.com/tenphi/numl" opacity="0 :appear[1]" nx-appear="timeout(800)">
             <nu-icon as="feature-icon" name="code-outline"></nu-icon>
             <nu-heading level="3" size="h4">
               Free
@@ -876,25 +879,24 @@
         </nu-flex>
       </nu-grid>
 
-<!--      <nu-flow gap>-->
-<!--        <nu-el size="lg||md">See more Layout examples in our Storybook:</nu-el>-->
+      <nu-flow gap>
+        <nu-el size="lg||md">See more Layout examples in our Storybook:</nu-el>
 
-<!--        <nu-pane size="md" flow="row wrap">-->
-<!--          <nu-btn special>Basic layouts</nu-btn>-->
-<!--          <nu-btn special>Flex layouts</nu-btn>-->
-<!--          <nu-btn special>Grid layouts</nu-btn>-->
-<!--          <nu-btn special>Complex layouts</nu-btn>-->
-<!--        </nu-pane>-->
-<!--      </nu-flow>-->
+        <nu-pane size="md" flow="row wrap">
+          <nu-btn special to="/storybook/layouts/basic-layouts">Basic layouts</nu-btn>
+          <nu-btn special to="/storybook/layouts/flex-layouts">Flex layouts</nu-btn>
+          <nu-btn special to="/storybook/layouts/grid-layouts">Grid layouts</nu-btn>
+          <nu-btn special to="/storybook/layouts/table-layouts">Table layouts</nu-btn>
+        </nu-pane>
+      </nu-flow>
 
-<!--      <nu-flow gap>-->
-<!--        <nu-el size="lg||md">Learn more in our Guide:</nu-el>-->
+      <nu-flow gap>
+        <nu-el size="lg||md">Learn more from the reference pages:</nu-el>
 
-<!--        <nu-pane size="md">-->
-<!--          <nu-btn special>Responsive styles</nu-btn>-->
-<!--          <nu-btn special>Complex styles</nu-btn>-->
-<!--        </nu-pane>-->
-<!--      </nu-flow>-->
+        <nu-pane size="md">
+          <nu-btn special to="/reference/attributes/responsive">Responsive utility</nu-btn>
+        </nu-pane>
+      </nu-flow>
     </nu-flow>
   </nu-section>
 
@@ -959,7 +961,7 @@
           <nu-attrs for="btn" padding="1x|||.5x 1x" t="'Button'||'Btn'"></nu-attrs>
           <nu-attrs for="splbtn" padding="1x 2x|||.5x 1x" t="'Special'||'Spl'"></nu-attrs>
           <nu-attrs for="btnset" gap flow="row"></nu-attrs>
-          <nu-attrs for="content" grow="1" text="nowrap"></nu-attrs>
+          <nu-attrs for="content" grow="1" text="nowrap" show="y||||n"></nu-attrs>
 
           <nu-card>
             <nu-heading>Main</nu-heading>
@@ -967,8 +969,7 @@
             <nu-line></nu-line>
 
             <nu-block id="content">Text and
-              <nu-mark>mark</nu-mark>
-              .
+              <nu-mark>mark</nu-mark>.
             </nu-block>
 
             <nu-flex id="btnset">
@@ -984,8 +985,7 @@
             <nu-line></nu-line>
 
             <nu-block id="content">Text and
-              <nu-mark>mark</nu-mark>
-              .
+              <nu-mark>mark</nu-mark>.
             </nu-block>
 
             <nu-flex id="btnset">
@@ -1001,8 +1001,7 @@
             <nu-line></nu-line>
 
             <nu-block id="content">Text and
-              <nu-mark>mark</nu-mark>
-              .
+              <nu-mark>mark</nu-mark>.
             </nu-block>
 
             <nu-flex id="btnset">
@@ -1018,8 +1017,7 @@
             <nu-line></nu-line>
 
             <nu-block id="content">Text and
-              <nu-mark>mark</nu-mark>
-              .
+              <nu-mark>mark</nu-mark>.
             </nu-block>
 
             <nu-flex id="btnset">
@@ -1035,8 +1033,7 @@
             <nu-line></nu-line>
 
             <nu-block id="content">Text and
-              <nu-mark>mark</nu-mark>
-              .
+              <nu-mark>mark</nu-mark>.
             </nu-block>
 
             <nu-flex id="btnset">
@@ -1048,14 +1045,15 @@
         </nu-flex>
       </nu-block>
 
-<!--      <nu-flow gap>-->
-<!--        <nu-el size="lg||md">Learn more in our Guide:</nu-el>-->
+      <nu-flow gap>
+        <nu-el size="lg||md">Learn more in the reference pages:</nu-el>
 
-<!--        <nu-pane size="md">-->
-<!--          <nu-btn special>Theme definitions</nu-btn>-->
-<!--          <nu-btn special>Using colors</nu-btn>-->
-<!--        </nu-pane>-->
-<!--      </nu-flow>-->
+        <nu-pane size="md" flow="row wrap">
+          <nu-btn special to="/reference/elements/nu-theme">Element nu-theme</nu-btn>
+          <nu-btn special to="/reference/attributes/theme">Attribute [theme]</nu-btn>
+          <nu-btn special to="/reference/functions/hue">Adaptive colors</nu-btn>
+        </nu-pane>
+      </nu-flow>
 
     </nu-flow>
   </nu-section>
@@ -1232,7 +1230,7 @@
       to="#root"
       interactive="yes" special shadow
       size="1.5" radius="round" padding="1x 0" place="sticky top (100vh - 6rem)"
-      height="2.5" width="2.5">
+      height="2.5" width="2.5" fill="special-bg 70%" backdrop="blur(4x)">
       <nu-icon name="chevron-up"></nu-icon>
     </nu-btn>
   </nu-block>
