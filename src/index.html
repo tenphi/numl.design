@@ -52,8 +52,8 @@
     theme="special :sticky[main strong]" fill="clear :sticky[bg]" shadow="0 :sticky[1 special]"
     height="13x :sticky[9x]|13x :sticky[7x]">
     <nu-props
-      all-transition-time=".35s"
-      opacity-transition-time=".35s"></nu-props>
+      all-transition=".35s"
+      opacity-transition=".35s"></nu-props>
 
     <nu-pane
       as="section-block" content="space-between" height="100%" transition="height"
@@ -92,7 +92,7 @@
           <nu-el id="label" show="y|n|y|n">Join chat</nu-el>
           <nu-dropdownicon></nu-dropdownicon>
           <nu-popup nx-listbox padding="0">
-            <nu-props opacity-transition-time=".08s"></nu-props>
+            <nu-props opacity-transition=".08s"></nu-props>
             <nu-itembtn to="!https://tele.click/numldesign" columns="1fr auto">
               Telegram
               <nu-icon name="external-link" size="1em"></nu-icon>
@@ -160,7 +160,7 @@
   <nu-block id="nav-float"
     place="sticky top" z="front" theme="tint strong" height="0"
     opacity=":sticky[1] 0" transition="opacity" interactive="n">
-    <nu-props opacity-transition-time=".5s"></nu-props>
+    <nu-props opacity-transition=".5s"></nu-props>
     <nu-block
       as="section-block" padding="4.5 left||3 left"
       show="^:sticky[y] n">
