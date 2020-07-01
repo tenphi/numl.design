@@ -65,7 +65,7 @@
 
         <nu-el
           text="b" size="md" transition="opacity"
-          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.23</nu-el>
+          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.25</nu-el>
       </nu-pane>
 
       <nu-pane as="from-right" size="md" text="w5" opacity="0 :appear[1]">
@@ -350,7 +350,7 @@
     <nu-attrs for="code" padding="1x 2x" border overflow="auto" scrollbar width="100%"></nu-attrs>
 
     <nu-flow as="section-block" gap="4x">
-      <nu-attrs for="btn" fill=":pressed[special-bg] bg" color inset="n :active[y]"></nu-attrs>
+      <nu-attrs for="btn" fill=":pressed[special-bg] bg" inset="n :active[y]"></nu-attrs>
 
       <nu-heading as="section-header">Design with Numl</nu-heading>
 
@@ -1225,12 +1225,14 @@
     </nu-flow>
   </nu-footer>
 
-  <nu-block place="top right 150vh 1" height="100% - 150vh" interactive="no" show="y|n">
+  <nu-block
+    aria-hidden="true"
+    place="top right 150vh 1" height="100% - 150vh" interactive="no" show="y|n">
     <nu-btn
       to="#root"
       interactive="yes" special shadow
       size="1.5" radius="round" padding="1x 0" place="sticky top (100vh - 6rem)"
-      height="2.5" width="2.5" fill="special-bg 70%" backdrop="blur(4x)">
+      height="2.5" width="2.5" fill="special-bg 80%" backdrop="blur(4x)">
       <nu-icon name="chevron-up"></nu-icon>
     </nu-btn>
   </nu-block>
