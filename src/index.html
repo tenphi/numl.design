@@ -40,7 +40,7 @@
     padding="10x 0||5x 0"></nu-attrs>
   <nu-attrs for="section-block" place="space-around" width="20 100% 1112px"
             padding="4x||2x"></nu-attrs>
-  <nu-attrs for="section-header" size="h1||h3"></nu-attrs>
+  <nu-attrs for="section-heading" size="h1||h3"></nu-attrs>
   <nu-attrs for="bold" text="w6" force></nu-attrs>
   <nu-attrs for="from-left" nx-appear move="-8x 0 :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
   <nu-attrs for="from-right" nx-appear move="8x 0 :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
@@ -203,7 +203,7 @@
           opacity="^card :hover[1] :focus[1] :hover:focus[1] .5" size="1em"></nu-attrs>
         <nu-attrs for="heading"></nu-attrs>
 
-        <nu-h2 as="section-header from-left" opacity="0 :appear[1]">
+        <nu-h2 as="section-heading from-left" opacity="0 :appear[1]">
           Why Numl?
         </nu-h2>
 
@@ -352,7 +352,7 @@
     <nu-flow as="section-block" gap="4x">
       <nu-attrs for="btn" fill=":pressed[special-bg] bg" inset="n :active[y]"></nu-attrs>
 
-      <nu-heading as="section-header">Design with Numl</nu-heading>
+      <nu-heading as="section-heading">Design with Numl</nu-heading>
 
       <nu-radiogroup value="login-form" gap flow="row wrap" items="center" text="w6">
         <nu-btn value="login-form">Form with validation</nu-btn>
@@ -649,7 +649,7 @@
         for="code" fill="diff" padding inline border
         overflow="auto" scrollbar width="max"></nu-attrs>
 
-      <nu-heading as="section-header">Learn basics in minutes</nu-heading>
+      <nu-heading as="section-heading">Learn basics in minutes</nu-heading>
 
       <nu-markdown>
         <textarea>
@@ -785,7 +785,7 @@
 
   <nu-section id="responsive">
     <nu-flow as="section-block" gap="4x">
-      <nu-heading as="section-header">Responsive layouts</nu-heading>
+      <nu-heading as="section-heading">Responsive layouts</nu-heading>
 
       <nu-block size="lg||md">
         Use <nu-el text="nowrap">
@@ -906,7 +906,7 @@
 
     <nu-flow as="section-block" gap="4x||2x" size="lg||md">
       <nu-flow gap>
-        <nu-heading as="section-header">Theming</nu-heading>
+        <nu-heading as="section-heading">Theming</nu-heading>
 
         <nu-pane size="lg h1||md h1" flow="row wrap" gap="0 2x">
           <nu-el text="nowrap">Choose a <nu-strong>hue</nu-strong></nu-el>
@@ -1058,6 +1058,59 @@
     </nu-flow>
   </nu-section>
 
+  <nu-section>
+    <nu-flow as="section-block" gap="4x">
+      <nu-heading as="section-heading">Built with Numl</nu-heading>
+
+      <nu-grid columns="1pr 1pr 1pr|1pr 1pr||1pr" gap="4x||2x|6x">
+        <nu-attrs
+          for="card" clear shadow="special :hover[hue(272 70 100 40)]"
+          move="0 0 :hover[0 -.5x]" transition="shadow, move"
+          padding="0" radius="1r|||0" space="0|||0 2x" overflow="no" border="0"></nu-attrs>
+        <nu-region gap="2x" label="Tenphi's homepage">
+          <nu-cardbtn to="!https://tenphi.me">
+            <nu-img label="tenphi.me screenshot" fit="cover" loading="lazy">
+              <img alt="" src="./images/tenphi-me-preview.jpg" />
+            </nu-img>
+          </nu-cardbtn>
+          <nu-flow gap>
+            <nu-link to="!https://tenphi.me">tenphi.me</nu-link>
+            <nu-description>
+              Personal page of Numl's author, Andrey&nbsp;Yamanov.
+            </nu-description>
+          </nu-flow>
+        </nu-region>
+
+        <nu-region gap="2x" label="Sellerscale">
+          <nu-cardbtn to="!https://sellerscale.com">
+            <nu-img label="sellerscale.com screenshot">
+              <img alt="" src="./images/sellerscale.jpg" loading="lazy" />
+            </nu-img>
+          </nu-cardbtn>
+          <nu-flow gap>
+            <nu-link to="!https://sellerscale.com">sellerscale.com</nu-link>
+            <nu-description>
+              Smarter financial management for Amazon sellers.
+            </nu-description>
+          </nu-flow>
+        </nu-region>
+
+        <nu-region gap="2x" label="Calendar of Frontend Events">
+          <nu-cardbtn to="!https://frontend-events-numl.now.sh/">
+            <nu-img label="tenphi.me screenshot">
+              <img alt="" src="./images/frontend-events.jpg" loading="lazy" />
+            </nu-img>
+          </nu-cardbtn>
+          <nu-flow gap>
+            <nu-link to="!https://frontend-events-numl.now.sh/">frontend-events-numl.now.sh</nu-link>
+            <nu-description>
+              Calendar of Frontend Events.
+            </nu-description>
+          </nu-flow>
+        </nu-region>
+      </nu-grid>
+    </nu-flow>
+  </nu-section>
 
   <nu-section
     theme="special" padding="4x 0"
