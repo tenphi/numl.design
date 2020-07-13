@@ -64,8 +64,8 @@
         </nu-blocklink>
 
         <nu-el
-          text="b" size="md" transition="opacity"
-          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.25</nu-el>
+          text="b" size="xs" transition="opacity"
+          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.26</nu-el>
       </nu-pane>
 
       <nu-pane as="from-right" size="md" text="w5" opacity="0 :appear[1]">
@@ -152,6 +152,10 @@
         <nu-btn to="/storybook" clear>
           <nu-icon name="^:hover[layout] :focus[layout] :hover:focus[layout] layout-outline"></nu-icon>
           Storybook
+        </nu-btn>
+        <nu-btn to="!http://patreon.com/tenphi" clear>
+          <nu-icon name="^:hover[heart] :focus[heart] :hover:focus[heart] heart-outline"></nu-icon>
+          Support
         </nu-btn>
       </nu-pane>
     </nu-flow>
@@ -1161,6 +1165,10 @@
 
           <nu-block>
             <a href="https://twitter.com/tenphi?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-lang="en" data-show-count="true">Follow @tenphi</a>
+          </nu-block>
+
+          <nu-block>
+            <a href="https://www.patreon.com/bePatron?u=16999828" data-patreon-widget-type="become-patron-button">Become a Patron!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
           </nu-block>
         </nu-flow>
 
