@@ -16,9 +16,7 @@
   <meta http-equiv="cache-control" content="no-cache" />
   <meta http-equiv="expires" content="0" />
   <meta http-equiv="pragma" content="no-cache" />
-  <style>nu-root {
-    opacity: 0;
-  }</style>
+  <style>*:not(:defined) { visibility: hidden; }</style>
 </head>
 <body>
 <script src="scripts/index.js"></script>
@@ -65,7 +63,7 @@
 
         <nu-el
           text="b" size="xs" transition="opacity"
-          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.26</nu-el>
+          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.11.28</nu-el>
       </nu-pane>
 
       <nu-pane as="from-right" size="md" text="w5" opacity="0 :appear[1]">
