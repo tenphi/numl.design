@@ -36,9 +36,9 @@
   <nu-attrs for="cd" size="sm" font="Roboto Mono"></nu-attrs>
   <nu-props
     xxl-font-size="23rp"
-    xxl-line-height="33rp"
+    xxl-line-height="35rp"
     xl-font-size="21rp"
-    xl-line-height="29rp"
+    xl-line-height="31rp"
     lg-font-size="19rp"
     lg-line-height="27rp"
     md-font-size="17rp"
@@ -64,7 +64,7 @@
 
   <nu-header
     as="section" padding="0" border="0" place="fixed top"
-    theme="special :sticky[main strong]" fill="clear :sticky[bg]" shadow="0 :sticky[1 special]"
+    theme="special :sticky[main strong]" fill="clear :sticky[bg]" shadow="0 :sticky[1]"
     height="13x :sticky[9x]|13x :sticky[7x]" color="white">
     <nu-props
       all-transition=".35s"
@@ -80,7 +80,7 @@
 
         <nu-el
           size="xs" transition="opacity"
-          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.12-beta.4</nu-el>
+          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.12-beta.6</nu-el>
       </nu-pane>
 
       <nu-pane as="from-right" size="md" text="w5" opacity="0 :appear[1]">
@@ -125,7 +125,7 @@
   <nu-section
     padding="26x 0 16x||14x 0 4x" theme="special"
     image="linear(-20deg, hue(260 70 special), hue(290 70 special))||linear(-40deg, hue(265 70 special), hue(285 70 special))" box="y">
-    <nu-flow as="section-block" gap="4x">
+    <nu-flow as="section-block" gap="4x" width="max 57|max 80%|100%">
       <nu-block move="-2b 0">
         <nu-heading size="8x" inline box="y">
           numl
@@ -138,16 +138,17 @@
       <!--        <nu-heading level="2">-->
       <!--          -->
       <!--        </nu-heading>-->
-      <nu-block size="lg|||md">
-        <nu-block>
-          Your
-          <nu-strong>code</nu-strong>
-          is your
-          <nu-strong>design system</nu-strong>.
-        </nu-block>
-        <nu-block>
-          Markup language to create modern <nu-strong>high-quality</nu-strong> interfaces with any look.
-        </nu-block>
+      <nu-block size="xl">
+        An open-source Library of Web Components for rapidly building<nu-block show="y||n"></nu-block> User Interfaces and custom Design Systems.
+<!--        <nu-block>-->
+<!--          Your-->
+<!--          <nu-strong>code</nu-strong>-->
+<!--          is your-->
+<!--          <nu-strong>design system</nu-strong>.-->
+<!--        </nu-block>-->
+<!--        <nu-block>-->
+<!--          Markup language to create modern <nu-strong>high-quality</nu-strong> interfaces with any look.-->
+<!--        </nu-block>-->
       </nu-block>
       <nu-pane as="from-bottom" nx-appear opacity="0 :appear[1]" size="lg||md" gap="2x||1x" text="w5" flow="row wrap">
         <nu-attrs for="btn" padding="1x 2x||1x"></nu-attrs>
@@ -1315,23 +1316,6 @@
   </nu-block>
 </nu-root>
 
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-(function (m, e, t, r, i, k, a) {
-  m[i] = m[i] || function () {
-    (m[i].a = m[i].a || []).push(arguments)
-  };
-  m[i].l = 1 * new Date();
-  k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-})
-(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-ym(60992518, "init", {
-  clickmap: true,
-  trackLinks: true,
-  accurateTrackBounce: true
-});
-</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172527749-1"></script>
 <script>
@@ -1341,11 +1325,6 @@ ym(60992518, "init", {
 
   gtag('config', 'UA-172527749-1');
 </script>
-<noscript>
-  <div><img src="https://mc.yandex.ru/watch/60992518" style="position:absolute; left:-9999px;"
-            alt=""/></div>
-</noscript>
-<!-- /Yandex.Metrika counter -->
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
