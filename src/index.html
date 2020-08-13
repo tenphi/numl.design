@@ -10,7 +10,7 @@
   <link rel="icon" media="(prefers-color-scheme:dark)" type="image/png" sizes="16x16"
         href="/images/nude-logo-16-dark.png">
   <title>numl – unity of design & code</title>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="Description" content="Markup language to create modern high-quality interfaces with any look.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +23,7 @@
 <script src="scripts/index.js"></script>
 <noscript><h1>Numl Design System official website</h1><p>To learn more activate Javascript on this page.</p></noscript>
 
-<nu-root responsive="1140px|800px|640px|375px" id="root" box="y" size="md" font="Baloo 2">
+<nu-root responsive="1140px|800px|640px|375px" id="root" box="y" size="md" font="Quicksand">
   <nu-theme id="main-theme" hue="272"></nu-theme>
   <nu-theme name="blue" hue="232" mod="dim" pastel></nu-theme>
   <nu-theme name="green" hue="154" mod="dim" pastel></nu-theme>
@@ -32,23 +32,23 @@
 <!--  <nu-theme name="lime" hue="96" mod="dim"></nu-theme>-->
   <nu-theme name="red" hue="1" mod="dim" pastel></nu-theme>
 
-  <nu-attrs for="code" size="sm" font="Roboto Mono"></nu-attrs>
-  <nu-attrs for="cd" size="sm" font="Roboto Mono"></nu-attrs>
-  <nu-props
-    xxl-font-size="23rp"
-    xxl-line-height="35rp"
-    xl-font-size="21rp"
-    xl-line-height="31rp"
-    lg-font-size="19rp"
-    lg-line-height="27rp"
-    md-font-size="17rp"
-    md-line-height="25rp"
-    sm-font-size="15rp"
-    sm-line-height="23rp"
-    xs-font-size="13rp"
-    xs-line-height="19rp"
-    xxs-font-size="11rp"
-    xxs-line-height="17rp"></nu-props>
+  <nu-attrs for="code" font="Roboto Mono"></nu-attrs>
+  <nu-attrs for="cd" font="Roboto Mono"></nu-attrs>
+<!--  <nu-props-->
+<!--    xxl-font-size="23rp"-->
+<!--    xxl-line-height="35rp"-->
+<!--    xl-font-size="21rp"-->
+<!--    xl-line-height="31rp"-->
+<!--    lg-font-size="19rp"-->
+<!--    lg-line-height="27rp"-->
+<!--    md-font-size="17rp"-->
+<!--    md-line-height="25rp"-->
+<!--    sm-font-size="15rp"-->
+<!--    sm-line-height="23rp"-->
+<!--    xs-font-size="13rp"-->
+<!--    xs-line-height="19rp"-->
+<!--    xxs-font-size="11rp"-->
+<!--    xxs-line-height="17rp"></nu-props>-->
   <nu-attrs
     role="article"
     for="section" gap="4x" flow="column" width="100%" fill="subtle :even[bg]"
@@ -1085,7 +1085,7 @@
       <nu-grid columns="1pr 1pr 1pr|1pr 1pr||1pr" gap="4x||2x|6x">
         <nu-attrs
           for="cardbtn" clear shadow="special :hover[hue(272 70 100 40)]"
-          move="0 0 :hover[0 -.5x]" transition="shadow, move"
+          move="0 0 :hover[0 -.5x]" transition="shadow, move" height="22.5x"
           padding="0" radius="1r|||0" space="0|||0 2x" overflow="no" border="0"></nu-attrs>
         <nu-attrs for="img" fit="contain" width="max 100%" place="cover"></nu-attrs>
         <nu-region gap="2x" label="Tenphi's homepage">
