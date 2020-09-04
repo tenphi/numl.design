@@ -9,10 +9,10 @@
         href="/images/nude-logo-32-dark.png">
   <link rel="icon" media="(prefers-color-scheme:dark)" type="image/png" sizes="16x16"
         href="/images/nude-logo-16-dark.png">
-  <title>numl – unity of design & code</title>
+  <title>Numl – unity of design & code</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
   <meta charset="utf-8">
-  <meta name="Description" content="Markup language to create modern high-quality interfaces with any look.">
+  <meta name="Description" content="An open-source Library of Web Components and a Runtime CSS Framework for rapidly building UI that follows your Design System.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="cache-control" content="no-cache" />
   <meta http-equiv="expires" content="0" />
@@ -67,13 +67,13 @@
     for="section" gap="4x" flow="column" width="100%" fill="subtle :even[bg]"
     items="center"
     padding="10x 0||5x 0"></nu-attrs>
-  <nu-attrs for="section-block" place="space-around" width="20 100% 1140px"
+  <nu-attrs for="section-block" space="around" width="20 100% 1140px"
             padding="4x||2x"></nu-attrs>
   <nu-attrs for="section-heading" size="h1||h3"></nu-attrs>
-  <nu-attrs for="from-left" nx-appear move="-8x 0 :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
-  <nu-attrs for="from-right" nx-appear move="8x 0 :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
-  <nu-attrs for="from-bottom" nx-appear move="0 8x :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
-  <nu-attrs for="from-top" nx-appear move="0 -4x :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
+  <nu-attrs for="from-left" use-appear move="-8x 0 :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
+  <nu-attrs for="from-right" use-appear move="8x 0 :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
+  <nu-attrs for="from-bottom" use-appear move="0 8x :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
+  <nu-attrs for="from-top" use-appear move="0 -4x :appear[0 0]" transition="opacity .5s ease, move .5s ease"></nu-attrs>
 
   <nu-header
     as="section" padding="0" border="0" place="fixed top"
@@ -93,7 +93,7 @@
 
         <nu-el
           size="xs" transition="opacity"
-          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v0.12-beta.10</nu-el>
+          opacity="^header:sticky[0] 1|^header:sticky[0] 1|^header:sticky[0] 1|0">v1.0.0-beta.1</nu-el>
       </nu-pane>
 
       <nu-pane as="from-right" size="md" text="w5" opacity="0 :appear[1]">
@@ -119,7 +119,7 @@
           <nu-icon name="message-circle-outline"></nu-icon>
           <nu-el id="label" show="y|n|y|n">Join chat</nu-el>
           <nu-dropdownicon></nu-dropdownicon>
-          <nu-popup nx-listbox padding="0">
+          <nu-popup use-listbox padding="0">
             <nu-props opacity-transition=".08s"></nu-props>
             <nu-itembtn to="!https://tele.click/numldesign" columns="1fr auto">
               Telegram
@@ -163,7 +163,7 @@
 <!--          Markup language to create modern <nu-strong>high-quality</nu-strong> interfaces with any look.-->
 <!--        </nu-block>-->
       </nu-block>
-      <nu-pane as="from-bottom" nx-appear opacity="0 :appear[1]" size="lg||md" gap="2x||1x" text="w5" flow="row wrap">
+      <nu-pane as="from-bottom" use-appear opacity="0 :appear[1]" size="lg||md" gap="2x||1x" text="w5" flow="row wrap">
         <nu-attrs for="btn" padding="1x 2x||1x"></nu-attrs>
         <nu-attrs for="icon"></nu-attrs>
         <nu-btn special to="/guide/getting-started">
@@ -241,7 +241,7 @@
         </nu-h2>
 
         <nu-grid columns="repeat(4, 1pr)|1pr 1pr|1pr" gap="3x">
-          <nu-cardbtn as="feature from-bottom" theme="blue tint" to="#basics" opacity="0 :appear[1]" nx-appear="timeout(200)">
+          <nu-cardbtn as="feature from-bottom" theme="blue tint" to="#basics" opacity="0 :appear[1]" use-appear="timeout(200)">
             <nu-icon as="feature-icon" name="bulb-outline"></nu-icon>
             <nu-heading level="3" size="h4">
               Easy to learn
@@ -252,7 +252,7 @@
             </nu-block>
           </nu-cardbtn>
 
-          <nu-cardbtn as="feature from-bottom" theme="green tint" to="#responsive" opacity="0 :appear[1]" nx-appear="timeout(400)">
+          <nu-cardbtn as="feature from-bottom" theme="green tint" to="#responsive" opacity="0 :appear[1]" use-appear="timeout(400)">
             <nu-icon as="feature-icon" name="layout-outline"></nu-icon>
             <nu-heading level="3" size="h4">
               Responsive
@@ -263,7 +263,7 @@
             </nu-block>
           </nu-cardbtn>
 
-          <nu-cardbtn as="feature from-bottom" theme="red tint" to="#theming" opacity="0 :appear[1]" nx-appear="timeout(600)">
+          <nu-cardbtn as="feature from-bottom" theme="red tint" to="#theming" opacity="0 :appear[1]" use-appear="timeout(600)">
             <nu-icon as="feature-icon" name="color-palette-outline"></nu-icon>
             <nu-heading level="3" size="h4">
               Themeable
@@ -274,7 +274,7 @@
             </nu-block>
           </nu-cardbtn>
 
-          <nu-cardbtn as="feature from-bottom" theme="purple tint" to="!https://github.com/tenphi/numl" opacity="0 :appear[1]" nx-appear="timeout(800)">
+          <nu-cardbtn as="feature from-bottom" theme="purple tint" to="!https://github.com/tenphi/numl" opacity="0 :appear[1]" use-appear="timeout(800)">
             <nu-icon as="feature-icon" name="code-outline"></nu-icon>
             <nu-heading level="3" size="h4">
               Free
@@ -331,7 +331,7 @@
 <!--        </nu-flow>-->
 <!--      </nu-flow>-->
 
-      <nu-flow place="space-around" gap="4x" as="from-bottom" opacity="0 :appear[1]">
+      <nu-flow space="around" gap="4x" as="from-bottom" opacity="0 :appear[1]">
         <nu-flow gap>
           <nu-heading level="4" size="h3||h5">Features</nu-heading>
 
@@ -402,7 +402,7 @@
 <!--          <nu-btn padding="1x 0 1x 1x" gap="0" control="example" special>-->
 <!--            <nu-value list="list" placeholder="select any" color="special-text :placeholder[special-text 50%]"></nu-value>-->
 <!--            <nu-icon name="chevron-down" scale="^:pressed[flip-y]"></nu-icon>-->
-<!--            <nu-popup nx-listbox id="list" link-value size="lg">-->
+<!--            <nu-popup use-listbox id="list" link-value size="lg">-->
 <!--              <nu-option value="login-form">login form</nu-option>-->
 <!--              <nu-option value="dropdown-menu">dropdown menu</nu-option>-->
 <!--              <nu-line></nu-line>-->
